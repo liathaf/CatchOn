@@ -1,0 +1,21 @@
+// // Setup
+@import "./setup/variables";
+@import "./setup/functions";
+// @import "setup/mixins.scss";
+@import "./setup/typography.scss";
+
+// // Basics
+@import "./basics/helpers";
+@import "./basics/layout";
+@import "./basics/base";
+// @import "basics/links.scss";
+@import "./basics/buttons";
+
+// // Components
+// @import "components/main-header.scss";
+// @import "components/cat-card.scss";
+
+
+//pages 
+
+@import "./pages/home"
