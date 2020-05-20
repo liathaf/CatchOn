@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-export function NavBar(props) {
+export function NavBar() {
     return (
-        <section className="main-nav">
+
         <nav className="navbar">
             <Link className="logo" to="/">CatchOn </Link>
             <ul className="links">
@@ -13,6 +13,6 @@ export function NavBar(props) {
                 <li><Link to="/login">Login</Link></li>
             </ul>
         </nav>
-        </section>
+
     )
 }

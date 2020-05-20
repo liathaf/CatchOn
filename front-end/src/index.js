@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import { HashRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { createHashHistory } from 'history'
-import { store } from './store/store'
+import store from './store/store'
 
 const history = createHashHistory()
 

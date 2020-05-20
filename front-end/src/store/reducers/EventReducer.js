@@ -7,13 +7,13 @@ const initialState = {
 export function EventReducer(state = initialState, action) {
 
     switch (action.type) {
-        case 'SET_EVENT':
+        case 'SET_EVENTS':
             return {
-                ...state, event: action.event
+                ...state, events: action.events
             }
         case 'SET_EVENT':
             return {
-                ...state, currToy: action.event
+                ...state, currEvent: action.event
             }
 
         case 'UPDATE_EVENT':

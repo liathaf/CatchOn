@@ -1,12 +1,26 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-// import { EventList } from '../cmps/EventList';
+// import { ReactRedux } from 'react';
+import { connect } from 'react-redux';
+import { loadEvents } from '../store/actions/eventActions'
+import { EventList } from '../cmps/EventList';
 
-export class Home extends Component {
+class Home extends Component {
+    
+    // state = {
+    //     labels: [ 'Sport ']
+    // }
+
+    componentDidMount() {
+        this.props.loadEvents();
+    }
+
     render() {
-        return (
-            <>
+        console.log(this.props);
+        const { events } = this.props
+    return (
+        <>
             <section className="landing">
                 <div className="dark-overlay">
                     <div className="landing-inner">
@@ -16,6 +30,7 @@ export class Home extends Component {
                 </div>
             </section>
             <section className="labels">
+              
                 <Link className="btn btn-success btn-cat" to="">Sport</Link>
                 <Link className="btn btn-success btn-cat" to="">Outdoors</Link>
                 <Link className="btn btn-success btn-cat" to="">Traveling</Link>
@@ -24,12 +39,23 @@ export class Home extends Component {
                 <Link className="btn btn-success btn-cat" to="">Coding</Link>
             </section>
             <section className="previewEvents">
-            {/* <EventList events={ events }/> */}
+                <EventList events={events} />
             </section>
-            </>
+        </>
 
-        )
-    }
+    )
+}
 }
 
 
+const mapStateToProps = (state) => {
+    return {
+        events: state.events.events
+    }
+}
+
+const mapDispatchToProps = {
+    loadEvents
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home)

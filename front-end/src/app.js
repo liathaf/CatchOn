@@ -4,7 +4,7 @@ import './style/global.scss';
 
 import {NavBar} from './cmps/NavBar'
 import {EventApp} from './pages/EventApp'
-import {Home} from './pages/Home'
+import Home from './pages/Home'
 import {EventEdit} from './pages/EventEdit'
 import {EventDetails} from './pages/EventDetails'
 import {UserDetails} from './pages/UserDetails'
@@ -14,13 +14,10 @@ import {SignUp} from './pages/SignUp'
   function App() {
     return (
       <div className="app">
-        <header>
           <NavBar />
-        </header>
         <main className="main-content">
           <Switch>
-
-            <Route exact component={Home} path="/"/> */}
+            <Route exact component={Home} path="/"/> 
           {/* <Route exact component={EventApp} path="/event" /> 
           <Route exact component={EventEdit} path="/event/edit/:eventId?" />
             <Route exact component={EventDetails} path="/event/:eventId" />
