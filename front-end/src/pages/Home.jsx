@@ -7,10 +7,10 @@ import { loadEvents } from '../store/actions/eventActions'
 import { EventList } from '../cmps/EventList';
 
 class Home extends Component {
-    
-    // state = {
-    //     labels: [ 'Sport ']
-    // }
+
+    state = {
+        categories: ['Sport', 'Outdoors', 'Traveling', 'Culinery', 'Video games', 'Coding']
+    }
 
     componentDidMount() {
         this.props.loadEvents();
@@ -19,32 +19,28 @@ class Home extends Component {
     render() {
         console.log(this.props);
         const { events } = this.props
-    return (
-        <>
-            <section className="landing">
-                <div className="dark-overlay">
-                    <div className="landing-inner">
-                        <h1 className="large">Explore new events and meet new people</h1>
-                        <Link to="/login" className="btn btn-primary btn-control">Join CatchOn</Link>
+        return (
+            <>
+                <section className="landing">
+                    <div className="dark-overlay">
+                        <div className="landing-inner">
+                            <h1 className="large">Explore new events and meet new people</h1>
+                            <Link to="/login" className="btn btn-primary btn-control">Join CatchOn</Link>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section className="labels">
-              
-                <Link className="btn btn-success btn-cat" to="">Sport</Link>
-                <Link className="btn btn-success btn-cat" to="">Outdoors</Link>
-                <Link className="btn btn-success btn-cat" to="">Traveling</Link>
-                <Link className="btn btn-success btn-cat" to="">Culinery</Link>
-                <Link className="btn btn-success btn-cat" to="">Video games</Link>
-                <Link className="btn btn-success btn-cat" to="">Coding</Link>
-            </section>
-            <section className="previewEvents">
-                <EventList events={events} />
-            </section>
-        </>
+                </section>
+                <section className="categories">
 
-    )
-}
+                    {this.state.categories.map((category , idx) => (<Link className="btn btn-success btn-cat" key={idx} to="">{category}</Link>))}
+
+                </section>
+                <section className="previewEvents">
+                    <EventList events={events} />
+                </section>
+            </>
+
+        )
+    }
 }
 
 
