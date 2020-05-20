@@ -18,6 +18,12 @@
     }
   }
 
+  .labels {
+    display: flex;
+    width: 90vw;
+    margin: rem(20px) auto;
+    justify-content: space-around;
+  }
 
   
 }
