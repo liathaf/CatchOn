@@ -17,7 +17,6 @@ class Home extends Component {
     }
 
     render() {
-        console.log(this.props);
         const { events } = this.props
         return (
             <>
@@ -34,9 +33,7 @@ class Home extends Component {
                     {this.state.categories.map((category , idx) => (<Link className="btn btn-success btn-cat" key={idx} to="">{category}</Link>))}
 
                 </section>
-                <section className="previewEvents">
-                    <EventList events={events} />
-                </section>
+                <EventList events={events} />
             </>
 
         )

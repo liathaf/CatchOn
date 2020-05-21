@@ -8,7 +8,7 @@
 @import "./basics/helpers";
 @import "./basics/layout";
 @import "./basics/base";
-// @import "basics/links.scss";
+@import "./basics/links";
 @import "./basics/buttons";
 
 // // Components
@@ -17,5 +17,8 @@
 
 
 //pages 
+@import "./pages/home";
 
-@import "./pages/home"
+// component 
+@import "./cmps/event.preview";
+
