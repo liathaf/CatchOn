@@ -3,8 +3,9 @@
   .landing {
     position: relative;
     min-height: 600px;
+    width: 100vw;
     overflow: hidden;
-    background: url("../../img/run.jpg") no-repeat center center/cover;
+    background: url("../../img/together.jpg") no-repeat center center/cover;
 
     .landing-inner {
       color: #fff;
@@ -18,12 +19,14 @@
     }
   }
 
-  .labels {
+  .categories {
     display: flex;
-    width: 90vw;
     margin: rem(20px) auto;
     justify-content: space-around;
   }
+
+
+  
 
   
 }

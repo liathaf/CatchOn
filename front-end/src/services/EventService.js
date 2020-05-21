@@ -10,7 +10,7 @@ const gEvents = [
 	"startAt": "21/06/2020 6pm",
 	"place": "Tel-Aviv beach",
 	"capacity": 30,
-	"imgUrls": [ "blabla.jpg", "blabla2.jpg" ],
+	"imgUrls": [ "https://cdn.groo.co.il/_media/media/10592/254596.jpg", "blabla2.jpg" ],
 	"attendees": [ {"_id": "2", "userName": "Shani choen", "imgUrl": "blabla"}],
 	"reviews": [{"id": "u101" ,"userId": "2","msg": "Good event","createdAt": "05-02-2020 16:49", "rate": 4 }]
 	  },
@@ -25,7 +25,7 @@ const gEvents = [
 	"startAt": "21/06/2020 6pm",
 	"place": "Tel-Aviv",
 	"capacity": 15,
-	"imgUrls": [ "blabla.jpg", "blabla2.jpg" ],
+	"imgUrls": [ "https://cdn.britannica.com/93/171293-050-D99BEDB2/Graffiti-Berlin-Wall.jpg", "blabla2.jpg" ],
 	"participents": [ {"_id": "2", "userName": "Shani choen", "imgUrl": "blabla"}],
 	"reviews":  [{"id": "u101" ,"userId": "2","msg": "Good event","createdAt": "05-02-2020 16:49", "rate": 4 }]
     },
@@ -40,7 +40,7 @@ const gEvents = [
 	"startAt": "21/06/2020 6pm",
 	"place": "Yehuda desert",
 	"capacity": 50,
-	"imgUrls": [ "blabla.jpg", "blabla2.jpg" ],
+	"imgUrls": [ "https://images.unsplash.com/photo-1530818021323-3d2bf2af7a87?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" ],
 	"participents": [ {"_id": "3", "userName": "Shani choen", "imgUrl": "blabla"}],
 	"reviews":  [{"id": "u101" ,"userId": "2","msg": "Good event","createdAt": "05-02-2020 16:49", "rate": 4 }]
     },
@@ -56,7 +56,7 @@ const gEvents = [
 	"startAt": "21/06/2020 6pm",
 	"place": "Herzelia B-fit studio",
 	"capacity": 25,
-	"imgUrls": [ "blabla.jpg", "blabla2.jpg" ],
+	"imgUrls": [ "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/working-hard-side-view-of-young-athletic-woman-with-royalty-free-image-1586884688.jpg", "blabla2.jpg" ],
 	"participents": [ {"_id": "4", "userName": "Shani choen", "imgUrl": "blabla"}],
 	"reviews":  [{"id": "u101" ,"userId": "2","msg": "Good event","createdAt": "05-02-2020 16:49", "rate": 4 }]
     },
@@ -71,7 +71,7 @@ const gEvents = [
 	"startAt": "21/06/2020 6pm",
 	"place": "kfar-saba Hamordim 6",
 	"capacity": 20,
-	"imgUrls": [ "blabla.jpg", "blabla2.jpg" ],
+	"imgUrls": [ "https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2018/05/27165913/vizsla-at-work-with-woman-corporate-office.jpg", "blabla2.jpg" ],
 	"participents": [ {"_id": "5", "userName": "Shani choen", "imgUrl": "blabla"}],
 	"reviews":  [{"id": "u101" ,"userId": "2","msg": "Good event","createdAt": "05-02-2020 16:49", "rate": 4 }]
     },
@@ -86,7 +86,7 @@ const gEvents = [
 	"startAt": "21/06/2020 6pm",
 	"place": "Herzelia moshe dayan 6",
 	"capacity": 60,
-	"imgUrls": [ "blabla.jpg", "blabla2.jpg" ],
+	"imgUrls": [ "https://images.unsplash.com/photo-1529832588601-c01e066263a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" ,"blabla2.jpg" ],
 	"participents": [ {"_id": "6", "userName": "Shani choen", "imgUrl": "blabla"}],
 	"reviews":  [{"id": "u101" ,"userId": "2","msg": "Good event","createdAt": "05-02-2020 16:49", "rate": 4 }]
 

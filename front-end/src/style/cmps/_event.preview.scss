@@ -1,0 +1,26 @@
+
+.event-preview {
+
+    .event-img {
+        height: 80%;
+    }
+
+    .usr-prev{
+        display: flex;
+
+        .userImg-preview{
+            width: rem(30px);
+            border-radius: 999px;
+            margin-inline-end: rem(10px)
+        }
+
+        .username-prev{
+            align-self: center;
+        }
+    }
+
+    .category{
+        background-color: $light-color;
+        padding: rem(3px);
+    }
+}

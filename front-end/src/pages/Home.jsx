@@ -7,44 +7,48 @@ import { loadEvents } from '../store/actions/eventActions'
 import { EventList } from '../cmps/EventList';
 
 class Home extends Component {
-    
-    // state = {
-    //     labels: [ 'Sport ']
-    // }
+
+    state = {
+        categories: [
+            { name: "Sport", class: "fas fa-running" },
+            { name: "Outdoors", class: "fas fa-running" },
+            { name: "Traveling", class: "fas fa-running" },
+            { name: "Culinary", class: "fas fa-running" },
+            { name: "Video games", class: "fas fa-running" },
+            { name: "Coding", class: "fas fa-running" }
+        ]
+    }
 
     componentDidMount() {
         this.props.loadEvents();
     }
 
     render() {
-        console.log(this.props);
         const { events } = this.props
-    return (
-        <>
-            <section className="landing">
-                <div className="dark-overlay">
-                    <div className="landing-inner">
-                        <h1 className="large">Explore new events and meet new people</h1>
-                        <Link to="/login" className="btn btn-primary btn-control">Join CatchOn</Link>
+        return (
+            <>
+                <section className="landing">
+                    <div className="dark-overlay">
+                        <div className="landing-inner">
+                            <h1 className="large">Explore new events and meet new people</h1>
+                            <Link to="/login" className="btn btn-primary btn-control">Join CatchOn</Link>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <section className="labels">
-              
-                <Link className="btn btn-success btn-cat fas fa-running" to="">Sport</Link>
-                <Link className="btn btn-success btn-cat" to="">Outdoors</Link>
-                <Link className="btn btn-success btn-cat" to="">Traveling</Link>
-                <Link className="btn btn-success btn-cat" to="">Culinery</Link>
-                <Link className="btn btn-success btn-cat" to="">Video games</Link>
-                <Link className="btn btn-success btn-cat" to="">Coding</Link>
-            </section>
-            <section className="previewEvents">
-                <EventList events={events} />
-            </section>
-        </>
+                </section>
+                <section className="categories container">
 
-    )
-}
+                    {this.state.categories.map((category, idx) => (
+                        <div>
+                            <i class={category.class}></i>
+                            <Link key={idx} to="">{category.name}</Link>
+                        </div>))}
+
+                </section>
+                <EventList events={events} />
+            </>
+
+        )
+    }
 }
 
 
