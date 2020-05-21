@@ -31,11 +31,11 @@ export function loadEvent(eventId){
     }
 }
 
-export function addReview(eventId , preview){
+export function addReview(eventId , review){
 
     return async dispatch => {
         try {
-            const event = await EventService.addReview(eventId , preview);
+            const event = await EventService.addReview(eventId , review);
             dispatch({type: 'UPDATE_EVENT' , event})
         } catch(err){
             console.log('cannot update event' , err)

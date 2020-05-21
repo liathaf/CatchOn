@@ -7,7 +7,7 @@ import { loadEvents } from '../store/actions/EventActions'
 import { EventList } from '../cmps/EventList';
 
 
-import Review from '../cmps/Review'
+import {Review} from '../cmps/Review'
 
 class Home extends Component {
 
@@ -47,7 +47,9 @@ class Home extends Component {
                 </section>
                 <h1 className="container">CatchOn Top Events</h1>
                 <EventList events={events} />
+                
                 {(events) && <Review />}
+               
             </>
 
         )

@@ -1,0 +1,18 @@
+.reviews{
+    width: 500px;
+    margin: auto;
+    .msg{
+       
+        display: flex;
+        flex-direction: column;
+
+        .user-details {
+            display: flex;
+            .userImg-review {
+                width: rem(30px);
+                border-radius: 999px;
+                margin-inline-end: rem(10px)
+            }
+        }
+    }
+}

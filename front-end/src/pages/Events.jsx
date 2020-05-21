@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { EventService } from '../services/EventService'
 
-class EventsPage extends Component {
+class _Events extends Component {
 
     state = {
         currCategory: '',
@@ -20,8 +20,7 @@ class EventsPage extends Component {
     }
 
     render() {
-    
-        
+            
         return (
             
             <div className="events-page">
@@ -45,4 +44,4 @@ const mapDispatchToProps = {
   
 }
 
-export const Events = connect(mapStateToProps, mapDispatchToProps)(EventsPage)
+export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)
