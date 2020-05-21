@@ -14,5 +14,20 @@ export function loadEvents() {
         }
 
     }
+
+    
+}
+
+export function loadEvent(eventId){
+
+    return async dispatch => {
+        try {
+            const event = await EventService.getById(eventId);
+            dispatch({type: 'SET_EVENT' , event})
+        } catch(err){
+            console.log('cannot get event' , err)
+        }
+
+    }
 }
 
