@@ -6,39 +6,42 @@ import { connect } from 'react-redux';
 import { loadEvents } from '../store/actions/eventActions'
 import { EventList } from '../cmps/EventList';
 
+
+import ReviewApp from '../cmps/ReviewApp'
+
 class Home extends Component {
 
-    state = {
-        categories: ['Sport', 'Outdoors', 'Traveling', 'Culinery', 'Video games', 'Coding']
-    }
+        state = {
+            categories: ['Sport', 'Outdoors', 'Traveling', 'Culinery', 'Video games', 'Coding']
+        }
 
-    componentDidMount() {
-        this.props.loadEvents();
-    }
+        componentDidMount() {
+            this.props.loadEvents();
+        }
 
-    render() {
-        const { events } = this.props
-        return (
-            <>
-                <section className="landing">
-                    <div className="dark-overlay">
-                        <div className="landing-inner">
-                            <h1 className="large">Explore new events and meet new people</h1>
-                            <Link to="/login" className="btn btn-primary btn-control">Join CatchOn</Link>
+        render() {
+            const { events } = this.props
+            return (
+                <>
+                    <section className="landing">
+                        <div className="dark-overlay">
+                            <div className="landing-inner">
+                                <h1 className="large">Explore new events and meet new people</h1>
+                                <Link to="/login" className="btn btn-primary btn-control">Join CatchOn</Link>
+                            </div>
                         </div>
-                    </div>
-                </section>
-                <section className="categories">
+                    </section>
+                    <section className="categories">
 
-                    {this.state.categories.map((category , idx) => (<Link className="btn btn-success btn-cat" key={idx} to="">{category}</Link>))}
+                        {this.state.categories.map((category, idx) => (<Link className="btn btn-success btn-cat" key={idx} to="">{category}</Link>))}
+                    </section>
+                    <EventList events={events} />
+                    {(events) && <ReviewApp/>}
+                </>
 
-                </section>
-                <EventList events={events} />
-            </>
-
-        )
+            )
+        }
     }
-}
 
 
 const mapStateToProps = (state) => {
