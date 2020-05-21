@@ -32,12 +32,8 @@ const user = {
 }
 
 
-function getUser(){
-
-    return Promise.resolve(user)
-}
 
 export const UserService = {
 
-    getUser
+    
 }

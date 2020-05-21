@@ -19,7 +19,7 @@ export function EventReducer(state = initialState, action) {
         case 'UPDATE_EVENT':
             return {
                 ...state, 
-                event: state.event.map(event => {
+                events: state.events.map(event => {
                     if (event._id === action.event._id) return action.event;
                     else return event
                 })
@@ -38,7 +38,6 @@ export function EventReducer(state = initialState, action) {
                 ...state, currFilter:  action.filter
                 
             }
-
         default:
             return state
     }

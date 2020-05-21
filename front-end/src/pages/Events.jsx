@@ -5,7 +5,7 @@ import { EventsByCategory } from '../cmps/EventsByCategory'
 import { EventList } from '../cmps/EventList'
 import { loadEvents } from '../store/actions/EventActions'
 
-class EventsPage extends Component {
+class _Events extends Component {
 
     state = {
         currCategory: '',
@@ -23,8 +23,7 @@ class EventsPage extends Component {
     render() {
     const { currCategory } = this.state
     const { events } = this.props    
-        return (
-            
+        return (          
             <div className="events-page">
                { currCategory && <EventsByCategory category={ currCategory } />}
                { !currCategory && <div className="all-events container">
@@ -48,4 +47,4 @@ const mapDispatchToProps = {
     loadEvents
 }
 
-export const Events = connect(mapStateToProps, mapDispatchToProps)(EventsPage)
+export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)
