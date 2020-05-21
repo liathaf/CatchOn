@@ -31,7 +31,7 @@ class Home extends Component {
             </section>
             <section className="labels">
               
-                <Link className="btn btn-success btn-cat" to="">Sport</Link>
+                <Link className="btn btn-success btn-cat fas fa-running" to="">Sport</Link>
                 <Link className="btn btn-success btn-cat" to="">Outdoors</Link>
                 <Link className="btn btn-success btn-cat" to="">Traveling</Link>
                 <Link className="btn btn-success btn-cat" to="">Culinery</Link>
