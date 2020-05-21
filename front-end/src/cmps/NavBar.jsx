@@ -15,9 +15,10 @@ export class NavBar extends Component {
            }
     };
     render(){
-        const opacity = Math.min(100 / this.state.currentScrollHeight  , 1)
+        const opacity = Math.min(this.state.currentScrollHeight/100  , 1)
+        const navBgc = `rgb(255, 255, 255,${opacity})`
     return (
-    <nav className="navbar" style={{opacity:opacity}}>
+    <nav className="navbar" style={{backgroundColor: navBgc}}>
         <div className="navbar-content container">
             <Link className="logo lead" to="/">CatchOn </Link>
             <ul className="links">
@@ -33,17 +34,3 @@ export class NavBar extends Component {
 
 
     
-// componentDidMount () {      
-//     window.onscroll =()=>{
-//      const newScrollHeight = Math.ceil(window.scrollY / 50) *50;
-//      if (this.state.currentScrollHeight != newScrollHeight){
-//          this.setState({currentScrollHeight: newScrollHeight})
-//      }
-//    }
-//  }
-
-//  render(){
-//     const opacity = Math.min(100 / this.state.currentScrollHeight  , 1)
- 
-//      return <div style={{opacity}} id='element-you-want-to-fade'> </div>
-//  }

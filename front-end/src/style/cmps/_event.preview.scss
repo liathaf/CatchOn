@@ -1,25 +1,38 @@
 
 .event-preview {
-
+    box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.3);
+    border-radius: 12px;
     .event-img {
-        height: 80%;
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+        border-top-right-radius: 12px;
+        border-top-left-radius: 12px;
     }
 
-    .usr-prev{
+    .event-content {
+        line-height: 1.5;
+        font-size: 0.9em;
+        padding: 15px;
+        background: #fafafa;
+    }
+
+    .usr-prev {
         display: flex;
 
-        .userImg-preview{
+        .userImg-preview {
             width: rem(30px);
             border-radius: 999px;
             margin-inline-end: rem(10px)
         }
 
-        .username-prev{
+        .username-prev {
             align-self: center;
         }
     }
 
-    .category{
+    .category {
         background-color: $light-color;
         padding: rem(3px);
     }
