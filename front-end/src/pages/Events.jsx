@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 
-class EventsPage extends Component {
+class _Events extends Component {
 
     state = {
         events: null
@@ -30,4 +30,4 @@ const mapDispatchToProps = {
   
 }
 
-export const Events = connect(mapStateToProps, mapDispatchToProps)(EventsPage)
+export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)

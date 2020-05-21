@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect  } from 'react-redux'
 import  LoginForm  from '../cmps/LoginFrom'
 
-class LoginPage extends Component {
+class _Login extends Component {
+
     render() {
         return (
             <div >
@@ -24,4 +25,4 @@ const mapDispatchToProps = {
   
 }
 
-export const Login = connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export const Login = connect(mapStateToProps, mapDispatchToProps)(_Login)

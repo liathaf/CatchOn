@@ -2,13 +2,13 @@
 import { combineReducers } from 'redux';
 
 import { EventReducer } from './EventReducer'
-// // import { UserReducer } from './reducers/UserReducer'
+import { UserReducer } from './UserReducer'
 
 ;
 
 const rootReducer = combineReducers({
       events: EventReducer,
-  // users: UserReducer
+      users: UserReducer
 })
 
 export default rootReducer;

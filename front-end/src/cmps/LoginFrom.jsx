@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TextField from './TextField';
 import { validateInput } from '../validations/login';
-import { login } from '../store/actions/userActions';
+import { login } from '../store/actions/UserActions';
 
 class LoginForm extends Component {
   state = {
