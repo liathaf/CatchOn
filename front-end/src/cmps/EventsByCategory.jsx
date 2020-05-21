@@ -1,9 +1,10 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { EventService } from '../services/EventService';
 export function EventsByCategory(props) {
 
   const categories = EventService.getCategories();
+  
   let history = useHistory()
 
 
@@ -11,7 +12,7 @@ export function EventsByCategory(props) {
     <div>
       <h1>{props.category}</h1>
       {props.category ? (
-        <img src={EventService.setCategoryBackground(props.category)} />
+        <img src={EventService.setCategoryBackground(props.category)} alt=""/>
       ) : (
           'Loading...'
         )}
