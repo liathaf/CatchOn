@@ -18,9 +18,9 @@ import {SignUp} from './pages/SignUp'
           <NavBar />
         <main className="main-content">
           <Switch>
+          <Route exact component={Events} path="/event/:category?" /> 
             <Route exact component={Home} path="/"/> 
             {/* <Route exact component={Login} path="/login" /> */}
-          <Route exact component={Events} path="/event/:category" /> 
           {/* <Route exact component={EventEdit} path="/event/edit/:eventId?" />
             <Route exact component={EventDetails} path="/event/:eventId" />
             <Route exact component={UserDetails} path="/user/:userId" />

@@ -1,32 +1,35 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { EventService } from '../services/EventService'
+
+import { EventsByCategory } from '../cmps/EventsByCategory'
+import { EventList } from '../cmps/EventList'
+import { loadEvents } from '../store/actions/EventActions'
 
 class EventsPage extends Component {
 
     state = {
         currCategory: '',
         filterBy: ''
+        
     }
 
     componentDidMount() {
         this.setState({currCategory: this.props.match.params.category})
+        this.props.loadEvents();
     }
 
-    onHandleChange = ({ target }) => {
-        const field = target.name;
-        const value = target.value;
-        this.setState({ [field]: value } , ()=>(console.log(this.state)))
-    }
+    
 
     render() {
-    
-        
+    const { currCategory } = this.state
+    const { events } = this.props    
         return (
             
             <div className="events-page">
-                <h1>{this.props.match.params.category}</h1>
-                {this.state.currCategory ? <img src={EventService.setCategoryBackground(this.state.currCategory)}/> : "Loading..."} 
+               { currCategory && <EventsByCategory category={ currCategory } />}
+               { !currCategory && <div className="all-events container">
+                   <EventList events={events}/>
+                </div>}
 
             </div>
             
@@ -37,12 +40,12 @@ class EventsPage extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        
+        events: state.events.events
     }
 }
 
 const mapDispatchToProps = {
-  
+    loadEvents
 }
 
 export const Events = connect(mapStateToProps, mapDispatchToProps)(EventsPage)

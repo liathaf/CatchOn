@@ -1,3 +1,6 @@
+const axios = require('axios');
+
+
 const gEvents = [
     {
 	"_id": 1,
@@ -118,8 +121,65 @@ function setCategoryBackground(category) {
 	return obj.img;
 }
 
+
+function getCategories() {
+	return gCategoryPhotos;
+}
+
+
+
+const baseUrl =  (process.env.NODE_ENV !== 'development') ? '/api/event' : '//localhost:3030/api/event';
+
+
+
+// function query(filterBy, sortBy) {
+  
+//     let queryString = '';
+//     if (filterBy) {
+//         if (filterBy.eventName) queryString += `name_like=${filterBy.eventName}`;
+//         if (filterBy.eventType && filterBy.eventType !== 'All') queryString += `&type=${filterBy.eventType}`;
+//         if (filterBy.isInStock) queryString += `&inStock=${filterBy.isInStock}`
+//     }
+//     if (sortBy) {
+//         if (sortBy === 'name') queryString += `&_sort=name&_order=asc`;
+//         if (sortBy === 'price') queryString += `&_sort=price&_order=asc`;
+//     }
+
+
+//     return axios.get(`${baseUrl}?${queryString}`)
+//         .then(res => {
+     
+           
+//             return res.data
+//         })
+// }
+
+function get(id) {
+    return axios.get(`${baseUrl}/${id}`)
+        .then(res => res.data)
+}
+
+function remove(id) {
+    return axios.delete(`${baseUrl}/${id}`)
+}
+
+function save(event) {
+    var prm;
+    if (event._id) {
+        prm = axios.put(`${baseUrl}/${event._id}`, event)
+    } else {
+        prm = axios.post(`${baseUrl}`, event)
+    }
+    return prm.then(res => res.data)
+}
+
+
+
 export const EventService = {
-	query,
-	getById,
+    query,
+    save,
+    remove,
+	get,
+	getCategories,
 	setCategoryBackground
 }
