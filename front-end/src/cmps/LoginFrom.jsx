@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import TextField from './TextField';
 import { validateInput } from '../validations/login';
@@ -11,6 +12,10 @@ class LoginForm extends Component {
     errors: {},
     isLoading: false,
   };
+
+  componentDidMount() {
+    console.log(this.props)
+  }
 
   isValid = () => {
     const { errors, isValid } = validateInput(this.state);
@@ -74,4 +79,4 @@ const mapDispatchToProps = {
     login
 }
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(null, mapDispatchToProps)(withRouter(LoginForm));

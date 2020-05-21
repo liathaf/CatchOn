@@ -1,3 +1,19 @@
 .events-page {
     margin-top: rem(100px);
+
+    img {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        height: 500px;
+        z-index: -1;
+    }
+
+    input {
+        width: rem(300px);
+        position: absolute;
+        top: rem(400px);
+        left: rem(50px);
+        padding: rem(5px);
+    }
 }

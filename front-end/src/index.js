@@ -4,17 +4,18 @@ import ReactDOM from 'react-dom';
 import App from './app';
 
 import * as serviceWorker from './serviceWorker';
-import { HashRouter as Router } from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { Provider } from 'react-redux'
-import { createHashHistory } from 'history'
+// import { createHashHistory } from 'history'
+// import { createBrowserHistory } from 'history';
 import store from './store/store'
 
-const history = createHashHistory()
+// const history = createBrowserHistory()
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router history={history}>
+      <Router>
         <App />
       </Router>
     </Provider>

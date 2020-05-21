@@ -35,10 +35,7 @@ class Home extends Component {
 
                     {this.state.categories.map((category , idx) => (<Link className="btn btn-success btn-cat" key={idx} to={`/event/${category}`}>{category}</Link>))}
                     </section>
-                    <section className="categories">
 
-                        {this.state.categories.map((category, idx) => (<Link className="btn btn-success btn-cat" key={idx} to="">{category}</Link>))}
-                    </section>
                     <EventList events={events} />
                     {(events) && <ReviewApp/>}
                 </>
