@@ -35,7 +35,7 @@
 .event-list {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(rem(225px), 1fr));
     grid-auto-rows: auto;
     gap: 20px;
     padding-top: 30px;
