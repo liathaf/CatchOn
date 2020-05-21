@@ -3,10 +3,11 @@ import { Link } from 'react-router-dom'
 
 // import { ReactRedux } from 'react';
 import { connect } from 'react-redux';
-import { loadEvents } from '../store/actions/eventActions'
+import { loadEvents } from '../store/actions/EventActions'
 import { EventList } from '../cmps/EventList';
 
-import ReviewApp from '../cmps/ReviewApp'
+
+import Review from '../cmps/Review'
 
 class Home extends Component {
 
@@ -46,7 +47,7 @@ class Home extends Component {
                 </section>
                 <h1 className="container">CatchOn Top Events</h1>
                 <EventList events={events} />
-                {(events) && <ReviewApp />}
+                {(events) && <Review />}
             </>
 
         )

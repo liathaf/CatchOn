@@ -1,4 +1,4 @@
-import { bindActionCreators } from "redux"
+
 import { EventService } from '../../services/EventService'
 
 export function loadEvents() {
@@ -26,6 +26,19 @@ export function loadEvent(eventId){
             dispatch({type: 'SET_EVENT' , event})
         } catch(err){
             console.log('cannot get event' , err)
+        }
+
+    }
+}
+
+export function addReview(eventId , preview){
+
+    return async dispatch => {
+        try {
+            const event = await EventService.addReview(eventId , preview);
+            dispatch({type: 'UPDATE_EVENT' , event})
+        } catch(err){
+            console.log('cannot update event' , err)
         }
 
     }
