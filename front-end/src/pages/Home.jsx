@@ -30,7 +30,7 @@ class Home extends Component {
                 </section>
                 <section className="categories">
 
-                    {this.state.categories.map((category , idx) => (<Link className="btn btn-success btn-cat" key={idx} to="">{category}</Link>))}
+                    {this.state.categories.map((category , idx) => (<Link className="btn btn-success btn-cat" key={idx} to={`/event/${category}`}>{category}</Link>))}
 
                 </section>
                 <EventList events={events} />
