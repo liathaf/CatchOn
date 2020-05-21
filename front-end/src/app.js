@@ -8,18 +8,18 @@ import Home from './pages/Home'
 import {EventEdit} from './pages/EventEdit'
 import {EventDetails} from './pages/EventDetails'
 import {UserDetails} from './pages/UserDetails'
-import {Login} from './pages/Login'
+// import {Login} from './pages/Login'
 import {SignUp} from './pages/SignUp'
 
-  function App(props) {
-  
+  function App() {
+
     return (
       <div className="app">
           <NavBar />
         <main className="main-content">
           <Switch>
             <Route exact component={Home} path="/"/> 
-            <Route exact component={Login} path="/login" />
+            {/* <Route exact component={Login} path="/login" /> */}
           <Route exact component={Events} path="/event/:category" /> 
           {/* <Route exact component={EventEdit} path="/event/edit/:eventId?" />
             <Route exact component={EventDetails} path="/event/:eventId" />

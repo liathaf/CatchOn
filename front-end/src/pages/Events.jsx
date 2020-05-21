@@ -25,7 +25,7 @@ class EventsPage extends Component {
         return (
             
             <div className="events-page">
-                <h1>this.props.match.params.category</h1>
+                <h1>{this.props.match.params.category}</h1>
                 {this.state.currCategory ? <img src={EventService.setCategoryBackground(this.state.currCategory)}/> : "Loading..."} 
 
             </div>
