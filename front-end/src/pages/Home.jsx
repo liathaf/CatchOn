@@ -38,20 +38,52 @@ class Home extends Component {
                         </div>
                     </div>
                 </section>
-                <h1 className="container">Start Your Journey</h1>
+                <div className="group-title container">
+                    <h1>Start Your Journey</h1>
+                    <Link to="/login">See More ></Link>
+                </div>
                 <section className="categories container">
                     {this.state.categories.map((category, idx) => (
                         <div className="category-preview">
-                            <Link key={idx} to={`/event/${category}`}><i class={category.class}></i>{category.name}</Link>
+                            <Link key={idx} to={`/event/${category.name}`}><i class={category.class}></i><p>{category.name}</p></Link>
                         </div>))}
                 </section>
-                <h1 className="container">CatchOn Top Events</h1>
+                <div className="group-title container">
+                    <h1>CatchOn Top Events</h1>
+                    <Link to="/login">See More ></Link>
+                </div>
                 <EventList events={events} />
-                
-                {(events) && <Review />}
-               
+                {/* {(events) && <Review />} */}
+                <section className="about-preview container"></section>
+                <footer>
+                <Link className="logo large" to="/">CatchOn </Link>
+                    <div class="icons my-1">
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-globe fa-2x"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin fa-2x"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-youtube fa-2x"></i>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <span>© 2020 CatchOn</span>
+                        <span>·Terms of Service</span>
+                        <span>·Privacy Policy</span>
+                    </div>
+                </footer>
             </>
-
         )
     }
 }
