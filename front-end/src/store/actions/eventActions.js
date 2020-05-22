@@ -20,7 +20,6 @@ export function loadEvent(eventId){
         } catch(err){
             console.log('cannot get event' , err)
         }
-
     }
   
 }
