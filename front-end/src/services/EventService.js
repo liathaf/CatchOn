@@ -1,5 +1,5 @@
 import { UtilService } from './UtileService'
-import axios from 'axios'
+// import axios from 'axios'
 
 
 const defaultEvents = [
@@ -107,6 +107,13 @@ function getById(eventId) {
 	return Promise.resolve(gEvents.find(event => event._id === eventId))
 }
 
+<<<<<<< HEAD
+=======
+function setCategoryBackground(category) {
+	const obj = gCategoryPhotos.find(obj => obj.category === category);
+	if(obj) return obj.img
+}
+>>>>>>> f012a560f01129c7fae57f192b427cb9e80a3409
 
 function addReview(eventId, review) {
 
@@ -127,25 +134,39 @@ function _findIdxById(id) {
 }
 
 function _init() {
+<<<<<<< HEAD
 	
 	var events = UtilService.loadFromStorage('events');
+=======
+
+	let events = UtilService.loadFromStorage('events');
+>>>>>>> f012a560f01129c7fae57f192b427cb9e80a3409
 	if (events) return events;
 	UtilService.saveToStorage('events', defaultEvents);
-	var events = UtilService.loadFromStorage('events');
+	 events = UtilService.loadFromStorage('events');
 	console.log(events);
 	return events;
 }
 
 function getCategories() {
+<<<<<<< HEAD
 	return CATEGORIES;
+=======
+	return gCategoryPhotos;
+>>>>>>> f012a560f01129c7fae57f192b427cb9e80a3409
 }
 
 export const EventService = {
 	query,
 	getById,
 	addReview,
+<<<<<<< HEAD
 	getCategories,
 	// setCategoryBackground,
+=======
+	setCategoryBackground,
+	getCategories
+>>>>>>> f012a560f01129c7fae57f192b427cb9e80a3409
 }
 
 // function setCategoryBackground(category) {
