@@ -7,7 +7,7 @@ import { loadEvents } from '../store/actions/EventActions'
 import { EventList } from '../cmps/EventList';
 
 
-import {Review} from '../cmps/Review'
+// import {Review} from '../cmps/Review'
 
 class Home extends Component {
 
@@ -44,8 +44,8 @@ class Home extends Component {
                 </div>
                 <section className="categories container">
                     {this.state.categories.map((category, idx) => (
-                        <div className="category-preview">
-                            <Link key={idx} to={`/event/${category.name}`}><i class={category.class}></i><p>{category.name}</p></Link>
+                        <div className="category-preview" key={idx}>
+                            <Link  to={`/event/${category.name}`}><i className={category.class}></i><p>{category.name}</p></Link>
                         </div>))}
                 </section>
                 <div className="group-title container">
@@ -59,24 +59,24 @@ class Home extends Component {
                 </section>
                 <footer>
                 <Link className="logo large" to="/">CatchOn </Link>
-                    <div class="icons my-1">
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <i class="fas fa-globe fa-2x"></i>
+                    <div className="icons my-1">
+                        <a href="https://www.globe.gov/" target="_blank" rel="noopener noreferrer">
+                            <i className="fas fa-globe fa-2x"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-twitter fa-2x"></i>
+                        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-twitter fa-2x"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-facebook fa-2x"></i>
+                        <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-facebook fa-2x"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-linkedin fa-2x"></i>
+                        <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-linkedin fa-2x"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-youtube fa-2x"></i>
+                        <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-youtube fa-2x"></i>
                         </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                            <i class="fab fa-instagram fa-2x"></i>
+                        <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer">
+                            <i className="fab fa-instagram fa-2x"></i>
                         </a>
                     </div>
                     <div>

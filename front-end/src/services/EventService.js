@@ -1,5 +1,5 @@
 import { UtilService } from './UtileService'
-import axios from 'axios'
+// import axios from 'axios'
 
 
 const defaultEvents = [
@@ -108,7 +108,7 @@ function getById(eventId) {
 
 function setCategoryBackground(category) {
 	const obj = gCategoryPhotos.find(obj => obj.category === category);
-	return obj.img;
+	if(obj) return obj.img
 }
 
 function addReview(eventId, review) {
@@ -131,12 +131,16 @@ function _findIdxById(id) {
 
 function _init() {
 
-	var events = UtilService.loadFromStorage('events');
+	let events = UtilService.loadFromStorage('events');
 	if (events) return events;
 	UtilService.saveToStorage('events', defaultEvents);
-	var events = UtilService.loadFromStorage('events');
+	 events = UtilService.loadFromStorage('events');
 	console.log(events);
 	return events;
+}
+
+function getCategories() {
+	return gCategoryPhotos;
 }
 
 export const EventService = {
@@ -144,6 +148,7 @@ export const EventService = {
 	getById,
 	addReview,
 	setCategoryBackground,
+	getCategories
 }
 
 
