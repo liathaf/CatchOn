@@ -18,7 +18,7 @@ export function loadEvent(eventId){
             const event = await EventService.getById(eventId);
             dispatch({type: 'SET_EVENT' , event})
         } catch(err){
-            console.log('cannot get event' , err)
+            console.log('cannot get event, too bad' , err)
         }
     }
 }
