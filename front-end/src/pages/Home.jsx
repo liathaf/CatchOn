@@ -49,7 +49,9 @@ class _Home extends Component {
                     <h2>CatchOn Top Events</h2>
                     <Link to="/login">See More ></Link>
                 </div>
-                <EventList events={events} />
+                <div className="events-home">
+                    <EventList events={events} atHome={true}/>
+                </div>
                 
                 <section className="about-preview container">
                 <Link to="/login" className="btn btn-control">Catch On Event</Link>
