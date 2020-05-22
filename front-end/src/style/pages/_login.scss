@@ -5,6 +5,7 @@
     width: 40%;
     padding: rem(30px);
     text-align: center;
+    min-width: 400px;
 
     .continue-with-facebook {
         
@@ -19,6 +20,10 @@
             font-size: rem(20px);
             line-height: 1;
             color: #ffffff;
+        }
+
+        i {
+            margin-left: 7px;
         }
     }
     
@@ -39,6 +44,7 @@
 
         i {
             color: #34a853;
+         
         }
     }
     
@@ -59,6 +65,7 @@
 
         i {
             color: rgb(26, 26, 26);
+            
         }
     }
 
@@ -91,7 +98,8 @@
         border: lightgray solid 1px;
         outline: none;
         cursor: pointer;
-
+        font-family: Roboto;
+        font-size: rem(20px);
         &:hover {
             background-color: rgb(226, 220, 220);
         }
