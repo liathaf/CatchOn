@@ -1,4 +1,4 @@
-.container{
+.container {
     max-width: 90vw;
     margin: auto;
 }
@@ -41,3 +41,8 @@
     color: $dark-color;
 }
 
+.line {
+    height: 1px;
+    background: #ccc;
+    margin: 1.5rem 0;
+}

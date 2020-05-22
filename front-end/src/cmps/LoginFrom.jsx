@@ -99,7 +99,7 @@ class LoginForm extends Component {
 }
 
 const mapDispatchToProps = {
-    login
+    // login
 }
 
 export default connect(null, mapDispatchToProps)(withRouter(LoginForm));

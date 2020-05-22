@@ -10,6 +10,9 @@ import { EventDetails } from './pages/EventDetails'
 // import { UserDetails } from './pages/UserDetails'
 import {Login} from './pages/Login'
 import { SignUp } from './pages/SignUp'
+import { UserDetails } from './pages/UserDetails'
+// import {Login} from './pages/Login'
+// import { SignUp } from './pages/SignUp'
 
 function App() {
 
@@ -25,6 +28,10 @@ function App() {
           <Route exact component={SignUp} path="/signup" />
           {/* <Route exact component={EventEdit} path="/event/edit/:eventId?" /> */}
           {/* <Route exact component={UserDetails} path="/user/:userId" /> */}
+          <Route exact component={EventEdit} path="/event/edit/:eventId?" />
+          <Route exact component={UserDetails} path="/user/:userId" />
+          {/* <Route exact component={SignUp} path="/signup" /> */}
+          {/* <Route exact component={Login} path="/login" /> */}
         </Switch>
       </main>
     </div>

@@ -1,39 +1,45 @@
-// import axios from 'axios';
-
-// export function login(data) {
-//     return dispatch => {
-//         return axios.post('/api/auth', data);
-//     }
-// }
+import { UtilService } from './UtileService'
 
 
-// async await try
-
-//   return async dispatch => {
-
-//             try {
-//                 const user = await axios.post('/api/auth', data);
-//                 return user
-//             } catch(err) {
-//                 console.log('Having problems in userAction');
-//             }
-
-//         }
-
-const user = {
-
+const defaultUsers = [{
     "_id": "u101",
     "fullName": "Orly Amdadi",
     "userName": "orly@amdadi.com",
     "password": "tinkerbell",
     "isAdmin": true,
-    "imgUrl": "http://some-img",
+    "imgUrl": "https://beautifulmemory.sg/wp-content/uploads/2019/03/default-avatar-profile-icon-vector-18942381.jpg",
     "rank": 5
+},{
+    "_id": "u102",
+    "fullName": "Ksbok ysno",
+    "userName": "orly@amdadi.com",
+    "password": "tinkerbell",
+    "isAdmin": false,
+    "imgUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80://beautifulmemory.sg/wp-content/uploads/2019/03/default-avatar-profile-icon-vector-18942381.jpg",
+    "rank": 5
+}]
+
+var gUsers = _init();
+
+function query() {
+	return Promise.resolve(gUsers);
+}
+
+function getById(userId) {
+	return Promise.resolve(gUsers.find(user => user._id === userId))
 }
 
 
+function _init() {
+	var users = UtilService.loadFromStorage('users');
+	if (users) return users;
+	UtilService.saveToStorage('users', defaultUsers);
+	 users = UtilService.loadFromStorage('users');
+	return users;
+}
+
 
 export const UserService = {
-
-    
+	query,
+	getById,
 }
