@@ -6,11 +6,8 @@ import { loadEvents } from '../store/actions/EventActions'
 import { EventList } from '../cmps/EventList';
 
 
-
-
-
 class _Home extends Component {
-
+    
     state = {
         categories: [
             { name: "sport", class: "fas fa-basketball-ball fa-3x" },
@@ -91,7 +88,6 @@ class _Home extends Component {
         )
     }
 }
-
 
 const mapStateToProps = (state) => {
     return {

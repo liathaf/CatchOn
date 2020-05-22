@@ -18,10 +18,11 @@
 
 //pages 
 @import "./pages/home";
-@import "./pages//login";
+@import "./pages/login";
 @import "./pages/event.details";
 @import "./pages/edit";
 @import "./pages/events.scss";
+@import "./pages/user.detail";
 
 // component 
 @import "./cmps/event.preview";

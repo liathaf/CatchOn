@@ -14,7 +14,7 @@ class LoginForm extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props)
+    console.log(this.props.login)
   }
 
   isValid = () => {
@@ -49,6 +49,29 @@ class LoginForm extends Component {
         <form onSubmit={this.onSubmit}>
           <h1>Login</h1>
 
+         <div className="continue-with-facebook">
+           <a href="#">
+             <i className="fab fa-facebook-square"></i>
+           <p>Continue with Facebook</p>
+           </a>
+           </div>
+
+           <div className="continue-with-google">
+           <a href="#">
+             <i className="fab fa-google"></i>
+           <p>Continue with Google</p>
+           </a>
+           </div>
+
+           <div className="continue-with-apple">
+           <a href="#">
+             <i className="fab fa-apple"></i>
+           <p>Continue with Apple</p>
+           </a>
+           </div>
+
+           <div className="login-or"><span>OR</span></div>
+
           <TextField
             field="identifier"
             label="Username"
@@ -66,7 +89,7 @@ class LoginForm extends Component {
           />
           <div className="form">
             <button className="loginBtn" disabled={this.state.isLoading}>
-              Login
+              Continue
             </button>
           </div>
         </form>
@@ -76,7 +99,7 @@ class LoginForm extends Component {
 }
 
 const mapDispatchToProps = {
-    login
+    // login
 }
 
 export default connect(null, mapDispatchToProps)(withRouter(LoginForm));
