@@ -1,14 +1,35 @@
-
 .event-preview {
+    &:hover {
+        position: relative;
+        .usr-prev {
+            position: absolute;
+            display: flex;
+            top: 160px;
+            left: 0;
+            padding: 5px 15px;
+            *{
+                margin: 0 15px 0 0;
+            }
+        }
+        .event-img {
+            filter:brightness(50%);
+        }
+
+    }
+
+    .event-time-place {
+        display: flex;
+        justify-content: space-between;
+    }
+
     box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.1);
-    border-radius: 12px;
+
     .event-img {
         width: 100%;
-        height: 150px;
+        height: 200px;
         object-fit: cover;
         display: block;
-        border-top-right-radius: 12px;
-        border-top-left-radius: 12px;
+        transition: filter 0.5s;
     }
 
     .event-content {
@@ -19,16 +40,16 @@
     }
 
     .usr-prev {
-        display: flex;
+        display: none;
 
         .userImg-preview {
             width: rem(30px);
             border-radius: 999px;
-            margin-inline-end: rem(10px)
         }
 
         .username-prev {
             align-self: center;
+            color: #fff;
         }
     }
 

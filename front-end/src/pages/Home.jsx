@@ -39,7 +39,7 @@ class Home extends Component {
                     </div>
                 </section>
                 <div className="group-title container">
-                    <h1>Start Your Journey</h1>
+                    <h2>Start Your Journey</h2>
                     <Link to="/login">See More ></Link>
                 </div>
                 <section className="categories container">
@@ -49,12 +49,14 @@ class Home extends Component {
                         </div>))}
                 </section>
                 <div className="group-title container">
-                    <h1>CatchOn Top Events</h1>
+                    <h2>CatchOn Top Events</h2>
                     <Link to="/login">See More ></Link>
                 </div>
                 <EventList events={events} />
                 {/* {(events) && <Review />} */}
-                <section className="about-preview container"></section>
+                <section className="about-preview container">
+                <Link to="/login" className="btn btn-control">Catch On Event</Link>
+                </section>
                 <footer>
                 <Link className="logo large" to="/">CatchOn </Link>
                     <div class="icons my-1">
