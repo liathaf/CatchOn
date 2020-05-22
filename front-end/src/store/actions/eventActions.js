@@ -21,7 +21,6 @@ export function loadEvent(eventId){
             console.log('cannot get event' , err)
         }
     }
-  
 }
 
 export function removeEvent(eventId) {
