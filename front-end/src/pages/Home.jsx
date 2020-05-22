@@ -1,24 +1,24 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
-// import { ReactRedux } from 'react';
 import { connect } from 'react-redux';
 import { loadEvents } from '../store/actions/EventActions'
 import { EventList } from '../cmps/EventList';
 
 
-// import {Review} from '../cmps/Review'
 
-class Home extends Component {
+
+
+class _Home extends Component {
 
     state = {
         categories: [
-            { name: "Sport", class: "fas fa-basketball-ball fa-3x" },
-            { name: "Outdoors", class: "fas fa-campground  fa-3x" },
-            { name: "Traveling", class: "fas fa-plane fa-3x" },
-            { name: "Culinary", class: "fas fa-utensils fa-3x" },
-            { name: "Video games", class: "fas fa-gamepad fa-3x" },
-            { name: "Coding", class: "fab fa-connectdevelop fa-3x" }
+            { name: "sport", class: "fas fa-basketball-ball fa-3x" },
+            { name: "outdoors", class: "fas fa-campground  fa-3x" },
+            { name: "traveling", class: "fas fa-plane fa-3x" },
+            { name: "culinary", class: "fas fa-utensils fa-3x" },
+            { name: "video games", class: "fas fa-gamepad fa-3x" },
+            { name: "coding", class: "fab fa-connectdevelop fa-3x" }
         ]
     }
 
@@ -53,7 +53,7 @@ class Home extends Component {
                     <Link to="/login">See More ></Link>
                 </div>
                 <EventList events={events} />
-                {/* {(events) && <Review />} */}
+                
                 <section className="about-preview container">
                 <Link to="/login" className="btn btn-control">Catch On Event</Link>
                 </section>
@@ -101,4 +101,4 @@ const mapDispatchToProps = {
     loadEvents
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)
