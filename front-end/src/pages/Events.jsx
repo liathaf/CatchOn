@@ -10,28 +10,25 @@ class _Events extends Component {
     state = {
         currCategory: '',
         filterBy: ''
-        
+
     }
 
     componentDidMount() {
-        this.setState({currCategory: this.props.match.params.category})
+        this.setState({ currCategory: this.props.match.params.category })
         this.props.loadEvents();
     }
 
-    
+
 
     render() {
-    const { currCategory } = this.state
-    const { events } = this.props    
-        return (          
-            <div className="events-page">
-               { currCategory && <EventsByCategory category={ currCategory } />}
-               { !currCategory && <div className="all-events container">
-                   <EventList events={events}/>
-                </div>}
-
+        const { currCategory } = this.state
+        const { events } = this.props
+        return (
+            <div className="events">
+                {currCategory && <EventsByCategory category={currCategory} />}
+                {!currCategory && <EventList events={events}/>}
             </div>
-            
+
         )
     }
 }

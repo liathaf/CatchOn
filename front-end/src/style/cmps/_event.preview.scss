@@ -1,14 +1,13 @@
 
 .event-preview {
+    
     box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.1);
     border-radius: 12px;
+    
     .event-img {
         width: 100%;
         height: 150px;
-        object-fit: cover;
         display: block;
-        border-top-right-radius: 12px;
-        border-top-left-radius: 12px;
     }
 
     .event-content {
@@ -18,7 +17,7 @@
         background: #fafafa;
     }
 
-    .usr-prev {
+    .user-prev {
         display: flex;
 
         .userImg-preview {

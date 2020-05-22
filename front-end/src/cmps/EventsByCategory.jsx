@@ -1,26 +1,24 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom'
 import { EventService } from '../services/EventService';
+
+
 export function EventsByCategory(props) {
 
   const categories = EventService.getCategories();
-  let history = useHistory()
-
+  const {category} = props;
 
   return (
     <div>
-      <h1>{props.category}</h1>
+      <h1>{category}</h1>
       {props.category ? (
-        <img src={EventService.setCategoryBackground(props.category)} />
-      ) : (
-          'Loading...'
-        )}
-      <div className="dropdown">
+        <img src={`${props.category}.jpg`} />) : ('Loading...')}
+      {/* <div className="dropdown">
         <button className="dropbtn">Try somthing else</button>
         <div className="dropdown-content">
-          {categories.map(category => <button onClick={async () => history.push(`/event/${category.category}`, true)} key={category.category}>{category.category} </button>)}
+          {categories.map((category , idx) => <Link to={`/event/${category}`} key={idx}>{category}</Link>)}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

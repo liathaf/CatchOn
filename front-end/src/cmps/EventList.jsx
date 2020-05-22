@@ -1,13 +1,15 @@
-import {  EventPreview } from './EventPreview'
-
 import React from 'react'
 
-export  function EventList(props) {
-   
+import { EventPreview } from './EventPreview'
+
+
+
+export function EventList(props) {
+
     const { events } = props
     return (
         <div className="event-list container">
-           {events.filter((event, index) => (index < 4)).map((event) => (<EventPreview event={ event } key={event._id}/>))}
+            {events.map((event, idx) => { if (idx < 4) return <EventPreview event={event} key={event._id} /> })}
         </div>
     )
 }
