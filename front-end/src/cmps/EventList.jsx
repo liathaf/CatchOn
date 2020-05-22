@@ -6,10 +6,12 @@ import { EventPreview } from './EventPreview'
 
 export function EventList(props) {
 
-    const { events } = props
+    const { events, atHome } = props
+    var limitEvents = events.length;
+    if (atHome) limitEvents = 6;
     return (
         <div className="event-list container">
-            {events.map((event, idx) => { if (idx < 6) return <EventPreview event={event} key={event._id} /> })}
+            {events.map((event, idx) => { if (idx < limitEvents) return <EventPreview event={event} key={event._id} /> })}
         </div>
     )
 }

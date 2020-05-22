@@ -6,22 +6,6 @@ import { loadEvent, addReview } from '../store/actions/EventActions'
 import { Review } from '../cmps/Review'
 
 
-// {
-//     "_id": "1",
-//     "title": "Yoga",
-//     "desc": "Yoga on the beach is both calming and stress-relieving, while helping to stretch and strengthen the body, also meditating with the sounds of the sea. The emphasis is on building awareness of the breath, the body and the nature. Postures are practiced at a slower pace with attention to alignment and detail. My focus and drive for teaching lies in helping individuals to find their own sustainable practice, which can both support and develop their own life.",
-//     "category": "Health & Medidation",
-//     "price": 0,
-//     "createdBy": { "_id": "1", "userName": "yosi abutbul", "rank": 5, "imgUrl": "blablba.jpg" },
-//     "createdAt": "02/06/2020 6pm",
-//     "startAt": "21/06/2020 6pm",
-//     "place": "Tel-Aviv beach",
-//     "capacity": 30,
-//     "imgUrls": ["https://cdn.groo.co.il/_media/media/10592/254596.jpg", "blabla2.jpg"],
-//     "attendees": [{ "_id": "2", "userName": "Shani choen", "imgUrl": "blabla" }],
-//     "reviews": [],
-// },
-
 class _EventDetails extends Component {
 
     componentDidMount() {
@@ -30,7 +14,7 @@ class _EventDetails extends Component {
     }
 
     onAddReview = (msg) => {
-      
+
         const { event } = this.props;
         // const { user } = this.props;
         const review = {
@@ -52,6 +36,8 @@ class _EventDetails extends Component {
 
     render() {
         const { event } = this.props;
+        console.log(event);
+        
         return (
             (event) &&
             <section className="event-detail">
@@ -64,11 +50,20 @@ class _EventDetails extends Component {
                     <img className="userImg-details" src={event.createdBy.imgUrl} />
                     <p>{event.createdBy.rank}</p>
                 </div>
+                <p>{event.createdAt}</p>
+                <p>{event.startAt}</p>
+                <p>{event.place}</p>
+                <p>{event.capacity}</p>
+                {event.imgUrls.map((url , idx) => <img key={idx} src={url}/>)}
+                <p>{event.attendees[0].userName}</p>
+                <img className="userImg-details" src={event.attendees[0].imgUrl} />                
                 <Review onAddReview={this.onAddReview} reviews={event.reviews} />
             </section>
         )
     }
 }
+
+
 
 const mapStateToProps = (state) => {
     return {

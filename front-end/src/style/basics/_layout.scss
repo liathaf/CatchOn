@@ -3,7 +3,6 @@
     width: 100%;
     z-index: 1;
     top: 0;
-    
 
     .navbar-content {
         display: flex;
@@ -27,19 +26,40 @@
             &:hover {
                 color: $dark-color;
             }
-
         }
     }
 }
 
-.event-list {
-
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(rem(350px), 1fr));
-    grid-auto-rows: auto;
-    gap: 40px;
-    padding-top: 30px;
-
+.events-home {
+    
+    .event-list {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(350px), 1fr));
+        grid-auto-rows: auto;
+        gap: 40px;
+        padding-top: 30px;
+    }
 }
 
+.events-prev {
+
+    .event-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(rem(220px), 1fr));
+        grid-auto-rows: auto;
+        gap: 20px;
+        padding-top: 30px;
+
+        .event-preview {
+            .event-time-place {
+                p {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
