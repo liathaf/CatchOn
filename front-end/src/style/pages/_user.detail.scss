@@ -1,0 +1,58 @@
+.profile-grid {
+  position: absolute;
+  top: 100px;
+  
+  .profile-top {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    margin: 0 0 3rem;
+    
+    img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+    }
+
+    .icons {
+      margin-top: 1rem;
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      a{
+         &:hover {
+        color: var(--dark-color);
+      }
+      }
+     
+    }
+  }
+
+  .profile-about {
+    text-align: left;
+    justify-content: space-between;
+    
+    .passions {
+      display: flex;
+
+      * {
+        margin-right: 1rem;
+        font-size: rem(20px);
+      }
+    }
+  }
+  
+  .profile-event{
+    div:first-child{
+      margin: 20px 0;
+    }
+    .event{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+    }
+  }
+}
