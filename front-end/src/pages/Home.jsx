@@ -42,14 +42,16 @@ class _Home extends Component {
                 <section className="categories container">
                     {this.state.categories.map((category, idx) => (
                         <div className="category-preview" key={idx}>
-                            <Link  to={`/event/${category.name}`}><i className={category.class}></i><p>{category.name}</p></Link>
+                            <Link  to={`/event/category/${category.name}`}><i className={category.class}></i><p>{category.name}</p></Link>
                         </div>))}
                 </section>
                 <div className="group-title container">
                     <h2>CatchOn Top Events</h2>
                     <Link to="/login">See More ></Link>
                 </div>
-                <EventList events={events} />
+                <div className="events-home">
+                    <EventList events={events} atHome={true}/>
+                </div>
                 
                 <section className="about-preview container">
                 <Link to="/login" className="btn btn-control">Catch On Event</Link>

@@ -1,42 +1,33 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-
+import  MapContainer  from '../cmps/Map';
 import { loadEvent, addReview } from '../store/actions/EventActions'
 import { Review } from '../cmps/Review'
 
 
-// {
-//     "_id": "1",
-//     "title": "Yoga",
-//     "desc": "Yoga on the beach is both calming and stress-relieving, while helping to stretch and strengthen the body, also meditating with the sounds of the sea. The emphasis is on building awareness of the breath, the body and the nature. Postures are practiced at a slower pace with attention to alignment and detail. My focus and drive for teaching lies in helping individuals to find their own sustainable practice, which can both support and develop their own life.",
-//     "category": "Health & Medidation",
-//     "price": 0,
-//     "createdBy": { "_id": "1", "userName": "yosi abutbul", "rank": 5, "imgUrl": "blablba.jpg" },
-//     "createdAt": "02/06/2020 6pm",
-//     "startAt": "21/06/2020 6pm",
-//     "place": "Tel-Aviv beach",
-//     "capacity": 30,
-//     "imgUrls": ["https://cdn.groo.co.il/_media/media/10592/254596.jpg", "blabla2.jpg"],
-//     "attendees": [{ "_id": "2", "userName": "Shani choen", "imgUrl": "blabla" }],
-//     "reviews": [],
-// },
-
 class _EventDetails extends Component {
+    state = {
+        currentScrollHeight: 0
+    }
 
     componentDidMount() {
         const { eventId } = this.props.match.params;
         this.props.loadEvent(eventId);
+        window.addEventListener('scroll', this.handleScroll, { passive: true })
+    }
+
+    handleScroll = () => {
+        this.setState({ currentScrollHeight: window.scrollY })
     }
 
     onAddReview = (msg) => {
-      
+
         const { event } = this.props;
         // const { user } = this.props;
         const review = {
             msg,
             user: {
-
                 "_id": "u101",
                 "fullName": "Orly Amdadi",
                 "userName": "liron",
@@ -52,23 +43,61 @@ class _EventDetails extends Component {
 
     render() {
         const { event } = this.props;
+        const top = (this.state.currentScrollHeight > 400) ? (this.state.currentScrollHeight) - 400 : 0;
+
         return (
             (event) &&
             <section className="event-detail">
-                <h2>{event.title}</h2>
-                <p>{event.desc}</p>
-                <Link to="">{event.category}</Link>
-                <p>${event.price}</p>
-                <div className="user-preview">
-                    <p>{event.createdBy.userName}</p>
-                    <img className="userImg-details" src={event.createdBy.imgUrl} />
-                    <p>{event.createdBy.rank}</p>
+
+                <div className="event-gallery">
+                    {event.imgUrls.map((url, idx) => <div key={idx}
+                        style={{ backgroundImage: `url(${url})` }}></div>)}
                 </div>
-                <Review onAddReview={this.onAddReview} reviews={event.reviews} />
+
+
+                <div className="event-main">
+                    <div className="middle-content">
+                        <div className="side-content" style={{ marginTop: top }}>
+                            <p className="lead">${event.price}{event.startAt}</p>
+                        </div>
+                        <div className="all-content">
+                            <div className="event-detail-top">
+                                <div>
+                                    <h1 className="large">{event.title}</h1>
+                                    <p>{event.place}</p>
+                                </div>
+                                <div className="user-preview">
+                                    <img className="userImg-details" src={event.createdBy.imgUrl} />
+                                    <p>{event.createdBy.userName}</p>
+                                    {/* <p>{event.createdBy.rank}</p> */}
+                                </div>
+                            </div>
+
+                            <div className="line"></div>
+
+                            <MapContainer />
+
+                            <h2>What we're about</h2>
+                            <p>{event.desc}.
+                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eaque consequuntur atque. Doloremque, molestias debitis vel eligendi itaque eius quia culpa, minima       quisquam hic dolorum sint accusamus explicabo iusto in?
+                        </p>
+                            <p>{event.createdAt}</p>
+                            <p>{event.capacity}</p>
+                            <p>{event.attendees[0].userName}</p>
+                            <img className="userImg-details" src={event.attendees[0].imgUrl} />
+                            <div className="event-chat">
+                                <h2>Reviews</h2>
+                                <Review onAddReview={this.onAddReview} reviews={event.reviews} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         )
     }
 }
+
+
 
 const mapStateToProps = (state) => {
     return {

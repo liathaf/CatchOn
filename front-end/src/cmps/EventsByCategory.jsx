@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import { EventService } from '../services/EventService';
 import { Link } from 'react-router-dom'
 import { EventList } from './EventList'
+import { EventFilter } from '../cmps/EventFilter';
 
 export function EventsByCategory(props) {
 
@@ -17,14 +18,10 @@ export function EventsByCategory(props) {
          <img src={`${bg}`} />
         <h1>{category}</h1>
         </div>}
-      <div className="dropdown">
-        <button className="dropbtn">Try somthing else</button>
-        <div className="dropdown-content">
-          {categories.map((category , idx) => <Link to={`/event/${category}`} key={idx}>{category}</Link>)}
-        </div>
-      </div>
 
-        <EventList category={category} events={events} />
+      
+
+      <EventList category={category} events={events} />
     </div>
   );
 }

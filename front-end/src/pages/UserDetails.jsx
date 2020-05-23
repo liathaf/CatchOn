@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 import { loadUser } from '../store/actions/UserActions'
-import { Review } from '../cmps/Review'
+
 
 
 class _UserDetails extends Component {
