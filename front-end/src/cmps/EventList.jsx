@@ -7,7 +7,7 @@ import { EventPreview } from './EventPreview'
 export function EventList(props) {
 
     const {category, events } = props
-    console.log(category)
+    
     return (
         <div className="event-list container">
             {!category && events.map((event, idx) => { if (idx < 6) return <EventPreview event={event} key={event._id} /> })}
