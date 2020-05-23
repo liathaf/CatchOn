@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
-
+import  MapContainer  from '../cmps/Map';
 import { loadEvent, addReview } from '../store/actions/EventActions'
 import { Review } from '../cmps/Review'
 
@@ -74,6 +74,8 @@ class _EventDetails extends Component {
                             </div>
 
                             <div className="line"></div>
+
+                            <MapContainer />
 
                             <h2>What we're about</h2>
                             <p>{event.desc}.
