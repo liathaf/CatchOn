@@ -17,8 +17,9 @@ export class NavBar extends Component {
     render(){
         const opacity = Math.min(this.state.currentScrollHeight/100  , 1)
         const navBgc = `rgb(255, 255, 255,${opacity})`
+        const border = `rgb(229, 229, 229,${opacity})`
     return (
-    <nav className="navbar" style={{backgroundColor: navBgc}}>
+    <nav className="navbar" style={{backgroundColor: navBgc,borderBottom: `1px solid ${border}`}}>
         <div className="navbar-content container">
             <Link className="logo lead" to="/">CatchOn </Link>
             <ul className="links">

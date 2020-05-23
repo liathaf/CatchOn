@@ -7,10 +7,18 @@ import { Review } from '../cmps/Review'
 
 
 class _EventDetails extends Component {
+    state = {
+        currentScrollHeight: 0
+    }
 
     componentDidMount() {
         const { eventId } = this.props.match.params;
         this.props.loadEvent(eventId);
+        window.addEventListener('scroll', this.handleScroll, { passive: true })
+    }
+
+    handleScroll = () => {
+        this.setState({ currentScrollHeight: window.scrollY })
     }
 
     onAddReview = (msg) => {
@@ -20,7 +28,6 @@ class _EventDetails extends Component {
         const review = {
             msg,
             user: {
-
                 "_id": "u101",
                 "fullName": "Orly Amdadi",
                 "userName": "liron",
@@ -36,28 +43,53 @@ class _EventDetails extends Component {
 
     render() {
         const { event } = this.props;
-        console.log(event);
-        
+        const top = (this.state.currentScrollHeight > 400) ? (this.state.currentScrollHeight) - 400 : 0;
+
         return (
             (event) &&
             <section className="event-detail">
-                <h2>{event.title}</h2>
-                <p>{event.desc}</p>
-                <Link to="">{event.category}</Link>
-                <p>${event.price}</p>
-                <div className="user-preview">
-                    <p>{event.createdBy.userName}</p>
-                    <img className="userImg-details" src={event.createdBy.imgUrl} />
-                    <p>{event.createdBy.rank}</p>
+
+                <div className="event-gallery">
+                    {event.imgUrls.map((url, idx) => <div key={idx}
+                        style={{ backgroundImage: `url(${url})` }}></div>)}
                 </div>
-                <p>{event.createdAt}</p>
-                <p>{event.startAt}</p>
-                <p>{event.place}</p>
-                <p>{event.capacity}</p>
-                {event.imgUrls.map((url , idx) => <img key={idx} src={url}/>)}
-                <p>{event.attendees[0].userName}</p>
-                <img className="userImg-details" src={event.attendees[0].imgUrl} />                
-                <Review onAddReview={this.onAddReview} reviews={event.reviews} />
+
+
+                <div className="event-main">
+                    <div className="middle-content">
+                        <div className="side-content" style={{ marginTop: top }}>
+                            <p className="lead">${event.price}{event.startAt}</p>
+                        </div>
+                        <div className="all-content">
+                            <div className="event-detail-top">
+                                <div>
+                                    <h1 className="large">{event.title}</h1>
+                                    <p>{event.place}</p>
+                                </div>
+                                <div className="user-preview">
+                                    <img className="userImg-details" src={event.createdBy.imgUrl} />
+                                    <p>{event.createdBy.userName}</p>
+                                    {/* <p>{event.createdBy.rank}</p> */}
+                                </div>
+                            </div>
+
+                            <div className="line"></div>
+
+                            <h2>What we're about</h2>
+                            <p>{event.desc}.
+                          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eaque consequuntur atque. Doloremque, molestias debitis vel eligendi itaque eius quia culpa, minima       quisquam hic dolorum sint accusamus explicabo iusto in?
+                        </p>
+                            <p>{event.createdAt}</p>
+                            <p>{event.capacity}</p>
+                            <p>{event.attendees[0].userName}</p>
+                            <img className="userImg-details" src={event.attendees[0].imgUrl} />
+                            <div className="event-chat">
+                                <h2>Reviews</h2>
+                                <Review onAddReview={this.onAddReview} reviews={event.reviews} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
         )
     }
