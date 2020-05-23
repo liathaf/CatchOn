@@ -28,13 +28,16 @@
         div {
             border: 1px solid #484848;
             border-collapse: collapse;
-            background-position: center center;
+            background-position: center;
             background-repeat: no-repeat;
             background-size: 100% 100%;
-            transition: background-size 1s ease;
+            transition: background-size 1s ease-in-out;
+            // animation: background-size 20s linear infinite;
+
 
             &:hover {
-                background-size: 115% 115%;
+                background-size: 108% 108%;
+                background-position: center;
             }
 
             &:first-child {
@@ -75,39 +78,40 @@
         .all-content {
             max-width: rem(610px);
             float: left;
+
             .event-detail-top {
                 display: grid;
                 align-items: center;
                 grid-template-columns: 5fr 1fr;
                 align-items: flex-start;
-        
+
                 div:first-child {
                     h1 {
                         padding-bottom: 2px;
                     }
                 }
-        
+
                 .user-preview {
                     p {
                         color: #767676;
                     }
-        
+
                     img {
                         height: 48px;
                         width: 48px;
                         border-radius: 50%;
                         margin-bottom: 0;
                     }
-        
-        
+
+
                     &:nth-child(2) {
                         text-align: center;
                     }
                 }
             }
-            .event-chat{
-            }
-        
+
+            .event-chat {}
+
         }
 
         .side-content {
