@@ -24,6 +24,13 @@ function getCategories() {
 	return CATEGORIES;
 }
 
+
+function setCategoryBackground(category) {
+	const obj = gCategoryPhotos.find(obj => obj.category === category);
+ if (obj) return obj.img;
+}
+
+
 export const EventService = {
 	query,
 	getById,
