@@ -30,14 +30,11 @@ class _EventDetails extends Component {
                 "rank": 5
             }
         }
-
-        this.props.addReview(event._id, review);
+        this.props.addReview(event, review);
     }
 
     render() {
         const { event } = this.props;
-        console.log(event);
-        
         return (
             (event) &&
             <section className="event-detail">

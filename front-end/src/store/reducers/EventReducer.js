@@ -20,7 +20,7 @@ export function EventReducer(state = initialState, action) {
             return {
                 ...state, 
                 events: state.events.map(event => {
-                    if (event._id === action.event._id) return action.event;
+                    if (event._id === action.savedEvent._id) return action.savedEvent;
                     else return event
                 })
             }

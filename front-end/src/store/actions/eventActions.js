@@ -45,11 +45,11 @@ export function saveEvent(event) {
   };
 }
 
-export function addReview(eventId, review) {
+export function addReview(event, review) {
   return async (dispatch) => {
     try {
-      const event = await EventService.addReview(eventId, review);
-      dispatch({ type: 'UPDATE_EVENT', event });
+      const savedEvent = await EventService.addReview(event, review);
+      dispatch({ type: 'UPDATE_EVENT', savedEvent });
     } catch (err) {
       console.log('cannot update event', err);
     }
