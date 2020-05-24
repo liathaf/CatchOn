@@ -4,6 +4,7 @@ import { EventService } from '../services/EventService'
 import { loadEvent } from '../store/actions/EventActions'
 
 class _EventEdit extends Component {
+
     state = {
         event: {
             title: '',
@@ -20,6 +21,7 @@ class _EventEdit extends Component {
     }
 
     async componentDidMount() {
+
         const eventId = this.props.match.params.eventId
 
         if (eventId) {
@@ -90,7 +92,7 @@ class _EventEdit extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        event: state.event
+        event: state.events.currEvent,
     }
 }
 

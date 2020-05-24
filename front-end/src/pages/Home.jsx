@@ -14,7 +14,7 @@ class _Home extends Component {
             { name: "outdoors", class: "fas fa-campground  fa-3x" },
             { name: "traveling", class: "fas fa-plane fa-3x" },
             { name: "culinary", class: "fas fa-utensils fa-3x" },
-            { name: "video games", class: "fas fa-gamepad fa-3x" },
+            { name: "gamming", class: "fas fa-gamepad fa-3x" },
             { name: "coding", class: "fab fa-connectdevelop fa-3x" }
         ]
     }
@@ -37,7 +37,7 @@ class _Home extends Component {
                 </section>
                 <div className="group-title container">
                     <h2>Start Your Journey</h2>
-                    <Link to="/login">See More ></Link>
+                    <Link to="/event">See More ></Link>
                 </div>
                 <section className="categories container">
                     {this.state.categories.map((category, idx) => (
@@ -47,14 +47,14 @@ class _Home extends Component {
                 </section>
                 <div className="group-title container">
                     <h2>CatchOn Top Events</h2>
-                    <Link to="/login">See More ></Link>
+                    <Link to="/event">See More ></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true}/>
                 </div>
                 
                 <section className="about-preview container">
-                <Link to="/login" className="btn btn-control">Catch On Event</Link>
+                <Link to="/event" className="btn btn-control">Catch On Event</Link>
                 </section>
                 <footer>
                 <Link className="logo large" to="/">CatchOn </Link>

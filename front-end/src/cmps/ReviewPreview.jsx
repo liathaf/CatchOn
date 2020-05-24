@@ -5,16 +5,16 @@ import * as moment from 'moment'
 
 export function ReviewPreview(props) {
     const { review } = props
-    const { user } = review;
     const createAt = moment(review.createdAt).fromNow();
     return (
         <div className="msg">
             <Link to="" className="user-details">
-                <img className="userImg-review" src={user.imgUrl} />
-                <p>{user.userName}</p>
+                <img className="userImg-review" src={review.user.imgUrl} />
+                <p>{review.user.userName}</p>
             </Link>
                 <p>{createAt}</p>
                 <p>{review.msg}</p>
         </div>
     )
 }
+

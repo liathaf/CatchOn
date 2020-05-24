@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 import { EventsByCategory } from '../cmps/EventsByCategory'
 import { EventList } from '../cmps/EventList'
@@ -10,47 +10,33 @@ import { loadEvents } from '../store/actions/EventActions'
 class _Events extends Component {
 
     state = {
-        
         filterBy: {
-            currCategory: ''
+            category: ''
         }
 
     }
 
     componentDidMount() {
-        const category = this.props.match.params.category;
-        this.setState(prevState=>({...prevState.filterBy , currCategory: category}))
-        this.props.loadEvents();
+        const { category } = this.props.match.params;
+        this.props.loadEvents({ category });
+        this.setState(prevState => ({ ...prevState.filterBy, category }))
     }
 
     onSetFilter = (filter) => {
-        
+        this.props.loadEvents(filter);
+        this.setState(prevState => ({ ...prevState.filterBy, category: filter.category }))
     }
 
     render() {
-        const { currCategory } = this.state
+        const { category } = this.state
         const { events } = this.props
         return (
             <div className="events">
-                {currCategory && <EventsByCategory category={currCategory} events={events} />}
-                {!currCategory && <EventList events={events}/>}
-
-                <EventFilter onSetFilter={this.onSetFilter}/>
+                {category && <EventsByCategory category={category} events={events} />}
+                {!category && <EventList events={events} />}
+                <EventFilter onSetFilter={this.onSetFilter} />
             </div>
-
-     
-            // <section className="events-prev">
-            //     <div className="main-img-events landing">
-                    
-            //         <div className="dark-overlay">
-            //         <EventFilter />
-            //         </div>
-            //     </div>
-               
-            //     {/* {currCategory && <EventsByCategory category={currCategory} />} */}
-            //     {!this.state.currCategory && <EventList events={events} />}
-            //     </section>
-       )
+        )
     }
 }
 

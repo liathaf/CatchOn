@@ -9,14 +9,13 @@ export function EventsByCategory(props) {
 
   const {category, events} = props;
   const bg = EventService.setCategoryBackground(category);
-  const categories = EventService.getCategories()
-  
+
   return (
     <div className="category-page">
       {!category ? (
        'Loading...') : <div>
          <img src={`${bg}`} />
-        <h1>{category}</h1>
+        <h1>{category.charAt(0).toUpperCase() + category.slice(1)}</h1>
         </div>}
 
       

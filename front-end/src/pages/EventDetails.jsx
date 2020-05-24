@@ -82,8 +82,10 @@ class _EventDetails extends Component {
                         </p>
                             <p>{event.createdAt}</p>
                             <p>{event.capacity}</p>
-                            <p>{event.attendees[0].userName}</p>
-                            <img className="userImg-details" src={event.attendees[0].imgUrl} />
+                            <Link to={`/user/${event.attendees[0]._id}`}>
+                                <p>{event.attendees[0].userName}</p>
+                                <img className="userImg-details" src={event.attendees[0].imgUrl} />
+                            </Link>
                             <div className="event-chat">
                                 <h2>Reviews</h2>
                                 <Review onAddReview={this.onAddReview} reviews={event.reviews} />
