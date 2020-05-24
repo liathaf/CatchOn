@@ -81,11 +81,14 @@
     a {
       position: relative;
       top: 25vh;
-      width: 40vw;
+      width: 40%;
       background-color: #f8b600ef;
       font-size: 3.5vh;
       float: right;
       margin-right: 3vw;
+      span{
+        display: block;
+      }
     }
   }
 

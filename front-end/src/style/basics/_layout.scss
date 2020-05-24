@@ -55,37 +55,44 @@
         grid-template-columns: repeat(auto-fit, minmax(rem(280px), 1fr));
         grid-auto-rows: auto;
         gap: 40px;
-       
+
         .event-preview {
             background-color: #f4f7f6;
+
             .event-img {
                 height: 30vh;
             }
+
+            &:hover {
+                .usr-prev {
+                    top: 23vh;
+                }
+            }
+
+
+
+            //     .event-content {
+            //         display: flex;
+            //         flex-direction: column;
+            //         justify-content: space-between;
+            //         background-color: #fff;
+            //     }
+
+            //     .event-time-place {
+            //         display: flex;
+            //         justify-content: space-between;
+
+            //         p {
+            //             text-overflow: ellipsis;
+            //             overflow: hidden;
+            //             white-space: nowrap;
+            //             width: 160px;
+            //             &:nth-child(2){
+            //                 text-align: right;
+            //             }
+            //         }
+            //     }
+            // }
         }
-        
-    
-
-        //     .event-content {
-        //         display: flex;
-        //         flex-direction: column;
-        //         justify-content: space-between;
-        //         background-color: #fff;
-        //     }
-             
-        //     .event-time-place {
-        //         display: flex;
-        //         justify-content: space-between;
-
-        //         p {
-        //             text-overflow: ellipsis;
-        //             overflow: hidden;
-        //             white-space: nowrap;
-        //             width: 160px;
-        //             &:nth-child(2){
-        //                 text-align: right;
-        //             }
-        //         }
-        //     }
-        // }
     }
 }

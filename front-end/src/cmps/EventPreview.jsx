@@ -23,8 +23,9 @@ export function EventPreview(props) {
                     <p>{event.place}</p>
                     <p>{event.startAt}</p>
                 </div>
-                <hr></hr>
+                <div className="event-price">
                 <p>${event.price}</p>
+                </div>
                 </div>
             </div>
         </div>
