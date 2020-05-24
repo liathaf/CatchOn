@@ -9,22 +9,21 @@ import { GeolocationService } from '../services/GeolocationService';
 class _EventDetails extends Component {
   state = {
     currentScrollHeight: 0,
-    loc: null
+    loc: null,
   };
 
   componentDidMount() {
     const { eventId } = this.props.match.params;
     this.props.loadEvent(eventId);
-    window.addEventListener('scroll', this.handleScroll, { passive: true })   
-    
+    window.addEventListener('scroll', this.handleScroll, { passive: true });
   }
 
   componentDidUpdate() {
-      if (this.props.event.place && !this.state.loc) {
-        GeolocationService.getLatLng(this.props.event.place)
-        .then(loc => this.setState({ loc }))
-      }
-      
+    if (this.props.event.place && !this.state.loc) {
+      GeolocationService.getLatLng(this.props.event.place).then((loc) =>
+        this.setState({ loc })
+      );
+    }
   }
 
   handleScroll = () => {
@@ -51,11 +50,9 @@ class _EventDetails extends Component {
     this.props.addReview(event._id.$oid, review);
   };
 
-  
-
   render() {
     const { event } = this.props;
-    
+
     const top =
       this.state.currentScrollHeight > 400
         ? this.state.currentScrollHeight - 400
@@ -96,38 +93,91 @@ class _EventDetails extends Component {
 
                 <div className="line"></div>
 
-                <div style={{ width: '50vw', height: '50vh' }}>
-                 {this.state.loc && <MyMapComponent
-                    isMarkerShown
-                    googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    containerElement={<div style={{ height: `400px` }} />}
-                    mapElement={<div style={{ height: `100%` }} />}
-                    lat={this.state.loc.lat} lng={this.state.loc.lng}
-                  />} 
-                </div>
+                <div style={{ width: '50vw', height: '50vh' }}></div>
 
-                <h2>What we're about</h2>
-                <p>
-                  {event.desc}. Lorem ipsum dolor, sit amet consectetur
-                  adipisicing elit. Officiis eaque consequuntur atque.
-                  Doloremque, molestias debitis vel eligendi itaque eius quia
-                  culpa, minima quisquam hic dolorum sint accusamus explicabo
-                  iusto in?
-                </p>
-                <p>{event.createdAt}</p>
-                <p>{event.capacity}</p>
-                <p>{event.attendees[0].userName}</p>
-                <img
-                  className="userImg-details"
-                  src={event.attendees[0].imgUrl}
-                />
-                <div className="event-chat">
-                  <h2>Reviews</h2>
-                  <Review
-                    onAddReview={this.onAddReview}
-                    reviews={event.reviews}
-                  />
+                <div className="event-main">
+                  <div className="middle-content">
+                    <div className="side-content" style={{ marginTop: top }}>
+                      <p className="top-side">
+                        <p className="lead">${event.price}</p>
+                        <p>{event.startAt}</p>
+                      </p>
+                      <div className="join">
+                        <Link to="">
+                          <span className="btn btn-primary">
+                            Join <i class="fas fa-plus-circle"></i>
+                          </span>
+                        </Link>
+                      </div>
+                      <span>created at: {event.createdAt}</span>
+                      {/* <p>2/{event.capacity}</p> */}
+                    </div>
+                    <div className="all-content">
+                      <div className="event-detail-top">
+                        <div>
+                          <h1 className="large">{event.title}</h1>
+                          <p>{event.place}</p>
+                        </div>
+                        <div className="user-preview">
+                          <img
+                            className="userImg-details"
+                            src={event.createdBy.imgUrl}
+                          />
+                          <p>{event.createdBy.userName}</p>
+                          {/* <p>{event.createdBy.rank}</p> */}
+                        </div>
+                      </div>
+
+                      <div className="line"></div>
+
+                      <h2>What we're about</h2>
+                      <p>
+                        {event.desc}. Lorem ipsum dolor, sit amet consectetur
+                        adipisicing elit. Officiis eaque consequuntur atque.
+                        Doloremque, molestias debitis vel eligendi itaque eius
+                        quia culpa, minima quisquam hic dolorum sint accusamus
+                        explicabo iusto in?
+                      </p>
+                      <div className="attendees">
+                        <h2>Attendees</h2>
+                        {event.attendees.map((attendees, idx) => (
+                          <img
+                            className="attendees-details"
+                            src={attendees.imgUrl}
+                            key={idx}
+                          ></img>
+                        ))}
+                      </div>
+                      <div
+                        style={{
+                          height: '30vh',
+                          margin: '20px 0',
+                          position: 'relative',
+                        }}
+                      >
+                        {this.state.loc && (
+                          <MyMapComponent
+                            isMarkerShown
+                            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
+                            loadingElement={<div style={{ height: `100%` }} />}
+                            containerElement={
+                              <div style={{ height: `400px` }} />
+                            }
+                            mapElement={<div style={{ height: `100%` }} />}
+                            lat={this.state.loc.lat}
+                            lng={this.state.loc.lng}
+                          />
+                        )}
+                      </div>
+                      <div className="event-chat">
+                        <h2>Reviews</h2>
+                        <Review
+                          onAddReview={this.onAddReview}
+                          reviews={event.reviews}
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -46,7 +46,7 @@ class _Home extends Component {
                         </div>))}
                 </section>
                 <div className="group-title container">
-                    <h2>CatchOn Top Events</h2>
+                    <h2>Top Events</h2>
                     <Link to="/login">See More ></Link>
                 </div>
                 <div className="events-home">
@@ -54,7 +54,8 @@ class _Home extends Component {
                 </div>
                 
                 <section className="about-preview container">
-                <Link to="/login" className="btn btn-control">Catch On Event</Link>
+                <Link to="/login" className="btn btn-control"><span>Be Spontaneous </span>
+                <span>Check Out Our recommended event</span></Link>
                 </section>
                 <footer>
                 <Link className="logo large" to="/">CatchOn </Link>

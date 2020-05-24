@@ -8,13 +8,20 @@ export function ReviewPreview(props) {
     const { user } = review;
     const createAt = moment(review.createdAt).fromNow();
     return (
-        <div className="msg">
-            <Link to="" className="user-details">
+        <div className="review-msg">
+            <Link to="">
                 <img className="userImg-review" src={user.imgUrl} />
-                <p>{user.userName}</p>
             </Link>
-                <p>{createAt}</p>
+            <div className="review-detail">
+                <div className="review-name-date">
+                    <Link to="">
+                        <p>{user.userName}</p>
+                    </Link>
+                    <p>{createAt}</p>
+                </div>
                 <p>{review.msg}</p>
+            </div>
+
         </div>
     )
 }

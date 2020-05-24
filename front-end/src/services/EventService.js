@@ -1,4 +1,6 @@
-import { UtilService } from './UtileService'
+import {
+	UtilService
+} from './UtileService'
 // import axios from 'axios'
 
 
@@ -822,13 +824,13 @@ function addReview(eventId, review) {
 
 	review.createdAt = Date.now();
 	review._id = UtilService.makeId();
-	
+
 	const eventIdx = _findIdxById(eventId);
-	
+
 	gEvents[eventIdx].reviews.push(review);
-	
+
 	UtilService.saveToStorage('events', gEvents);
-	
+
 	return Promise.resolve(gEvents[eventIdx])
 }
 
@@ -837,11 +839,11 @@ function _findIdxById(id) {
 }
 
 function _init() {
-	
+
 	var events = UtilService.loadFromStorage('events');
 	if (events) return events;
 	UtilService.saveToStorage('events', defaultEvents);
-	 events = UtilService.loadFromStorage('events');
+	events = UtilService.loadFromStorage('events');
 	console.log(events);
 	return events;
 }
@@ -853,7 +855,7 @@ function getCategories() {
 
 function setCategoryBackground(category) {
 	const obj = gCategoryPhotos.find(obj => obj.category === category);
- if (obj) return obj.img;
+	if (obj) return obj.img;
 }
 
 const gCategoryPhotos = [

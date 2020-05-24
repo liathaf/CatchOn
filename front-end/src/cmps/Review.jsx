@@ -30,9 +30,10 @@ export class Review extends Component {
         return (
             <>
                 <section className="reviews">
-                    <form className="review-input" onSubmit={this.onHandelSubmit}>
-                        <input className="review-input" name="msg" placeholder="write massege..." onChange={this.onHandleChange}></input>
-                        <button className="send-msg-btn">Send</button>
+                    <form className="review-form" autocomplete="off" onSubmit={this.onHandelSubmit}>
+                        <img src="https://techuntangle.com/wp-content/uploads/2019/08/how-to-remove-guest-user-on-mac.png"></img>
+                        <input  name="msg" placeholder="write massege..." onChange={this.onHandleChange}></input>
+                        <button className="btn" onClick={this.onHandelSubmit}>Comment</button>
                     </form>
                     <ReviewList reviews={reviews} />
 
