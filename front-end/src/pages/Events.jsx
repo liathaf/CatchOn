@@ -31,7 +31,7 @@ class _Events extends Component {
         const { currCategory } = this.state
         const { events } = this.props
         return (
-            <div className="events">
+            <div className="events-prev">
                 {currCategory && <EventsByCategory category={currCategory} events={events} />}
                 {!currCategory && <EventList events={events}/>}
 
