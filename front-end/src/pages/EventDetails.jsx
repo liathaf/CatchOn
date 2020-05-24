@@ -42,7 +42,7 @@ class _EventDetails extends Component {
 
     render() {
         const { event } = this.props;
-        const top = (this.state.currentScrollHeight > 400) ? (this.state.currentScrollHeight) - 400 : 0;
+        const top = (this.state.currentScrollHeight > 350) ? (this.state.currentScrollHeight) - 350 : 0;
 
         return (
             (event) &&
@@ -57,7 +57,14 @@ class _EventDetails extends Component {
                 <div className="event-main">
                     <div className="middle-content">
                         <div className="side-content" style={{ marginTop: top }}>
-                            <p className="lead">${event.price}{event.startAt}</p>
+                            <p className="top-side"><p className="lead">${event.price}</p><p>{event.startAt}</p></p>
+                            <div className="join">
+                                <Link to="">
+                                    <span className="btn btn-primary">Join  <i class="fas fa-plus-circle"></i></span>
+                                </Link>
+                            </div>
+                            <span>created at: {event.createdAt}</span>
+                            {/* <p>2/{event.capacity}</p> */}
                         </div>
                         <div className="all-content">
                             <div className="event-detail-top">
@@ -73,19 +80,20 @@ class _EventDetails extends Component {
                             </div>
 
                             <div className="line"></div>
-{/* 
-                            <MapContainer /> */}
+
 
                             <h2>What we're about</h2>
                             <p>{event.desc}.
                           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis eaque consequuntur atque. Doloremque, molestias debitis vel eligendi itaque eius quia culpa, minima       quisquam hic dolorum sint accusamus explicabo iusto in?
                         </p>
-                            <p>{event.createdAt}</p>
-                            <p>{event.capacity}</p>
-                            <Link to={`/user/${event.attendees[0]._id}`}>
-                                <p>{event.attendees[0].userName}</p>
-                                <img className="userImg-details" src={event.attendees[0].imgUrl} />
-                            </Link>
+                            <div className="attendees">
+                                <h2>Attendees</h2>
+                                {event.attendees.map((attendees, idx) => <img className="attendees-details" src={attendees.imgUrl} key={idx}></img>)}
+                            </div>
+                            <div style={{ height: "10vh" ,margin: "20px 0", position: "relative"}}>
+                                {/* 
+                            <MapContainer /> */}
+                            </div>
                             <div className="event-chat">
                                 <h2>Reviews</h2>
                                 <Review onAddReview={this.onAddReview} reviews={event.reviews} />
