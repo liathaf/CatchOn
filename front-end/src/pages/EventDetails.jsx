@@ -4,16 +4,28 @@ import { Link } from 'react-router-dom';
 import { MyMapComponent } from '../cmps/Map';
 import { loadEvent, addReview } from '../store/actions/EventActions';
 import { Review } from '../cmps/Review';
+import { Geolocation } from '../cmps/Geolocation';
+import { GeolocationService } from '../services/GeolocationService';
 
 class _EventDetails extends Component {
   state = {
     currentScrollHeight: 0,
+    loc: null
   };
 
   componentDidMount() {
     const { eventId } = this.props.match.params;
     this.props.loadEvent(eventId);
-    window.addEventListener('scroll', this.handleScroll, { passive: true });
+    window.addEventListener('scroll', this.handleScroll, { passive: true })   
+    
+  }
+
+  componentDidUpdate() {
+      if (this.props.event.place && !this.state.loc) {
+        GeolocationService.getLatLng(this.props.event.place)
+        .then(loc => this.setState({ loc }))
+      }
+      
   }
 
   handleScroll = () => {
@@ -37,11 +49,14 @@ class _EventDetails extends Component {
       },
     };
 
-    this.props.addReview(event._id, review);
+    this.props.addReview(event._id.$oid, review);
   };
+
+  
 
   render() {
     const { event } = this.props;
+    
     const top =
       this.state.currentScrollHeight > 400
         ? this.state.currentScrollHeight - 400
@@ -83,14 +98,14 @@ class _EventDetails extends Component {
                 <div className="line"></div>
 
                 <div style={{ width: '50vw', height: '50vh' }}>
-                  <MyMapComponent
+                 {this.state.loc && <MyMapComponent
                     isMarkerShown
                     googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
                     loadingElement={<div style={{ height: `100%` }} />}
                     containerElement={<div style={{ height: `400px` }} />}
                     mapElement={<div style={{ height: `100%` }} />}
-                    lat={32.8} lng={34.855499}
-                  />
+                    lat={this.state.loc.lat} lng={this.state.loc.lng}
+                  />} 
                 </div>
 
                 <h2>What we're about</h2>
