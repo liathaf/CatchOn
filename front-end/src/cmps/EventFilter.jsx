@@ -27,7 +27,7 @@ export class EventFilter extends React.Component {
                 <form className="filter-box-events" onSubmit={this.onFilter}>
                     <input list="categories" name="categories"  placeholder="Search"/>
                 <datalist id="categories" className="categories-select">
-                    {categories.map(category => <option value={category.charAt(0).toUpperCase() + category.slice(1)}></option>)}
+                    {categories.map(category => <option value={category.charAt(0).toUpperCase() + category.slice(1)} key={category}></option>)}
                 </datalist>
                 </form>
             </React.Fragment >
