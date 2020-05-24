@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { MyMapComponent } from '../cmps/Map';
 import { loadEvent, addReview } from '../store/actions/EventActions';
 import { Review } from '../cmps/Review';
-import { Geolocation } from '../cmps/Geolocation';
 import { GeolocationService } from '../services/GeolocationService';
 
 class _EventDetails extends Component {
