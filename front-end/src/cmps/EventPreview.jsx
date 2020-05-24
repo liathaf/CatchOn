@@ -6,7 +6,7 @@ export function EventPreview(props) {
     const { event } = props
     return (
         <div className="event-preview">
-            <Link to={`/event/${event._id.$oid}`}>
+            <Link to={`/event/${event._id}`}>
                 <img className="event-img" src={event.imgUrls[0]} />
             </Link>
             <div className="event-content">
