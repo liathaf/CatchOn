@@ -2,7 +2,7 @@ const eventService = require('./event.service');
 const logger = require('../../service/logger.service')
 
 async function getEvents(req, res) {
-
+    
     try {
         const events = await eventService.query(req.query);
         res.send(events);
