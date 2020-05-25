@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom'
 
-import { EventsByCategory } from '../cmps/EventsByCategory'
+
 import { EventList } from '../cmps/EventList'
 import { EventFilter } from '../cmps/EventFilter'
 import { loadEvents } from '../store/actions/EventActions'
@@ -32,9 +32,8 @@ class _Events extends Component {
         const { events } = this.props
      
         return (
-            <div className="events">
-                {category && <EventsByCategory category={category} events={events} />}
-                {!category && <EventList events={events} />}
+            <div className="events events-prev">
+                <EventList events={events}/>
                 <EventFilter onSetFilter={this.onSetFilter} />
             </div>
         )

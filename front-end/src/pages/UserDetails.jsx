@@ -15,6 +15,7 @@ class _UserDetails extends Component {
 
     render() {
         const { user } = this.props;
+        console.log(user)
         return (
             (user) &&
             <section className="container">
@@ -108,7 +109,7 @@ class _UserDetails extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.users.loggedInUser
+        user: state.users.currUser
     }
 }
 

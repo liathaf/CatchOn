@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import {EventService} from '../services/EventService'
+
 
 export class EventFilter extends React.Component {
     state = {
         filter: {
-            category: ''
+            
         }
     }
 
@@ -17,14 +17,11 @@ export class EventFilter extends React.Component {
     }
     
     render() {
-        const categories = EventService.getCategories();
+      
         return (
             <React.Fragment>
                 <form className="filter-box-events">
-                    <input list="categories" name="category"  placeholder="Search" onChange={this.onHandleChange}/>
-                <datalist id="categories" className="categories-select">
-                    {categories.map((category , idx) => <option key={idx}>{category.charAt(0).toUpperCase() + category.slice(1)}</option>)}
-                </datalist>
+                    <input type="text" name="" placeholder="Search" onChange={this.onHandleChange}/>
                 </form>
             </React.Fragment >
         )
