@@ -3,6 +3,7 @@ import HttpService from './HttpService'
 
 
 function query(filterBy) {
+	
 	var queryStr = '';
 	if (filterBy.category) queryStr = `?category=${filterBy.category.toLowerCase()}`
 	return HttpService.get(`event${queryStr}`);

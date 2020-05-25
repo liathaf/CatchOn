@@ -45,7 +45,21 @@ class _Home extends Component {
                         </div>))}
                 </section>
                 <div className="group-title container">
-                    <h2>CatchOn Top Events</h2>
+                    <h2>Events From Top Creators</h2>
+                    <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4>
+                </div>
+                <div className="events-home">
+                    <EventList events={events} atHome={true} />
+                </div>
+                <div className="group-title container">
+                    <h2>New Events</h2>
+                    <Link to="/event">See More ></Link>
+                </div>
+                <div className="events-home">
+                    <EventList events={events} atHome={true} />
+                </div>
+                <div className="group-title container">
+                    <h2>Free Events</h2>
                     <Link to="/event">See More ></Link>
                 </div>
                 <div className="events-home">

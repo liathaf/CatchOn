@@ -21,7 +21,10 @@ export class EventFilter extends React.Component {
         return (
             <React.Fragment>
                 <form className="filter-box-events">
-                    <input type="text" name="" placeholder="Search" onChange={this.onHandleChange}/>
+                    <input type="text" name=""  placeholder="Search" onChange={this.onHandleChange}/>
+                <datalist  className="categories-select">
+     
+                </datalist>
                 </form>
             </React.Fragment >
         )

@@ -20,7 +20,6 @@ class _EventDetails extends Component {
     }
 
     componentDidUpdate() {
-
         if (this.props.event && !this.state.loc) {
             GeolocationService.getLatLng(this.props.event.place).then((loc) =>
                 this.setState({ loc })
