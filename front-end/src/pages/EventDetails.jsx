@@ -6,6 +6,7 @@ import { loadEvent, addReview } from '../store/actions/EventActions';
 import { Review } from '../cmps/Review';
 import { GeolocationService } from '../services/GeolocationService';
 
+
 class _EventDetails extends Component {
   state = {
     currentScrollHeight: 0,
@@ -93,7 +94,6 @@ class _EventDetails extends Component {
 
                 <div className="line"></div>
 
-                <div style={{ width: '50vw', height: '50vh' }}></div>
 
                 <div className="event-main">
                   <div className="middle-content">
@@ -105,7 +105,7 @@ class _EventDetails extends Component {
                       <div className="join">
                         <Link to="">
                           <span className="btn btn-primary">
-                            Join <i class="fas fa-plus-circle"></i>
+                            Join <i className="fas fa-plus-circle"></i>
                           </span>
                         </Link>
                       </div>
