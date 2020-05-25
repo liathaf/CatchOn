@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-
+import image from '../../src/img/logo-stright.png'
 
 export class NavBar extends Component {
     state = {
@@ -21,7 +21,7 @@ export class NavBar extends Component {
     return (
     <nav className="navbar" style={{backgroundColor: navBgc,borderBottom: `1px solid ${border}`}}>
         <div className="navbar-content container">
-            <Link className="logo lead" to="/">CatchOn </Link>
+            <Link className="logo" to="/"><img src={image}></img></Link>
             <ul className="links">
                 <li><Link to="/edit">Create Event</Link></li>
                 <li><Link to="/signup">Register</Link></li>

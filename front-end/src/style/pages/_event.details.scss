@@ -66,12 +66,6 @@
         width: 80vw;
         margin: 0 auto;
 
-        img {
-            height: 48px;
-            width: 48px;
-            border-radius: 50%;
-            margin-bottom: 0;
-        }
 
         .all-content {
             max-width: rem(610px);
@@ -122,11 +116,19 @@
                         opacity: 0.8;
                     }
                 }
+
+                img {
+                    height: 48px;
+                    width: 48px;
+                    border-radius: 50%;
+                    margin-bottom: 0;
+                }
+
             }
 
-            // map {
-            //     height: 300px;
-            // }
+            map {
+                border-radius: 0;
+            }
 
             .event-chat {
                 margin: 40px 0;

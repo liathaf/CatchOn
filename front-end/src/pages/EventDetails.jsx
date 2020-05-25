@@ -167,3 +167,10 @@ export const EventDetails = connect(
     mapStateToProps,
     mapDispatchToProps
 )(_EventDetails);
+
+
+
+{/* <div className="button-container">
+                <button className="btn">left</button>
+                <button className="btn">right</button>
+            </div> */}
