@@ -1,69 +1,59 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-import { EventsByCategory } from '../cmps/EventsByCategory'
-import { EventList } from '../cmps/EventList'
-import { EventFilter } from '../cmps/EventFilter'
-import { loadEvents } from '../store/actions/EventActions'
+import { EventList } from '../cmps/EventList';
+import { EventFilter } from '../cmps/EventFilter';
+import { loadEvents } from '../store/actions/EventActions';
 
 class _Events extends Component {
+  state = {
+    filterBy: null,
+    sortBy: null,
+  };
 
-    state = {
-        
-        filterBy: {
-            currCategory: ''
-        }
+  componentDidMount() {
+    this.loadEvents();
+  }
 
-    }
+  loadEvents() {
+    this.props.loadEvents(this.state.filterBy, this.state.sortBy);
+  }
 
-    componentDidMount() {
-        const category = this.props.match.params.category;
-        this.setState(prevState=>({...prevState.filterBy , currCategory: category}))
-        this.props.loadEvents();
-    }
+  onDelete = (id) => {
+    this.props.removeEvent(id);
+  };
 
-    onSetFilter = (filter) => {
-        
-    }
+  onSetFilter = (filterBy) => {
+    this.setState({ filterBy }, () => {
+      this.loadEvents();
+    });
+  };
+  onSort = (sortBy) => {
+    this.setState({ sortBy }, this.loadToys);
+  };
 
-    render() {
-        const { currCategory } = this.state
-        const { events } = this.props
-     
-        return (
-            <div className="events-prev">
-                {currCategory && <EventsByCategory category={currCategory} events={events} />}
-                {!currCategory && <EventList events={events}/>}
+  render() {
 
-                <EventFilter onSetFilter={this.onSetFilter}/>
-            </div>
+    return (
+      <div className="events-prev">
+        <EventFilter onSetFilter={this.onSetFilter} onSort={this.onSort} />
+        <EventList events={this.props.events} onDelete={this.onDelete} />
+      </div>
 
-     
-            // <section className="events-prev">
-            //     <div className="main-img-events landing">
-                    
-            //         <div className="dark-overlay">
-            //         <EventFilter />
-            //         </div>
-            //     </div>
-               
-            //     {/* {currCategory && <EventsByCategory category={currCategory} />} */}
-            //     {!this.state.currCategory && <EventList events={events} />}
-            //     </section>
-       )
-    }
+    );
+  }
 }
-
 
 const mapStateToProps = (state) => {
-    return {
-        events: state.events.events
-    }
-}
+  return {
+    events: state.events.events
+  };
+};
 
 const mapDispatchToProps = {
-    loadEvents
-}
+  loadEvents,
+  removeEvent
+};
 
-export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)
+export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events);
