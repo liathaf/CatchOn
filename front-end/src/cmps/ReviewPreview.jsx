@@ -7,8 +7,9 @@ export function ReviewPreview(props) {
     const { review } = props
     const { user } = review
     const createAt = moment(review.createdAt).fromNow();
+
     return (
-        (review.length) && <div className="review-msg">
+        <div className="review-msg">
             <Link to="">
                 <img className="userImg-review" src={user.imgUrl} />
             </Link>
