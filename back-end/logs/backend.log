@@ -501,27 +501,7 @@ Mon, 25 May 2020 09:04:31 GMT - Debug - auth.service - login with email: ds
 Mon, 25 May 2020 09:04:55 GMT - Debug - auth.service - login with email: 
 Mon, 25 May 2020 09:05:16 GMT - Debug - auth.service - login with email: 
 Mon, 25 May 2020 09:05:19 GMT - Debug - auth.service - login with email: fdfd
-Mon, 25 May 2020 11:30:04 GMT - Info - Server is running on port: 3030
-Mon, 25 May 2020 11:32:55 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:32:57 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:33:23 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:34:13 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:25 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:28 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:31 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:32 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:33 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:34 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:39 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:37:52 GMT - Debug - auth.service - login with email: sca
-Mon, 25 May 2020 11:39:33 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:40:19 GMT - Info - Server is running on port: 3030
-Mon, 25 May 2020 11:40:25 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:40:31 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:46:08 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:50:09 GMT - Error - Cannot get events
-Mon, 25 May 2020 11:52:24 GMT - Error - Cannot get events
-Mon, 25 May 2020 12:19:23 GMT - Error - Cannot get events
-Mon, 25 May 2020 12:19:35 GMT - Error - Cannot get events
-Mon, 25 May 2020 12:21:44 GMT - Error - Cannot get events
-Mon, 25 May 2020 13:58:31 GMT - Info - Server is running on port: 3030
+Mon, 25 May 2020 11:29:22 GMT - Info - Server is running on port: 3030
+Mon, 25 May 2020 11:46:11 GMT - Info - Server is running on port: 3030
+Mon, 25 May 2020 14:13:40 GMT - Info - Server is running on port: 3030
+Mon, 25 May 2020 20:32:07 GMT - Info - Server is running on port: 3030

@@ -21,7 +21,7 @@ class _EventDetails extends Component {
     }
 
     componentDidUpdate() {
-        if (this.props.event.place && !this.state.loc) {
+        if (this.props.event && !this.state.loc) {
             GeolocationService.getLatLng(this.props.event.place).then((loc) =>
                 this.setState({ loc })
             );
@@ -169,7 +169,3 @@ export const EventDetails = connect(
 
 
 
-{/* <div className="button-container">
-                <button className="btn">left</button>
-                <button className="btn">right</button>
-            </div> */}

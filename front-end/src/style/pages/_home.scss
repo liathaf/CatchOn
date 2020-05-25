@@ -1,6 +1,7 @@
 .main-content {
-position: absolute;
-width: 100%;
+  position: absolute;
+  width: 100%;
+
   .landing {
     position: relative;
     height: 600px;
@@ -8,12 +9,15 @@ width: 100%;
     overflow: hidden;
     background: url("../../img/bgc-imgs/bg-01.jpg") no-repeat center center/cover;
     margin-bottom: 5rem;
+
     .landing-inner {
       position: relative;
       color: rgb(24, 21, 21);
-      h1{
+
+      h1 {
         font-size: 40px;
       }
+
       height: 40%;
       width: 50%;
       margin-inline-start: 6.5vw;
@@ -23,8 +27,8 @@ width: 100%;
       align-items: left;
     }
   }
-  
-  .top-on{
+
+  .top-on {
     position: absolute;
     // top: 60px;
     height: 600px;
@@ -76,11 +80,68 @@ width: 100%;
     justify-content: space-between;
     align-items: center;
     margin: 5px auto;
-    h2{
+
+    h2 {
       color: rgba(0, 0, 0, 0.795);
     }
-    a {
-      color: #4a73e8;
+
+    h4 span {
+      display: table-cell;
+      margin: 0;
+      padding: 0;
+      animation: animate 2s linear infinite;
+      // font-family: 'badScript',cursive;
+      // #4a73e8;
+      &:first-child{
+        animation-delay: 0s;
+      }
+      &:nth-child(2){
+        animation-delay: 0.25s;
+      }
+      &:nth-child(3){
+        animation-delay: 0.5s;
+      }
+      &:nth-child(4){
+        padding-left: 4px;
+        animation-delay: 0.75s;
+      }
+      &:nth-child(5){
+        animation-delay: 1s;
+      }
+      &:nth-child(6){
+        animation-delay: 1.25s;
+      }
+      &:nth-child(7){
+        animation-delay: 1.5s;
+      }
+      &:nth-child(8){
+        padding-left: 4px;
+        animation-delay: 1.75s;
+      }
+    }
+
+    @keyframes animate {
+
+      0%,
+      100% {
+        color: #c5c6c9;
+        // filter: blur(2px);
+      //  text-shadow: 0 0 10px #00b3ff,
+      //     0 0 1px #00b3ff,
+      //     0 0 2px #00b3ff,
+      //     0 0 3px #00b3ff,
+      //     0 0 4px #00b3ff,
+      //     0 0 8px #00b3ff,
+      //     0 0 16px #00b3ff,
+      //     0 0 32px #00b3ff,
+      }
+
+      0%,
+      95% {
+        color: #36497e;
+        // filter: blur(0px);
+        text-shadow: none;
+      }
     }
   }
 
@@ -90,6 +151,7 @@ width: 100%;
     background: url("https://images.unsplash.com/photo-1589529220923-8e72f4256b4c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")no-repeat center center/cover;
     box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.1);
     text-align: center;
+
     a {
       position: relative;
       top: 25vh;
@@ -98,7 +160,8 @@ width: 100%;
       font-size: 3.5vh;
       float: right;
       margin-right: 3vw;
-      span{
+
+      span {
         display: block;
       }
     }

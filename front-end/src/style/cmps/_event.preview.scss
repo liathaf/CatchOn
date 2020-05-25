@@ -1,22 +1,6 @@
 .event-preview {
     width: 100%;
-    // &:hover {
-    //     position: relative;
-    //     .usr-prev {
-    //         position: absolute;
-    //         display: flex;
-    //         top: 33vh;
-    //         left: 0;
-    //         padding: 5px 15px;
-    //         *{
-    //             margin: 0 15px 0 0;
-    //         }
-    //     }
-    //     .event-img {
-    //         filter:brightness(50%);
-    //     }
-
-    // }
+    background-color: rgba(255, 255, 255, 0.233);
 
     .event-time-place {
         display: flex;
@@ -29,42 +13,83 @@
         object-fit: cover;
         display: block;
         transition: filter 0.7s;
-        border-radius: 5px;
+        border-radius: 2px;
     }
 
     .event-content {
         line-height: 2;
         font-size: 0.9em;
-        padding: 5px 0 10px;
+        padding: 5px 2px 10px;
         height: 130px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        .event-price{
-            height: 10px;
-            border-top: .5px solid rgba(128, 128, 128, 0.384);
-            background-color: 0;
-            margin: 5px 0 8px;
+
+        .event-price-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            * {
+                display: inline;
+                font-weight: 500;
+            }
+
+            p {
+                margin-left: 5px;
+                font-size: 15px;
+                font-weight: 900;
+            }
         }
     }
 
-    .usr-prev {
-        display: none;
-        transition: display 0.7s;
-        .userImg-preview {
-            width: rem(30px);
-            border-radius: 999px;
+    .content-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        height: 25px;
+        .user-rank-avatar {
+            .usr-prev {
+                display: flex;
+                // display: grid;
+                // grid-column: 1fr 1fr;
+                .userImg-preview {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    margin-right: 10px;
+                }
+
+                .username-prev {
+                    position: relative;
+                    bottom: 7px;
+                    font-size: 14px;
+                    color: rgb(24, 23, 23);
+                }
+            }
+            .user-rank {
+                position: relative;
+                bottom: 19px;
+                left: 40px;
+                    i {
+                        display: inline;
+                        color: #FF385C;
+                        margin-right: 4px;
+                    }
+
+                    p {
+                        display: inline;
+                        font-weight: 300;
+                    }
+                }
+
         }
 
-        .username-prev {
-            align-self: center;
-            color: #fff;
-        }
-        
-    }.user-rank{
-           color:red;
-        }
-    
+
+
+    }
+
+
     .category {
         background-color: $light-color;
         padding: rem(3px);
