@@ -5,8 +5,9 @@ import * as moment from 'moment'
 
 export function ReviewPreview(props) {
     const { review } = props
-    const { user } = review;
+    const { user } = review
     const createAt = moment(review.createdAt).fromNow();
+
     return (
         <div className="review-msg">
             <Link to="">
@@ -25,3 +26,4 @@ export function ReviewPreview(props) {
         </div>
     )
 }
+

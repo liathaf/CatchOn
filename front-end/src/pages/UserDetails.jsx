@@ -108,7 +108,6 @@ class _UserDetails extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        user: state.users.currUser,
         user: state.users.loggedInUser
     }
 }

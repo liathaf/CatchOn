@@ -1,9 +1,10 @@
 import { EventService } from '../../services/EventService';
 
-export function loadEvents() {
+export function loadEvents(filter = {}) {
   return async (dispatch) => {
     try {
-      const events = await EventService.query();
+      const events = await EventService.query(filter);
+      
       dispatch({ type: 'SET_EVENTS', events });
     } catch (err) {
       console.log('cannot get events', err);
@@ -45,11 +46,11 @@ export function saveEvent(event) {
   };
 }
 
-export function addReview(eventId, review) {
+export function addReview(event, review) {
   return async (dispatch) => {
     try {
-      const event = await EventService.addReview(eventId, review);
-      dispatch({ type: 'UPDATE_EVENT', event });
+      const savedEvent = await EventService.addReview(event, review);
+      dispatch({ type: 'UPDATE_EVENT', savedEvent });
     } catch (err) {
       console.log('cannot update event', err);
     }

@@ -14,7 +14,7 @@ class _Home extends Component {
             { name: "outdoors", class: "fas fa-campground  fa-3x" },
             { name: "traveling", class: "fas fa-plane fa-3x" },
             { name: "culinary", class: "fas fa-utensils fa-3x" },
-            { name: "video games", class: "fas fa-gamepad fa-3x" },
+            { name: "gamming", class: "fas fa-gamepad fa-3x" },
             { name: "coding", class: "fab fa-connectdevelop fa-3x" }
         ]
     }
@@ -45,8 +45,8 @@ class _Home extends Component {
                         </div>))}
                 </section>
                 <div className="group-title container">
-                    <h2>Top Events</h2>
-                    <Link to="/login">See More ></Link>
+                    <h2>CatchOn Top Events</h2>
+                    <Link to="/event">See More ></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} />

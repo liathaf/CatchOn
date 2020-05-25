@@ -6,16 +6,16 @@ export class NavBar extends Component {
     state = {
         currentScrollHeight: 0
     }
-    componentDidMount () {      
-            window.onscroll =()=>{
-             const newScrollHeight = Math.ceil(window.scrollY / 50) *50;
-             if (this.state.currentScrollHeight !== newScrollHeight){
-                 this.setState({currentScrollHeight: newScrollHeight})
-             }
-           }
+    componentDidMount() {
+        window.onscroll = () => {
+            const newScrollHeight = Math.ceil(window.scrollY / 50) * 50;
+            if (this.state.currentScrollHeight !== newScrollHeight) {
+                this.setState({ currentScrollHeight: newScrollHeight })
+            }
+        }
     };
-    render(){
-        const opacity = Math.min(this.state.currentScrollHeight/100  , 1)
+    render() {
+        const opacity = Math.min(this.state.currentScrollHeight / 100, 1)
         const navBgc = `rgb(247, 255, 255,${opacity})`
         const border = `rgb(229, 229, 229,${opacity})`
     return (
@@ -34,4 +34,4 @@ export class NavBar extends Component {
 }
 
 
-    
+

@@ -1,59 +1,44 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom'
 
-import { EventList } from '../cmps/EventList';
-import { EventFilter } from '../cmps/EventFilter';
-import { loadEvents } from '../store/actions/EventActions';
-
+import { EventList } from '../cmps/EventList'
+import { EventFilter } from '../cmps/EventFilter'
+import { loadEvents, removeEvent } from '../store/actions/EventActions'
 class _Events extends Component {
-  state = {
-    filterBy: null,
-    sortBy: null,
-  };
+    state = {
+        filterBy: {
+            
+        }
+    }
+    componentDidMount() {
+        this.props.loadEvents();
+    }
 
-  componentDidMount() {
-    this.loadEvents();
-  }
 
-  loadEvents() {
-    this.props.loadEvents(this.state.filterBy, this.state.sortBy);
-  }
-
-  onDelete = (id) => {
-    this.props.removeEvent(id);
-  };
-
-  onSetFilter = (filterBy) => {
-    this.setState({ filterBy }, () => {
-      this.loadEvents();
-    });
-  };
-  onSort = (sortBy) => {
-    this.setState({ sortBy }, this.loadToys);
-  };
-
-  render() {
-
-    return (
-      <div className="events-prev">
-        <EventFilter onSetFilter={this.onSetFilter} onSort={this.onSort} />
-        <EventList events={this.props.events} onDelete={this.onDelete} />
-      </div>
-
-    );
-  }
+    onSetFilter = (filter) => {
+        this.props.loadEvents(filter);
+    }
+    render() {
+        const { events } = this.props
+        return (
+            <div className="events">
+              
+                <EventFilter onSetFilter={this.onSetFilter} />
+              <div className="events-prev">
+                <EventList events={events} />
+              </div>
+            </div>
+        )
+    }
 }
-
 const mapStateToProps = (state) => {
-  return {
-    events: state.events.events
-  };
-};
-
+    return {
+        events: state.events.events
+    }
+}
 const mapDispatchToProps = {
-  loadEvents,
-  removeEvent
-};
-
-export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events);
+    loadEvents
+    
+}
+export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)
