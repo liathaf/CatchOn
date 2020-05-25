@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 export function EventPreview(props) {
     const { event } = props
     let imageChoice = 0;
-    console.log(event);
     const price = (event.price === 0) ? "Free" : "$" + event.price;
     return (
         <div className="event-preview">
