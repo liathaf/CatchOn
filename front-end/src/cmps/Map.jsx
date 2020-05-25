@@ -14,3 +14,5 @@ export const MyMapComponent = withScriptjs(withGoogleMap((props) =>
   </GoogleMap>
 
 ))
+
+

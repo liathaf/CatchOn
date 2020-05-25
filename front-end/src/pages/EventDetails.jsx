@@ -6,6 +6,7 @@ import { loadEvent, addReview } from '../store/actions/EventActions';
 import { Review } from '../cmps/Review';
 import { GeolocationService } from '../services/GeolocationService';
 
+
 class _EventDetails extends Component {
     state = {
         currentScrollHeight: 0,
