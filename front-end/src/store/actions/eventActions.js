@@ -1,9 +1,9 @@
 import { EventService } from '../../services/EventService';
 
-export function loadEvents(filter = {}) {
+export function loadEvents(filterBy = null, sortBy = null) {
   return async (dispatch) => {
     try {
-      const events = await EventService.query(filter);
+      const events = await EventService.query(filterBy, sortBy);
       
       dispatch({ type: 'SET_EVENTS', events });
     } catch (err) {

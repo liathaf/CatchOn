@@ -15,7 +15,7 @@ class _EventDetails extends Component {
 
     componentDidMount() {
         const { eventId } = this.props.match.params;
-        console.log(eventId);
+        
         this.props.loadEvent(eventId);
         window.addEventListener('scroll', this.handleScroll, { passive: true });
     }
