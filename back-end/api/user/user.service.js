@@ -11,6 +11,7 @@ module.exports = {
 
 
 
+
 async function getById(userId) {
     const collection = await dbService.getCollection('user')
     try {
@@ -49,6 +50,7 @@ async function getByEmail(email) {
         throw err;
     }
 }
+
 
 
 

@@ -2,6 +2,7 @@ import { UserService } from '../../services/UserService';
 
 
 export function loadUser(userId) {
+  
   return async dispatch => {
     try {
       const user = await UserService.getById(userId);
@@ -17,7 +18,7 @@ export function login(userCreds) {
   return async dispatch => {
     
       const user = await UserService.login(userCreds);
-      dispatch(setUser(user));
+      dispatch(setLoggedInUser(user));
   
   }
 
@@ -26,20 +27,21 @@ export function signup(userCreds) {
   return async dispatch => {
    
     const user = await UserService.signup(userCreds);
-    dispatch(setUser(user));
+    dispatch(setLoggedInUser(user));
     
   };
 }
 export function logout() {
   return async dispatch => {
     await UserService.logout();
-    dispatch(setUser(null));
+    dispatch(setLoggedInUser(null));
   };
 }
 
-export function setUser(user) {
+export function setLoggedInUser(user) {
   return {
-    type: 'SET_USER',
+    type: 'SET_LOGGEDIN_USER',
     user
   };
 }
+

@@ -8,7 +8,7 @@ export function EventList(props) {
 
     const { events, atHome  } = props
     var limitEvents = events.length;
-    if (atHome) limitEvents = 6;
+    if (atHome) limitEvents = 4;
     return (
         <div className="event-list  container">
             {events.map((event, idx) => { if (idx < limitEvents) return <EventPreview event={event} key={event._id} /> })}
