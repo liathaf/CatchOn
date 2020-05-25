@@ -30,6 +30,7 @@ class _Events extends Component {
     render() {
         const { category } = this.state
         const { events } = this.props
+     
         return (
             <div className="events">
                 {category && <EventsByCategory category={category} events={events} />}

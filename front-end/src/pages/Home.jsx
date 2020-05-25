@@ -7,7 +7,7 @@ import { EventList } from '../cmps/EventList';
 
 
 class _Home extends Component {
-    
+
     state = {
         categories: [
             { name: "sport", class: "fas fa-basketball-ball fa-3x" },
@@ -27,22 +27,21 @@ class _Home extends Component {
         const { events } = this.props
         return (
             <>
+                <div className="top-on"></div>
                 <section className="landing">
-                    <div className="dark-overlay">
-                        <div className="landing-inner container">
-                            <h1 className="large">Explore new events and meet new people</h1>
-                            <Link to="/login" className="btn btn-primary btn-control">Join CatchOn</Link>
-                        </div>
+                    <div className="landing-inner container">
+                        <h1 className="large">Explore new events and meet new people</h1>
+                        <Link to="/login" className="btn btn-primary btn-control">Join VenYou</Link>
                     </div>
                 </section>
                 <div className="group-title container">
-                    <h2>Start Your Journey</h2>
-                    <Link to="/event">See More ></Link>
+                    <h2>Start Your Venue</h2>
+                    {/* <Link to="/login"></Link> */}
                 </div>
                 <section className="categories container">
                     {this.state.categories.map((category, idx) => (
                         <div className="category-preview" key={idx}>
-                            <Link  to={`/event/category/${category.name}`}><i className={category.class}></i><p>{category.name}</p></Link>
+                            <Link to={`/event/category/${category.name}`}><i className={category.class}></i><p>{category.name}</p></Link>
                         </div>))}
                 </section>
                 <div className="group-title container">
@@ -50,14 +49,15 @@ class _Home extends Component {
                     <Link to="/event">See More ></Link>
                 </div>
                 <div className="events-home">
-                    <EventList events={events} atHome={true}/>
+                    <EventList events={events} atHome={true} />
                 </div>
-                
+
                 <section className="about-preview container">
-                <Link to="/event" className="btn btn-control">Catch On Event</Link>
+                    <Link to="/login" className="btn btn-control"><span>Be Spontaneous </span>
+                        <span>Check Out Our recommended event</span></Link>
                 </section>
                 <footer>
-                <Link className="logo large" to="/">CatchOn </Link>
+                    <Link className="logo large" to="/">VenYou </Link>
                     <div className="icons my-1">
                         <a href="https://www.globe.gov/" target="_blank" rel="noopener noreferrer">
                             <i className="fas fa-globe fa-2x"></i>
@@ -79,7 +79,7 @@ class _Home extends Component {
                         </a>
                     </div>
                     <div>
-                        <span>© 2020 CatchOn</span>
+                        <span>© 2020 VenYou</span>
                         <span>·Terms of Service</span>
                         <span>·Privacy Policy</span>
                     </div>

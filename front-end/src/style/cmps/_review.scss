@@ -12,9 +12,10 @@
 
         input {
             width: 90%;
-            height: 50%;
+            height: 70%;
             margin-left: 2%;
-            margin-top: 5px;
+            padding: 2px 0 5px;
+            font-size: 16px;
             outline: 0;
             border: 0;
             background: transparent;
@@ -39,6 +40,7 @@
         grid-template-columns: 1fr 9fr;
         width: 100%;
         img {
+            border-radius: 50%;
             height: 40px;
             width: 40px;
         }

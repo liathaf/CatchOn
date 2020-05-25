@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../img/logo/logo-stright.png'
-
+import image from '../../src/img/logo-stright.png'
 
 export class NavBar extends Component {
     state = {
@@ -19,19 +18,18 @@ export class NavBar extends Component {
         const opacity = Math.min(this.state.currentScrollHeight / 100, 1)
         const navBgc = `rgb(247, 255, 255,${opacity})`
         const border = `rgb(229, 229, 229,${opacity})`
-        return (
-            <nav className="navbar" style={{ backgroundColor: navBgc, borderBottom: `1px solid ${border}` }}>
-                <div className="navbar-content container">
-                    {/* <Link className="logo lead" to="/">CatchOn </Link> */}
-                    <Link to="/"><img src={logo} style={{ width: " 110px", paddingTop: "0.1rem" }} /></Link>
-                    <ul className="links">
-                        <li><Link to="/event/edit">Create Event</Link></li>
-                        <li><Link to="/signup">Register</Link></li>
-                        <li><Link to="/login">Login</Link></li>
-                    </ul>
-                </div>
-            </nav>
-        )
+    return (
+    <nav className="navbar" style={{backgroundColor: navBgc,borderBottom: `1px solid ${border}`}}>
+        <div className="navbar-content container">
+            <Link className="logo" to="/"><img src={image}></img></Link>
+            <ul className="links">
+                <li><Link to="/edit">Create Event</Link></li>
+                <li><Link to="/signup">Register</Link></li>
+                <li><Link to="/login">Login</Link></li>
+            </ul>
+        </div>
+    </nav>
+    )
     }
 }
 
