@@ -7,24 +7,33 @@ import { EventFilter } from '../cmps/EventFilter'
 import { loadEvents, removeEvent } from '../store/actions/EventActions'
 class _Events extends Component {
     state = {
-        filterBy: {
-            
-        }
+      filterBy: null
+      
     }
     componentDidMount() {
         this.props.loadEvents();
     }
 
 
-    onSetFilter = (filter) => {
-        this.props.loadEvents(filter);
-    }
+    onSetFilter = (filterBy) => {
+    
+      this.setState({ filterBy }, () => {
+        this.props.loadEvents(filterBy );
+      })
+      
+  }
+
+
+
     render() {
         const { events } = this.props
         return (
             <div className="events">
+
+              <div className="filter">
+              <EventFilter onSetFilter={this.onSetFilter} onSort={this.onSort} />
+              </div>
               
-                <EventFilter onSetFilter={this.onSetFilter} />
               <div className="events-prev">
                 <EventList events={events} />
               </div>
@@ -38,7 +47,8 @@ const mapStateToProps = (state) => {
     }
 }
 const mapDispatchToProps = {
-    loadEvents
+    loadEvents,
+    removeEvent
     
 }
 export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)

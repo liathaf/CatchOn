@@ -8,11 +8,41 @@ module.exports = {
     update,
 }
 
-async function query(filterBy) {
+function _buildCriteria(filterBy) {
+    console.log(filterBy)
+    const criteria = {};
+    if (filterBy.title) {
+        criteria.title =  {'$regex': filterBy.title, '$options': 'i'}
+        // criteria.desc =  {'$regex': filterBy.title, '$options': 'i'}
+        // criteria.place =  {'$regex': filterBy.title, '$options': 'i'}
+    }
+    if (filterBy.category) {
+        criteria.category =  filterBy.category
+    }
+    if (filterBy.isFree) {
+        criteria.price = {$eq: 0}
+    }
+    if (filterBy.thisMonth) {
+        criteria.startAt = {$eq: 0}
+    }
+    console.log(criteria)
+    return criteria;
+}
 
+
+
+
+
+
+
+async function query(filterBy) {
+    const filter = _buildCriteria(filterBy)
+    console.log(filter)
     const collection = await dbService.getCollection('event');
+
     try {
-        const events = await collection.find(filterBy).toArray();
+        let events = await collection.find(filter).toArray();
+        console.log(events.length)
         return events;
     } catch (err) {
         console.log('ERROR: cannot find events');

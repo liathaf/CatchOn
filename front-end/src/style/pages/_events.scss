@@ -1,7 +1,35 @@
            
-.events-prev{
+.events{
 
     .main-img-events{
         min-height: 280px
+    }
+
+    .filter {
+        position: absolute;
+        top: 150px;
+        width: 100vw;
+    }
+
+    .event-filter {
+        width: 100%;
+        text-align: center;
+
+        .search-input {
+          
+            width: 60%;
+            min-width: 400px;
+            
+            
+        }
+
+        .filters {
+            display: flex;
+            min-width: 400px;
+            margin: rem(10px) auto;
+            justify-content: space-around;
+            width: 60%;
+            min-width: 400px;
+        }
     }
 }
