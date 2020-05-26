@@ -649,3 +649,203 @@ Mon, 25 May 2020 14:57:22 GMT - Debug - auth.service - login with email: liathaf
 Mon, 25 May 2020 15:06:35 GMT - Debug - auth.service - login with email: mati@gmail.com
 Mon, 25 May 2020 15:08:56 GMT - Debug - auth.service - login with email: moshe@gmail.com
 >>>>>>> db71b79374ba76cca310755d105b45f195a7836b
+Mon, 25 May 2020 20:52:34 GMT - Debug - adi.ahronov@gmail.com, adi aharonov
+Mon, 25 May 2020 20:52:34 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: adi aharonov
+Mon, 25 May 2020 20:52:34 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$mVPfVvAeOwH0WavDr3tpKeBFXJb4parV8d6n8zsoqznIxwetMwMHS","username":"adi aharonov","imgUrl":"","rank":0,"attendedEvents":[],"isAdmin":false,"_id":"5ecc30127edf1a6ccc90c2d5"}
+Mon, 25 May 2020 20:52:34 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Mon, 25 May 2020 20:52:55 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Tue, 26 May 2020 10:29:05 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 10:57:40 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 10:58:38 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 10:58:56 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 10:59:33 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:02:38 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:04:06 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:24:12 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:24:15 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:16 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:17 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:17 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:23 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:23 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:23 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:23 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:23 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:24 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:24 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:24 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:24 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:24 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:26 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:26 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:26 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:24:27 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:26:54 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:27:06 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:27:13 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:28:50 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:28:51 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:29:03 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:29:14 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:29:18 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:29:59 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:29:59 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:30:05 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:30:10 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:30:34 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:30:34 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:30:41 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:30:59 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:31:10 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:31:16 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:31:29 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:31:32 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:31:40 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:33:10 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:33:10 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:33:16 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:20 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:34:23 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:26 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:29 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:29 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:31 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:31 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:31 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:32 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:32 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:32 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:53 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:34:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:34:58 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:35:00 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:35:32 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:37:49 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:37:51 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:38:51 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:38:54 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:38:54 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:38:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:38:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:38:56 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:38:56 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:38:58 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:39:05 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:39:07 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:39:43 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 11:39:44 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:44:22 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:45:47 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:45:52 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:45:53 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:45:54 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:45:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:45:56 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:45:58 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:49 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:50 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:51 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:52 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:53 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:54 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:46:56 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:48:44 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:48:44 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:48:45 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:48:46 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:49:02 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:49:03 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:49:10 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:49:11 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:49:43 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:49:53 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:50:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:51:04 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:51:31 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:51:33 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:51:50 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:30 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:31 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:31 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:31 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:32 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:32 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:33 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:33 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:33 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:34 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:34 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:34 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:36 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:36 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:52:37 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:53:28 GMT - Error - Cannot get events
+Tue, 26 May 2020 11:54:17 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:00:02 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:00:20 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:00:42 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:00:50 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:01:29 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:01:56 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:02:01 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:02:07 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:02:15 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:02:44 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:02:48 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:06:35 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:06:36 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:07:00 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:07:04 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:08:29 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:09:10 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:12:07 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:12:59 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:17:41 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:17:54 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:18:54 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 12:18:58 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:19:01 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:19:07 GMT - Error - Cannot get events
+Tue, 26 May 2020 12:19:20 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:14:40 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:18:22 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:19:06 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:20:59 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:22:52 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:24:29 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:24:36 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:25:21 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:26:53 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:28:31 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:28:55 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:29:01 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:37:09 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:44:42 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:44:53 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:05 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:09 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:36 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:45:41 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:45 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:46 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:47 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:48 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:49 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:50 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:55 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:45:59 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:47:19 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:47:22 GMT - Error - Cannot get events
+Tue, 26 May 2020 13:48:52 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 13:58:51 GMT - Info - Server is running on port: 3030

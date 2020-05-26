@@ -62,7 +62,7 @@ class _EventEdit extends Component {
                     <input autoFocus type="text" maxLength="100" value={Event.title} onChange={this.handleInput} name="title" />
 
                     <label> Description: </label>
-                    <input autoFocus type="text" value={Event.desc} onChange={this.handleInput} name="desc" />
+                    <input  type="text" value={Event.desc} onChange={this.handleInput} name="desc" />
 
                     <label> Category: </label>
                     <input type="text" value={Event.category} onChange={this.handleInput} name="category" />

@@ -15,7 +15,7 @@ class _UserDetails extends Component {
 
     render() {
         const { user } = this.props;
-        console.log(user)
+
         return (
             (user) &&
             <section className="container">
