@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { ReviewList } from '../cmps/ReviewList'
-import { SocketService } from '../services/SocketService'
+
 
 export class Review extends Component {
 
@@ -10,9 +10,6 @@ export class Review extends Component {
 
     }
 
-    componentDidMount(){
-       
-    }
 
     onHandleChange = ({ target }) => {
         const field = target.name;
@@ -35,7 +32,7 @@ export class Review extends Component {
         return (
             <>
                 <section className="reviews">
-                    <form className="review-form" autocomplete="off" onSubmit={this.onHandelSubmit}>
+                    <form className="review-form" autoComplete="off" onSubmit={this.onHandelSubmit}>
                         <img src="https://techuntangle.com/wp-content/uploads/2019/08/how-to-remove-guest-user-on-mac.png"></img>
                         <input name="msg" placeholder="write massege..." onChange={this.onHandleChange}></input>
                         <button className="btn" onClick={this.onHandelSubmit}>Comment</button>

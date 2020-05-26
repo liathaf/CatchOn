@@ -13,6 +13,7 @@ export function loadEvents(filterBy = null, sortBy = null) {
 }
 
 export function loadEvent(eventId){
+  
     return async dispatch => {
         try {
             const event = await EventService.getById(eventId);

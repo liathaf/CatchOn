@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
 import { MyMapComponent } from '../cmps/Map';
 import { loadEvent, addReview } from '../store/actions/EventActions';
 import { Review } from '../cmps/Review';
 import { GeolocationService } from '../services/GeolocationService';
+import { SocketService } from '../services/SocketService';
+
 
 
 class _EventDetails extends Component {
@@ -14,8 +17,9 @@ class _EventDetails extends Component {
     };
 
     componentDidMount() {
+        SocketService.setup();
         const { eventId } = this.props.match.params;
-        this.props.loadEvent(eventId);
+        SocketService.on('new review', this.props.loadEvent(eventId));
         window.addEventListener('scroll', this.handleScroll, { passive: true });
     }
 
@@ -25,25 +29,33 @@ class _EventDetails extends Component {
                 this.setState({ loc })
             );
         }
+        const { eventId } = this.props.match.params;
+        // work only on componentDidUpdate , why?
+        SocketService.on('new review', this.props.loadEvent(eventId));
+    }
+
+    componentWillUnmount() {
+        SocketService.off();
     }
 
     handleScroll = () => {
         this.setState({ currentScrollHeight: window.scrollY });
     };
 
-    onAddReview = (msg) => {
+    onAddReview = async (msg) => {
         const { event } = this.props;
-        const { user } = this.props;
+        var { user } = this.props;
         const review = {
             msg,
             user
         }
-        this.props.addReview(event, review);
+        await this.props.addReview(event, review);
+        SocketService.emit('added new review');
+
     }
 
     render() {
         const { event } = this.props;
-
         const top =
             this.state.currentScrollHeight > 360
                 ? this.state.currentScrollHeight - 360
@@ -60,14 +72,14 @@ class _EventDetails extends Component {
                     <div className="event-main">
                         <div className="middle-content">
                             <div className="side-content" style={{ marginTop: top }}>
-                                <p className="top-side">
+                                <div className="top-side">
                                     <p className="lead">${event.price}</p>
                                     <p>{event.startAt}</p>
-                                </p>
+                                </div>
                                 <div className="join">
                                     <Link to="">
                                         <span className="btn btn-primary">
-                                            Join <i class="fas fa-plus-circle"></i>
+                                            Join <i className="fas fa-plus-circle"></i>
                                         </span>
                                     </Link>
                                 </div>
@@ -81,13 +93,13 @@ class _EventDetails extends Component {
                                         <p>{event.place}</p>
                                     </div>
                                     <Link to={`/user/${event.createdBy._id}`}>
-                                    <div className="user-preview">
-                                        <img
-                                            className="userImg-details"
-                                            src={event.createdBy.imgUrl}/>
-                                        <p>{event.createdBy.userName}</p>
-                                        {/* <p>{event.createdBy.rank}</p> */}
-                                    </div>
+                                        <div className="user-preview">
+                                            <img
+                                                className="userImg-details"
+                                                src={event.createdBy.imgUrl} />
+                                            <p>{event.createdBy.userName}</p>
+                                            {/* <p>{event.createdBy.rank}</p> */}
+                                        </div>
                                     </Link>
                                 </div>
 
@@ -104,13 +116,12 @@ class _EventDetails extends Component {
                                 <div className="attendees">
                                     <h2>Attendees</h2>
                                     {event.attendees.map((attendee, idx) => (
-                                         <Link to={`/user/${attendee._id}`}>
-                                             <img
-                                                 className="attendees-details"
-                                                 src={attendee.imgUrl}
-                                                 key={idx}>
-                                             </img>
-                                         </Link>
+                                        <Link to={`/user/${attendee._id}`} key={idx}>
+                                            <img
+                                                className="attendees-details"
+                                                src={attendee.imgUrl}>
+                                            </img>
+                                        </Link>
                                     ))}
                                 </div>
                                 <div className="map">

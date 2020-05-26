@@ -23,6 +23,7 @@ async function getEvent(req, res) {
     }
 }
 async function updateEvent(req, res) {
+    
     const event = req.body;
     try {
         await eventService.update(event);

@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function _buildCriteria(filterBy) {
-    console.log(filterBy)
+    
     const criteria = {};
     if (filterBy.title) {
         criteria.title =  {'$regex': filterBy.title, '$options': 'i'}
@@ -25,19 +25,14 @@ function _buildCriteria(filterBy) {
     if (filterBy.thisMonth) {
         criteria.startAt = {$eq: 0}
     }
-    console.log(criteria)
+    
     return criteria;
 }
 
 
-
-
-
-
-
 async function query(filterBy) {
     const filter = _buildCriteria(filterBy)
-    console.log(filter)
+   
     const collection = await dbService.getCollection('event');
 
     try {
@@ -63,6 +58,7 @@ async function getById(eventId) {
 }
 
 async function update(event) {
+    
     const collection = await dbService.getCollection('event');
     event._id = ObjectId(event._id);
     try {

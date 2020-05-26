@@ -22,7 +22,7 @@ function getById(eventId) {
 
 
 function addReview(event, review) {
-
+	
 	review.createdAt = Date.now();
 	review._id = UtilService.makeId();
 	event.reviews.push(review);
