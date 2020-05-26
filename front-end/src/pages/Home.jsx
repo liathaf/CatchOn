@@ -5,6 +5,9 @@ import { connect } from 'react-redux';
 import { loadEvents } from '../store/actions/EventActions'
 import { EventList } from '../cmps/EventList';
 
+import group1 from '../img/group1.png'
+import group2 from '../img/group2.png'
+
 
 class _Home extends Component {
 
@@ -31,6 +34,10 @@ class _Home extends Component {
                 <section className="landing">
                     <div className="landing-inner container">
                         <h1 className="large">Explore new events and meet new people</h1>
+                        <div className="main-img">
+                            <img className="group1-main-img" src={group1}></img>
+                            <img className="group2-main-img" src={group2}></img>
+                        </div>
                         <Link to="/login" className="btn btn-primary btn-control">Join VenYou</Link>
                     </div>
                 </section>

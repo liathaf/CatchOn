@@ -7,7 +7,7 @@
     height: 600px;
     width: 100%;
     overflow: hidden;
-    background: url("../../img/bgc-imgs/bg-01.jpg") no-repeat center center/cover;
+    background: url("../../img/main-bg.jpg") no-repeat center center/cover;
     margin-bottom: 5rem;
 
     .landing-inner {
@@ -189,4 +189,34 @@
       color: $dark-color;
     }
   }
+}
+
+
+.group1-main-img {
+  position: absolute;
+  width : 800px;
+  height: 800px;
+  top: -220px;
+  left: 300px;
+  
+}
+.group2-main-img {
+  position: absolute;
+  width : 800px;
+  height: 800px;
+  left: 700px;
+  top: -232px;
+  
+}
+.main-img .group1-main-img { animation: fader 4s infinite alternate; }
+@keyframes fader { to { opacity: 0; } }
+
+.main-img .group2-main-img { animation: fader 4s infinite alternate; }
+@keyframes fader { to { opacity: 0; } }
+
+@keyframes identifier {
+  0% { top: 0; left: 0; }
+  30% { top: 50px; }
+  68%, 72% { left: 50px; }
+  100% { top: 100px; left: 100%; }
 }
