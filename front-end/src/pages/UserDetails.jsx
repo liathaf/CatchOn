@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 
 import { loadUser } from '../store/actions/UserActions'
+import avatar from '../img/avatar.jpg'
 
 
 
@@ -15,14 +16,14 @@ class _UserDetails extends Component {
 
     render() {
         const { user } = this.props;
-
+       
         return (
             (user) &&
             <section className="container">
                 <div className="profile-grid">
                     <div className="profile-top">
                         <div>
-                            <img src={user.imgUrl} />
+                            <img src={(user.imgUrl)? user.imgUrl : avatar} />
 
                             <div className="icons">
                                 <a href="#" target="_blank" rel="noopener noreferrer">

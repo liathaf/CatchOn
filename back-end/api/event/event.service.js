@@ -1,7 +1,7 @@
 
 const dbService = require('../../service/db.service');
 const ObjectId = require('mongodb').ObjectId;
-const moment = require('moment');
+
 
 module.exports = {
     query,
@@ -40,11 +40,6 @@ function _buildCriteria(filterBy) {
 }
 
 
-
-
-
-
-
 async function query(filterBy) {
     const filter = _buildCriteria(filterBy)
     // console.log(filter)
@@ -72,6 +67,7 @@ async function getById(eventId) {
 }
 
 async function update(event) {
+    
     const collection = await dbService.getCollection('event');
     event._id = ObjectId(event._id);
     try {

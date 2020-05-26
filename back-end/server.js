@@ -31,12 +31,15 @@ if (process.env.NODE_ENV === 'production') {
 const eventRoutes = require('./api/event/event.routes')
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
+const connectSockets = require('./api/socket/socket.routes')
+
 
 
 // routes
 app.use('/api/event', eventRoutes)
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
+connectSockets(io)
 
 
 const logger = require('./service/logger.service')

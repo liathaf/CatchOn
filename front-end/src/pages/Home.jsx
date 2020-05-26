@@ -6,6 +6,7 @@ import { loadEvents } from '../store/actions/EventActions'
 import { EventList } from '../cmps/EventList';
 
 
+
 class _Home extends Component {
 
     state = {
@@ -27,11 +28,15 @@ class _Home extends Component {
         const { events } = this.props
         return (
             <>
-                <div className="top-on"></div>
+            <div className="top-on"></div>
                 <section className="landing">
+                    {/* <div className="main-img">
+                        <img className="group1-main-img" src={group1}></img>
+                        <img className="group2-main-img" src={group2}></img>
+                    </div> */}
                     <div className="landing-inner container">
                         <h1 className="large">Explore new events and meet new people</h1>
-                        <Link to="/login" className="btn btn-primary btn-control">Join VenYou</Link>
+                        <Link to="/login" className="btn btn-primary">Join Venyou</Link>
                     </div>
                 </section>
                 <div className="group-title container">
@@ -46,7 +51,7 @@ class _Home extends Component {
                 </section>
                 <div className="group-title container">
                     <h2>Events From Top Creators</h2>
-                    <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4>
+                    <Link to="/event"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} />
@@ -67,8 +72,10 @@ class _Home extends Component {
                 </div>
 
                 <section className="about-preview container">
-                    <Link to="/login" className="btn btn-control"><span>Be Spontaneous </span>
-                        <span>Check Out Our recommended event</span></Link>
+                    <div>
+                    <h2>Check A Random Event</h2>
+                    <Link to="/login" className="btn btn-control">Be Spontaneous</Link>
+                    </div>
                 </section>
                 <footer>
                     <Link className="logo large" to="/">VenYou </Link>
@@ -94,8 +101,6 @@ class _Home extends Component {
                     </div>
                     <div>
                         <span>© 2020 VenYou</span>
-                        <span>·Terms of Service</span>
-                        <span>·Privacy Policy</span>
                     </div>
                 </footer>
             </>
