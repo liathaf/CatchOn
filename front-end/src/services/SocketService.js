@@ -11,10 +11,6 @@ function setup() {
     socket = io(BASE_URL);
 }
 
-function terminate() {
-    socket = null;
-}
-
 function on(eventName, cb) {
     socket.on(eventName, cb);
 }
@@ -30,7 +26,6 @@ function emit(eventName, data) {
 
 export const SocketService = {
     setup,
-    terminate,
     on,
     off,
     emit

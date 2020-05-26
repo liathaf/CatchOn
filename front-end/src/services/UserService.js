@@ -1,5 +1,6 @@
 import Axios from 'axios';
 import HttpService from './HttpService'
+import { UtilService } from './UtileService'
 
 
 
@@ -13,7 +14,7 @@ async function login(userCred) {
         const user = await HttpService.post('auth/login', userCred);
         return _handleLogin(user)
     } catch (err) {
-        throw(err)
+        throw (err)
     }
 }
 
@@ -54,11 +55,11 @@ async function uploadImg(ev) {
 }
 
 
-
 export const UserService = {
     login,
     logout,
     signup,
     uploadImg,
-    getById
+    getById,
+   
 }
