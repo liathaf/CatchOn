@@ -45,8 +45,8 @@ class _EventDetails extends Component {
         const { event } = this.props;
 
         const top =
-            this.state.currentScrollHeight > 400
-                ? this.state.currentScrollHeight - 400
+            this.state.currentScrollHeight > 360
+                ? this.state.currentScrollHeight - 360
                 : 0;
 
         return (
