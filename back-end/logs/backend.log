@@ -648,5 +648,12 @@ Mon, 25 May 2020 14:52:22 GMT - Debug - auth.service - login with email: liathaf
 Mon, 25 May 2020 14:57:22 GMT - Debug - auth.service - login with email: liathaf@gmail.com
 Mon, 25 May 2020 15:06:35 GMT - Debug - auth.service - login with email: mati@gmail.com
 Mon, 25 May 2020 15:08:56 GMT - Debug - auth.service - login with email: moshe@gmail.com
+<<<<<<< HEAD
+Mon, 25 May 2020 20:48:00 GMT - Info - Server is running on port: 3030
+=======
 >>>>>>> db71b79374ba76cca310755d105b45f195a7836b
+<<<<<<< HEAD
 Mon, 25 May 2020 20:57:00 GMT - Info - Server is running on port: 3030
+=======
+>>>>>>> 9338e66776e536c7fc89ef6531644fc88fbafb85
+>>>>>>> 957c8f50afea198090a09d88a6a14108e1843506
