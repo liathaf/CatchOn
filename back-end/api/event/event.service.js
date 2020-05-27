@@ -7,6 +7,7 @@ module.exports = {
     query,
     getById,
     update,
+    add
 }
 
 function _buildCriteria(filterBy) {
@@ -74,6 +75,20 @@ async function update(event) {
         return event;
     } catch (err) {
         console.log(`ERROR: cannot update event ${event._id}`);
+        throw err;
+    }
+}
+
+
+async function add(event) {
+
+    const collection = await dbService.getCollection('event')
+    try {
+        await collection.insertOne(event);
+        console.log('*************************************************************' , event)
+        return event;
+    } catch (err) {
+        console.log(`ERROR: cannot insert event`)
         throw err;
     }
 }

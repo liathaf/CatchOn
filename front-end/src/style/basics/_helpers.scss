@@ -47,13 +47,44 @@
     margin: 1.5rem 0;
 }
 
+
+.user-prev {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  
+    
+}
+
 .userImg-preview {
-    width: rem(30px);
-    border-radius: 999px;
-    height: 29px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .username-prev {
-    align-self: center;
-    color: #fff;
+    position: relative;
+    bottom: 7px;
+    font-size: 14px;
+    color: rgb(24, 23, 23);
+
+    :hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+.event-price-free {
+    color: green;
+}
+
+.event-price {
+    color: red;
+    
+
+    &.free{
+        color: green;
+    }
 }
