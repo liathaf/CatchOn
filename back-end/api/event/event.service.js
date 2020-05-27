@@ -10,9 +10,9 @@ module.exports = {
 }
 
 function _buildCriteria(filterBy) {
-    console.log(filterBy)
+    
     if(!filterBy.title &&  !filterBy.isFree && !filterBy.category && !filterBy.thisMonth){
-       return;
+       return filterBy;
     }
     const criteria = { $and: []};
     if (filterBy.title) {
@@ -42,7 +42,6 @@ function _buildCriteria(filterBy) {
 
 async function query(filterBy) {
     const filter = _buildCriteria(filterBy)
-    // console.log(filter)
     const collection = await dbService.getCollection('event');
 
     try {
