@@ -166,7 +166,7 @@
 
     div {
       position: relative;
-      width: 250px;
+      width: 300px;
       height: 100px;
       margin-top: 100px;
       margin-right: 4vw;
@@ -176,10 +176,15 @@
 
     a {
       font-size: 16px;
-      width: 250px;
+      width: 180px;
       justify-content: center;
       background-color: rgba(219, 161, 0, 0.897);
-      // display: block;
+      padding: rem(5px) rem(10px);
+
+      &:hover{
+        background-color: rgb(219, 218, 212);
+      }
+      
     }
 
     h2 {
@@ -255,7 +260,7 @@
   background-position: center;
   background-size: cover;
 
-  animation: image 15s infinite alternate;
+  animation: image 3s infinite alternate;
 }
 
 @keyframes image {

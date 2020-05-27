@@ -73,8 +73,8 @@ class _Home extends Component {
 
                 <section className="about-preview container">
                     <div>
-                    <h2>Check A Random Event</h2>
-                    <Link to="/login" className="btn btn-control">Be Spontaneous</Link>
+                    <h2>Check out a Random Event</h2>
+                    <Link to="/login" className="btn btn-control">Be spontaneous</Link>
                     </div>
                 </section>
                 <footer>

@@ -1,0 +1,15 @@
+Tue, 26 May 2020 16:34:03 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 16:36:07 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 17:32:38 GMT - Debug - auth.service - login with email: mati@gmail.com
+Tue, 26 May 2020 17:33:18 GMT - Debug - liathaf@gmail.com, liat hafzadi
+Tue, 26 May 2020 17:33:18 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: liat hafzadi
+Tue, 26 May 2020 17:33:18 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$cVwwNGBG03u8KImcyAlGm.WxD5j0Enfup7jLnK/O3zD0zQjcC5cYO","username":"liat hafzadi","imgUrl":"","rank":0,"attendedEvents":[],"isAdmin":false,"_id":"5ecd52de537fcb4c706dbbe9"}
+Tue, 26 May 2020 17:33:18 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Tue, 26 May 2020 18:03:09 GMT - Error - Cannot get event
+Tue, 26 May 2020 20:12:34 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 20:14:33 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 20:20:12 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 20:25:18 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 20:30:58 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 20:57:47 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 21:02:26 GMT - Info - Server is running on port: 3030

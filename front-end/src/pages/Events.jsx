@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom'
+
 
 import { EventList } from '../cmps/EventList'
 import { EventFilter } from '../cmps/EventFilter'
 import { loadEvents, removeEvent } from '../store/actions/EventActions'
+
 class _Events extends Component {
     state = {
       filterBy: null
@@ -31,7 +32,7 @@ class _Events extends Component {
             <div className="events">
 
               <div className="filter">
-              <EventFilter onSetFilter={this.onSetFilter} onSort={this.onSort} />
+              <EventFilter onSetFilter={this.onSetFilter}/>
               </div>
               
               <div className="events-prev">

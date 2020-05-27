@@ -27,7 +27,7 @@ export function EventReducer(state = initialState, action) {
 
         case 'ADD_EVENT':
             return {
-                ...state, event: [...state.event , action.event]
+                ...state, event: [...state.event , action.savedEvent]
             }
         case 'REMOVE_EVENT':
             return {

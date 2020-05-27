@@ -155,14 +155,19 @@
                 border-bottom: 1px solid #c0bcbc;
                 padding-bottom: 5px;
                 margin: 10px;
+
+                p{
+                    font-size: rem(15px)
+                }
             }
 
+    
             .join {
                 text-align: center;
                 margin: 20px 0;
 
                 span {
-                    padding: 10px 80px;
+                    padding: 5px 50px;
 
                     i {
                         padding-left: 10px;
@@ -170,6 +175,7 @@
                         border-left: 1px solid #fff;
                     }
                 }
+               
             }
 
             span {

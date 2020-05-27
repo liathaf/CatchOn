@@ -25,18 +25,17 @@ export function EventPreview(props) {
 
                 <div className="content-top">
                     <div className="user-rank-avatar">
-                        <Link to={`/user/${event.createdBy._id}`} className="usr-prev">
+                        <Link to={`/user/${event.createdBy._id}`} className="user-prev">
                             <img className="userImg-preview" src={userImg}></img>
-                            <p className="username-prev">{event.createdBy.userName}</p>
+                            <p className="username-prev">{event.createdBy.username}</p>
                         </Link>
-                        <div className="user-rank"><i class="fas fa-star"></i><p>5.0</p></div>
                     </div>
-                        <h3>5/10<i class="far fa-user"></i></h3>
+                        <h3>5/10<i className="far fa-user"></i></h3>
                 </div>
 
                 <div className="event-price-title">
                     <h3>{event.title}</h3>
-                    <p>{price}</p>
+                    <p className={`event-price ${(event.price === 0) ? 'free' : ''}`}>{price}</p>
                 </div>
                 <div>
                     <div className="event-time-place">

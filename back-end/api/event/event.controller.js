@@ -34,8 +34,16 @@ async function updateEvent(req, res) {
     }
 }
 
+async function addEvent(req, res) {
+    var event = req.body;
+    await eventService.add(event)
+    res.send(event)
+}
+
+
 module.exports = {
     getEvents,
     getEvent,
-    updateEvent
+    updateEvent,
+    addEvent
 }

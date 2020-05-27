@@ -27,7 +27,6 @@ async function getById(userId) {
 
 async function add(user) {
     const collection = await dbService.getCollection('user');
-    user.rank = 0;
     user.attendedEvents = [];
     user.isAdmin = false
     try {
