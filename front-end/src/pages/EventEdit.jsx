@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-<<<<<<< HEAD
 import { EventService } from '../services/EventService';
-import { loadEvent } from '../store/actions/EventActions';
+import { loadEvent, saveEvent } from '../store/actions/EventActions';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import TextField from '@material-ui/core/TextField';
@@ -23,35 +22,7 @@ class _EventEdit extends Component {
     },
   };
 
-  async componentDidMount() {
-    const eventId = this.props.match.params.eventId;
 
-    if (eventId) {
-      try {
-        const event = await this.props.loadEvent();
-        this.setState({ event });
-      } catch (err) {
-        console.log('eventEdit: cannot load event');
-      }
-=======
-import { EventService } from '../services/EventService'
-import { loadEvent , saveEvent } from '../store/actions/EventActions'
-
-class _EventEdit extends Component {
-
-    state = {
-        event: {
-            title: '',
-            desc: '',
-            category: '',
-            price: '',
-            createdBy: '',
-            startAt: '',
-            place: '',
-            capacity: '',
-            imgUrls: []
-        }
-    }
 
     async componentDidMount() {
 
@@ -73,15 +44,10 @@ class _EventEdit extends Component {
         const field = target.name;
         const value = target.value;
 
-<<<<<<< HEAD
         if (field === 'imgUrls') {
             try {
                 const savedImgUrl = await EventService.uploadImg(ev);
                 this.setState(prevState => ({ event: { ...prevState.event, [field]: [...prevState.event.imgUrls, savedImgUrl] } }))
-=======
-                    <label> Description: </label>
-                    <input  type="text" value={Event.desc} onChange={this.handleInput} name="desc" />
->>>>>>> b4a58757be84aa4118d4a426ea8ff459ab01e5a3
 
             } catch (err) {
                 console.log('edit cmp: cannot upload img')
@@ -106,38 +72,13 @@ class _EventEdit extends Component {
 
     }
 
-    render() {
-        return (
-            <div className="edit">
-                <h1>Edit Area</h1>
-                <form onSubmit={this.onHandelSubmit}>
-                    <input autoFocus type="text" maxLength="100" value={Event.title} placeholder="Event name" name="title" onChange={this.onHandelChange} />
-                    <input type="date" value={Event.startAt} name="startAt" placeholder="Event start time" onChange={this.onHandelChange} />
-                    <input type="text" value={Event.price} name="price" placeholder="Price" onChange={this.onHandelChange} />
-                    <input name="category" placeholder="category" onChange={this.onHandelChange} />
-                    <input type="text" value={Event.place} name="place" placeholder="Place" onChange={this.onHandelChange} />
-                    <input type="text" value={Event.capacity} name="capacity" placeholder="Attendees Limit" onChange={this.onHandelChange} />
-                    <input autoFocus type="text" value={Event.desc} name="desc" placeholder="description" onChange={this.onHandelChange} />
-                    <input type="file" name="imgUrls" onChange={this.onHandelChange} />
-                    <button>Save</button>
-                </form>
-            </div>
-        )
->>>>>>> 9b3c3d09add38a8192628057480adb99110bcbe6
-    }
-  }
+   
 
-  onHandleChange = ({ target }) => {
-    const field = target.name;
-    const value = target.value;
-    this.setState({ [field]: value });
-  };
 
   handleDate = (date) => {
     this.setState((prevState) => ({
       event: { ...prevState.event, startAt: date },
     }));
-    console.log(this.state);
   };
 
   onSaveEvent = (ev) => {
@@ -256,14 +197,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = {
-<<<<<<< HEAD
-  loadEvent,
-};
-=======
     loadEvent,
-    saveEvent,
+    saveEvent
 }
->>>>>>> 9b3c3d09add38a8192628057480adb99110bcbe6
 
 export const EventEdit = connect(
   mapStateToProps,
