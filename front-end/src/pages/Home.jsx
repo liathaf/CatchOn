@@ -36,7 +36,7 @@ class _Home extends Component {
                     </div> */}
                     <div className="landing-inner container">
                         <h1 className="large">Explore new events and meet new people</h1>
-                        <Link to="/login" className="btn btn-primary">Join Venyou</Link>
+                        <Link to="/login" className="btn btn-primary">Join VENYOU</Link>
                     </div>
                 </section>
                 <div className="group-title container">
@@ -58,14 +58,14 @@ class _Home extends Component {
                 </div>
                 <div className="group-title container">
                     <h2>New Events</h2>
-                    <Link to="/event">See More ></Link>
+                    <Link to="/event"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} />
                 </div>
                 <div className="group-title container">
                     <h2>Free Events</h2>
-                    <Link to="/event">See More ></Link>
+                    <Link to="/event"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} />
@@ -73,7 +73,7 @@ class _Home extends Component {
 
                 <section className="about-preview container">
                     <div>
-                    <h2>Check A Random Event</h2>
+                    <h2>Check Out A Random Event</h2>
                     <Link to="/login" className="btn btn-control">Be Spontaneous</Link>
                     </div>
                 </section>

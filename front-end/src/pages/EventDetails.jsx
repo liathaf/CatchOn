@@ -13,6 +13,7 @@ import { SocketService } from '../services/SocketService';
 class _EventDetails extends Component {
     state = {
         currentScrollHeight: 0,
+        display: 'grid',
         loc: null,
     };
 
@@ -33,13 +34,19 @@ class _EventDetails extends Component {
         // work only on componentDidUpdate , why?
         SocketService.on('new review', this.props.loadEvent(eventId));
     }
-
+    
     componentWillUnmount() {
         SocketService.off();
     }
-
+    
     handleScroll = () => {
-        this.setState({ currentScrollHeight: window.scrollY });
+        if (window.visualViewport.width > 960) {
+            this.setState({ currentScrollHeight: window.scrollY });
+        }if (window.pageYOffset > 500 && window.visualViewport.width < 960) {
+            this.setState({ display: 'none' });
+        }else{
+            this.setState({ display: 'grid' });
+        }
     };
 
     onAddReview = async (msg) => {
@@ -64,14 +71,16 @@ class _EventDetails extends Component {
         return (
             event && (
                 <section className="event-detail">
-                    <div className="event-gallery">
-                        {event.imgUrls.map((url, idx) => (
-                            <div key={idx} style={{ backgroundImage: `url(${url})` }}></div>
-                        ))}
+                    <div className="image-slide">
+                        <div className="event-gallery">
+                            {event.imgUrls.map((url, idx) => (
+                                <div key={idx} style={{ backgroundImage: `url(${url})` }}></div>
+                            ))}
+                        </div>
                     </div>
                     <div className="event-main">
                         <div className="middle-content">
-                            <div className="side-content" style={{ marginTop: top }}>
+                            <div className="side-content" style={{ marginTop: top, display: this.state.display }}>
                                 <div className="top-side">
                                     <p className="lead">${event.price}</p>
                                     <p>{event.startAt}</p>
@@ -79,11 +88,11 @@ class _EventDetails extends Component {
                                 <div className="join">
                                     <Link to="">
                                         <span className="btn btn-primary">
-                                            Join <i className="fas fa-plus-circle"></i>
+                                            Join
                                         </span>
                                     </Link>
                                 </div>
-                                <span>created at: {event.createdAt}</span>
+                                {/* <p className="createdAt">created at: {event.createdAt}</p> */}
                                 {/* <p>2/{event.capacity}</p> */}
                             </div>
                             <div className="all-content">
@@ -113,38 +122,40 @@ class _EventDetails extends Component {
                         quia culpa, minima quisquam hic dolorum sint accusamus
                         explicabo iusto in?
                       </p>
-                                <div className="attendees">
-                                    <h2>Attendees</h2>
-                                    {event.attendees.map((attendee, idx) => (
-                                        <Link to={`/user/${attendee._id}`} key={idx}>
-                                            <img
-                                                className="attendees-details"
-                                                src={attendee.imgUrl}>
-                                            </img>
-                                        </Link>
-                                    ))}
-                                </div>
-                                <div className="map">
-                                    {this.state.loc && (
-                                        <MyMapComponent
-                                            isMarkerShown
-                                            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
-                                            loadingElement={<div style={{ height: `100%` }} />}
-                                            containerElement={
-                                                <div style={{ height: `45vh` }} />
-                                            }
-                                            mapElement={<div style={{ height: `100%` }} />}
-                                            lat={this.state.loc.lat}
-                                            lng={this.state.loc.lng}
+                                <div className="bottom-event-content">
+                                    <div className="attendees">
+                                        <h2>Attendees</h2>
+                                        {event.attendees.map((attendee, idx) => (
+                                            <Link to={`/user/${attendee._id}`} key={idx}>
+                                                <img
+                                                    className="attendees-details"
+                                                    src={attendee.imgUrl}>
+                                                </img>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                    <div className="map">
+                                        {this.state.loc && (
+                                            <MyMapComponent
+                                                isMarkerShown
+                                                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
+                                                loadingElement={<div style={{ height: `100%` }} />}
+                                                containerElement={
+                                                    <div style={{ height: `45vh` }} />
+                                                }
+                                                mapElement={<div style={{ height: `100%` }} />}
+                                                lat={this.state.loc.lat}
+                                                lng={this.state.loc.lng}
+                                            />
+                                        )}
+                                    </div>
+                                    <div className="event-chat">
+                                        <h2>Reviews</h2>
+                                        <Review
+                                            onAddReview={this.onAddReview}
+                                            reviews={event.reviews}
                                         />
-                                    )}
-                                </div>
-                                <div className="event-chat">
-                                    <h2>Reviews</h2>
-                                    <Review
-                                        onAddReview={this.onAddReview}
-                                        reviews={event.reviews}
-                                    />
+                                    </div>
                                 </div>
                             </div>
                         </div>
