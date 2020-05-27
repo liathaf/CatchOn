@@ -29,6 +29,10 @@ export function EventPreview(props) {
                             <img className="userImg-preview" src={userImg}></img>
                             <p className="username-prev">{event.createdBy.username}</p>
                         </Link>
+<<<<<<< HEAD
+=======
+                        <div className="user-rank"><i className="fas fa-star"></i><p>5.0</p></div>
+>>>>>>> b4a58757be84aa4118d4a426ea8ff459ab01e5a3
                     </div>
                         <h3>5/10<i className="far fa-user"></i></h3>
                 </div>
@@ -40,7 +44,7 @@ export function EventPreview(props) {
                 <div>
                     <div className="event-time-place">
                         <p>{event.place}</p>
-                        <p>{timeService.convertToRelativeTime(event.startAt)}</p>
+                        {/* <p>{timeService.convertToRelativeTime(event.startAt)}</p> */}
                     </div>
                     {/* <div className="event-price">
                     </div> */}

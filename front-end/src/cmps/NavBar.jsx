@@ -41,7 +41,7 @@ export class _NavBar extends Component {
                 <div className="navbar-content container">
                     <Link className="logo" to="/"><img src={logo}></img></Link>
                     <ul className="links">
-                        <li><Link to="/edit">Create Event</Link></li>
+                        <li><Link to="/event/edit">Create Event</Link></li>
                         {(!user) &&
                             <>
                                 <li><Link to="/signup">Register</Link></li>

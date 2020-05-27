@@ -39,10 +39,15 @@ class _EventEdit extends Component {
         const field = target.name;
         const value = target.value;
 
+<<<<<<< HEAD
         if (field === 'imgUrls') {
             try {
                 const savedImgUrl = await EventService.uploadImg(ev);
                 this.setState(prevState => ({ event: { ...prevState.event, [field]: [...prevState.event.imgUrls, savedImgUrl] } }))
+=======
+                    <label> Description: </label>
+                    <input  type="text" value={Event.desc} onChange={this.handleInput} name="desc" />
+>>>>>>> b4a58757be84aa4118d4a426ea8ff459ab01e5a3
 
             } catch (err) {
                 console.log('edit cmp: cannot upload img')

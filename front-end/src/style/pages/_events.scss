@@ -12,24 +12,37 @@
     }
 
     .event-filter {
-        width: 100%;
+        // width: 100%;
         text-align: center;
 
         .search-input {
-          
-            width: 60%;
-            min-width: 400px;
-            
-            
+            width: 70vw;
+            // height: 2vh;
+            font-size: 1vh;
         }
 
         .filters {
             display: flex;
-            min-width: 400px;
+            min-width: 100vw;
             margin: rem(10px) auto;
-            justify-content: space-around;
+            justify-content: space-evenly;
             width: 60%;
-            min-width: 400px;
+           
+        }
+
+        .category-input {
+            background: none;
+            outline: none;
+            padding: rem(5px);
+            border-radius: rem(5px);
+            &:focus{
+                option:hover{
+                    background-color: grey;
+                }
+            }
+        }
+        div:nth-child(3){
+            height: 6vh;
         }
     }
 }
