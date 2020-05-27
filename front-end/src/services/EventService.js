@@ -32,12 +32,15 @@ function addReview(event, review) {
 
 
 async function save(event) {
-    console.log('in event service');
+    
+    console.log('in event service' , event);
     
     event.createdAt = Date.now();
     event.attendees = [];
     event.reviews = [];
     const savedEvent  = await HttpService.post('event', event);
+    console.log('in event service savedEvent' , savedEvent);
+    
     return savedEvent;
   }
   

@@ -11,7 +11,7 @@ module.exports = {
 }
 
 function _buildCriteria(filterBy) {
-    console.log(filterBy)
+   
     if(!filterBy.title &&  !filterBy.isFree && !filterBy.category && !filterBy.thisMonth){
        return;
     }
@@ -43,7 +43,7 @@ function _buildCriteria(filterBy) {
 
 async function query(filterBy) {
     const filter = _buildCriteria(filterBy)
-    // console.log(filter)
+  
     const collection = await dbService.getCollection('event');
 
     try {
@@ -86,7 +86,6 @@ async function add(event) {
     const collection = await dbService.getCollection('event')
     try {
         await collection.insertOne(event);
-        console.log('*************************************************************' , event)
         return event;
     } catch (err) {
         console.log(`ERROR: cannot insert event`)

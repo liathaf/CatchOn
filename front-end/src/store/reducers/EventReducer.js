@@ -27,7 +27,7 @@ export function EventReducer(state = initialState, action) {
 
         case 'ADD_EVENT':
             return {
-                ...state, event: [...state.event , action.savedEvent]
+                ...state, events: [...state.events , action.savedEvent]
             }
         case 'REMOVE_EVENT':
             return {
@@ -36,7 +36,6 @@ export function EventReducer(state = initialState, action) {
         case 'SET_FILTER':
             return {
                 ...state, currFilter:  action.filter
-                
             }
         default:
             return state

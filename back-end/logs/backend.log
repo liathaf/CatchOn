@@ -868,3 +868,6 @@ Tue, 26 May 2020 13:48:52 GMT - Info - Server is running on port: 3030
 Tue, 26 May 2020 13:58:51 GMT - Info - Server is running on port: 3030
 Tue, 26 May 2020 16:42:19 GMT - Info - Server is running on port: 3030
 >>>>>>> b4a58757be84aa4118d4a426ea8ff459ab01e5a3
+Wed, 27 May 2020 10:29:20 GMT - Error - Cannot get event
+Wed, 27 May 2020 10:29:37 GMT - Error - Cannot get event
+Wed, 27 May 2020 10:30:34 GMT - Error - Cannot get event
