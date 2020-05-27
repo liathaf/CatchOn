@@ -6,6 +6,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import TextField from '@material-ui/core/TextField';
 
+
 class _EventEdit extends Component {
   state = {
     event: {
@@ -83,6 +84,7 @@ class _EventEdit extends Component {
 
   onSaveEvent = (ev) => {
     ev.preventDefault();
+    
     EventService.save(this.state.event)
       .then((savedEvent) => {
         this.props.history.push('/');

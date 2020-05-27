@@ -1,4 +1,6 @@
 import Geocode from "react-geocode";
+import { getDistance } from 'geolib';
+import { EventService } from './EventService';
 
 Geocode.setApiKey("AIzaSyAomBI0lRzP0QpN31wTxSY3V8W8LRVYTHI");
 Geocode.setRegion("il");
@@ -19,6 +21,19 @@ function getLatLng(loc) {
     
 }
 
+async function getClosestEvents(userLoc) {
+    try {
+        const events = await EventService.query()
+       console.log(events)
+
+    } catch {
+
+    }
+  }
+
+  getClosestEvents()
+
 export const GeolocationService = {
     getLatLng
+    
 }
