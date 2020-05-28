@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 import { login } from '../store/actions/UserActions'
 
@@ -75,6 +75,7 @@ class _Login extends Component {
           <div className="form">
             <p style={{ color: "red", fontSize: "0.8rem" }}>{this.state.msg}</p>
             <button className="loginBtn">Continue</button>
+            <div className="signup"><p>New member?</p> <Link to="/signup">Sign up</Link></div>
           </div>
         </form>
       </div>

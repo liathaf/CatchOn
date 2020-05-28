@@ -92,7 +92,7 @@ class _EventDetails extends Component {
 
         var { user, event } = this.props
         const { isAttend } = this.state
-        if (!user) {
+        if (!user || event.price !== 0) {
             
             this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
             return
@@ -122,12 +122,12 @@ class _EventDetails extends Component {
 
         const { event, user } = this.props;
         if (target.style.color === 'black') {
-            // this.setState({isLiked: 'blue'})
+            
             target.style.color = 'blue';
             event.likes.push(user._id)
             await this.props.saveEvent(event)
         } else {
-            // this.setState({isLiked: 'black'})
+           
             target.style.color = 'black';
             const idx = event.likes.find(userInArr => (userInArr === user._id))
             event.likes.splice(idx, 1);
@@ -227,10 +227,10 @@ class _EventDetails extends Component {
                                         )}
                                     </div>
                                 
-                                    {/* {this.props.user &&
+                                    {this.props.user &&
                                         <div>
-                                            <i onClick={this.onToggleLike} className="fas fa-heart" style={{ color: (event.likes.find(userId => userId === user._id)) ? 'blue' : 'black' }} />   {event.likes.length}
-                                        </div>} */}
+                                          <i onClick={this.onToggleLike} className="fas fa-heart" style={{ color: (event.likes.find(userId => userId === user._id)) ? 'blue' : 'black' }} />{event.likes.length}
+                                        </div>}
                                     <div className="event-chat">
                                     <h2>Reviews</h2>
                                     <Review

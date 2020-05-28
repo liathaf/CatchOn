@@ -95,13 +95,25 @@
         border: lightgray solid 1px;
         outline: none;
         cursor: pointer;
-        font-family: Roboto;
         font-size: rem(20px);
         &:hover {
             background-color: rgb(226, 220, 220);
         }
     }
 
+    .signup{
+        display: flex;
+        justify-content: center;
+        margin-inline-end: rem(5px); 
+
+        p{
+            margin-inline-end: rem(3px);;
+        }
+
+        &:hover a{
+            text-decoration: underline;
+        }
+    }
     
 
 }

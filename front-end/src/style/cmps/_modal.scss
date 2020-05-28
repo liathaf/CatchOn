@@ -13,7 +13,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 400px;
+        min-width: 400px;
         height: 175px;
         background-color: white;
         opacity: 0.8;
@@ -25,12 +25,12 @@
             justify-content: center;
             display: flex;
             flex-direction: column;
-            font-size: rem(15px);
+            font-size: rem(18px);
             
 
             .event-title {
                 color:#49beb7;
-                font-size: rem(15px);
+                font-size: rem(18px);
                 display: flex;
                 justify-content: center;
                 margin-bottom: rem(1px);
@@ -66,6 +66,14 @@
                 display: flex;
                 justify-content: center;
                 margin-inline-end: rem(5px); 
+
+                p{
+                    margin-inline-end: rem(3px);;
+                }
+
+                &:hover a{
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -79,3 +87,6 @@
         padding: rem(10px) rem(15px);
     }
 }
+
+
+

@@ -7,7 +7,6 @@ import avatar from '../img/avatar.jpg'
 export function EventPreview(props) {
     const { event } = props
     const price = (event.price === 0) ? "Free" : "$" + event.price;
-    console.log(event)
     const userImg = (event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar;
 
     return (
@@ -20,9 +19,9 @@ export function EventPreview(props) {
             </Link>
             <h5 className="attendees">{event.attendees.length}/{event.capacity}<i className="far fa-user"></i></h5>
             <div className="event-content">
-                {/* <div>
-                    <i className="fas fa-heart">{event.likes.length}</i>
-                </div> */}
+                <div>
+                   {event.likes && <i className="fas fa-heart">{event.likes.length}</i>}
+                </div>
 
                 <div className="event-content">
                     <div className="event-price-title">
