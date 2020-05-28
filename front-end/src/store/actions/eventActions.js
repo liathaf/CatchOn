@@ -37,7 +37,7 @@ export function removeEvent(eventId) {
 
 export function saveEvent(event) {
   
-  console.log("event action:" , event);
+  
   return async (dispatch) => {
 
     try {

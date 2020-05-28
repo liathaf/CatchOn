@@ -31,8 +31,16 @@
         button {
             margin-left: 40px;
             padding: 10px;
-            background-color: rgba(0, 139, 23, 0.644);
-            color: #fff;
+            background-color:#49beb7;
+            border-radius: 8px;
+            color: black;
+            transition: 0.5s;
+            font-size: rem(13px);
+
+            &:hover{
+                background-color: #f34573;
+                color:white
+            }
         }
     }
     .review-msg{

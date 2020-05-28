@@ -29,6 +29,7 @@ export function EventPreview(props) {
                             <img className="userImg-preview" src={userImg}></img>
                             <p className="username-prev">{event.createdBy.username}</p>
                         </Link>
+                        {/* <div className="user-rank"><i className="fas fa-star"></i><p>5.0</p></div> */}
                     </div>
                         <h3>5/10<i className="far fa-user"></i></h3>
                 </div>

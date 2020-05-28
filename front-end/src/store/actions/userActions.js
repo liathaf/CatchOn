@@ -31,10 +31,18 @@ export function signup(userCreds) {
     
   };
 }
+
 export function logout() {
   return async dispatch => {
     await UserService.logout();
     dispatch(setLoggedInUser(null));
+  };
+}
+
+export function updateUser(user) {
+  return async dispatch => {
+    await UserService.updateUser(user);
+    dispatch(setLoggedInUser(user));
   };
 }
 

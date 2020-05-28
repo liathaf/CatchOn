@@ -13,7 +13,7 @@ module.exports = {
 function _buildCriteria(filterBy) {
    
     if(!filterBy.title &&  !filterBy.isFree && !filterBy.category && !filterBy.thisMonth){
-       return;
+       return filterBy;
     }
     const criteria = { $and: []};
     if (filterBy.title) {
@@ -36,7 +36,7 @@ function _buildCriteria(filterBy) {
         criteria.$and.push({ startAt : {$lt: wantedDate}});
     }
 
-    console.log('criteria', criteria)
+
     return criteria;
 }
 

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { EventList } from '../cmps/EventList'
 import { EventFilter } from '../cmps/EventFilter'
-import { loadEvents, removeEvent } from '../store/actions/EventActions'
+import { loadEvents, removeEvent } from '../store/actions/EventActions';
 
 class _Events extends Component {
     state = {
@@ -53,3 +53,5 @@ const mapDispatchToProps = {
     
 }
 export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)
+
+

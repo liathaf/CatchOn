@@ -5,45 +5,45 @@ import Axios from 'axios';
 
 function query(filterBy) {
 
-	var queryStr = '';
-	if (filterBy) {
-		if (filterBy.title) queryStr += `title=${filterBy.title}`;
+    var queryStr = '';
+    if (filterBy) {
+        if (filterBy.title) queryStr += `title=${filterBy.title}`;
         if (filterBy.category) queryStr += `&category=${filterBy.category}`;
         if (filterBy.isFree) queryStr += `&isFree=${filterBy.isFree}`
         if (filterBy.thisMonth) queryStr += `&thisMonth=${filterBy.thisMonth}`
     }
-    
 
-	return HttpService.get(`event?${queryStr}`);
+
+    return HttpService.get(`event?${queryStr}`);
 }
 
 function getById(eventId) {
-	return HttpService.get(`event/${eventId}`);
+    return HttpService.get(`event/${eventId}`);
 }
 
 
 function addReview(event, review) {
-	
-	review.createdAt = Date.now();
-	review._id = UtilService.makeId();
-	event.reviews.push(review);
-	return HttpService.put(`event/${event._id}`, event);
+
+    review.createdAt = Date.now();
+    review._id = UtilService.makeId();
+    event.reviews.push(review);
+    save(event);
 }
 
 
 async function save(event) {
-    
-    console.log('in event service' , event);
-    
-    event.createdAt = Date.now();
-    event.attendees = [];
-    event.reviews = [];
-    const savedEvent  = await HttpService.post('event', event);
-    console.log('in event service savedEvent' , savedEvent);
-    
+    var savedEvent; 
+    if (!event._id) {
+        event.createdAt = Date.now();
+        event.attendees = [];
+        event.reviews = [];
+        var savedEvent = await HttpService.post('event', event);
+    } else {
+        var savedEvent = await HttpService.put(`event/${event._id}`, event);
+    }
     return savedEvent;
-  }
-  
+}
+
 
 
 async function uploadImg(ev) {
@@ -62,13 +62,16 @@ async function uploadImg(ev) {
     }
 }
 
-
+function findIdxById(event , userId){
+    return event.attendees.findIndex(user => user._id === userId)
+}
 
 export const EventService = {
-	query,
-	getById,
+    query,
+    getById,
     addReview,
     save,
-	uploadImg,
+    uploadImg,
+    findIdxById
 }
 

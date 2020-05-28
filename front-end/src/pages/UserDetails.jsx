@@ -16,14 +16,15 @@ class _UserDetails extends Component {
 
     render() {
         const { user } = this.props;
-       
+      
         return (
             (user) &&
             <section className="container">
                 <div className="profile-grid">
                     <div className="profile-top">
+
                         <div>
-                            <img src={(user.imgUrl)? user.imgUrl : avatar} />
+                            <img src={(user.imgUrl) ? user.imgUrl : avatar} />
 
                             <div className="icons">
                                 <a href="#" target="_blank" rel="noopener noreferrer">
@@ -43,64 +44,42 @@ class _UserDetails extends Component {
                                 </a>
                             </div>
                         </div>
+
                         <div className="profile-about">
-                            <h1 className="large">{user.fullName}</h1>
-                            <p className="lead">{user.job}</p>
-                            <p>{user.location}</p>
-                            <h2 className="text-primary">{user.fullName} Bio</h2>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed
-                                doloremque nesciunt, repellendus nostrum deleniti recusandae nobis
-                                neque modi perspiciatis similique?
-                            </p>
+                            <h2 className="text-primary">{user.username}</h2>
+                            <p>{user.dsc}</p>
                             <div className="line"></div>
-                            <h2 className="text-primary">Passions</h2>
-                            <div className="passions">
-                                <div><i className="fa fa-check"></i> Cooking</div>
-                                <div><i className="fa fa-check"></i> Developing</div>
-                                <div><i className="fa fa-check"></i> Running</div>
-                                <div><i className="fa fa-check"></i> Sky Diving</div>
-                            </div>
                         </div>
+
                     </div>
 
                     <div className="profile-event">
                         <h1>
-                            <i className="fas fa-calendar-week"></i> Events
+                            <i className="fas fa-calendar-week"></i> {`${user.username.split(' ')[0]}'s Events`}
                         </h1>
-                        <div className="event">
-                            <div>
-                                <h4><a href="#" target="_blank"
-                                    rel="">Yoga at the beach</a></h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Repellat, laborum!
-                                </p>
-                            </div>
-                            <div>
-                                <ul>
-                                    <li>⭐ ⭐ ⭐ ⭐</li>
-                                    <li>Attends: 25</li>
-                                </ul>
-                            </div>
-                        </div>
                         <div className="line"></div>
-                        <div className="event">
-                            <div>
-                                <h4><a href="#" target="_blank"
-                                    rel="">Eating with gumball</a></h4>
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                    Repellat, laborum!
-                    </p>
-                            </div>
-                            <div>
-                                <ul>
-                                    <li>⭐ ⭐ ⭐ ⭐ ⭐</li>
-                                    <li>Attends: 25</li>
-                                </ul>
-                            </div>
-                        </div>
+                        {user.attendedEvents.map((event , idx) => {
+                            if (idx < 2) return (<div className="event" kay={event._id}>
+                                <Link to={`/event/${event._id}`}>
+                                    <h4>{event.title}</h4>
+                                    <img className="event-img-user-details" src={event.imgUrl}></img>
+                                </Link>
+                            </div>)
+                        })}
+                        <h1>
+                            <i className="fas fa-calendar-week"></i> {`${user.username.split(' ')[0]}'s created Events`}
+                        </h1>
+                        <div className="line"></div>
+                        {user.createdEvents.map((event , idx) => {
+                            if (idx < 2) return (<div className="event" kay={event._id}>
+                                <Link to={`/event/${event._id}`}>
+                                    <h4>
+                                        {event.title}
+                                    </h4>
+                                    <img className="event-img-user-details" src={event.imgUrl}></img>
+                                </Link>
+                            </div>)
+                        })}
                     </div>
                 </div>
             </section>
@@ -119,3 +98,4 @@ const mapDispatchToProps = {
 }
 
 export const UserDetails = connect(mapStateToProps, mapDispatchToProps)(_UserDetails)
+
