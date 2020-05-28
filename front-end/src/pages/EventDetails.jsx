@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import moment from 'moment'
 import { MyMapComponent } from '../cmps/Map';
-import { loadEvent, addReview } from '../store/actions/EventActions';
+import { loadEvent, addReview, saveEvent } from '../store/actions/EventActions';
 import { Review } from '../cmps/Review';
 import { GeolocationService } from '../services/GeolocationService';
 import { SocketService } from '../services/SocketService';
@@ -11,40 +11,49 @@ import { SocketService } from '../services/SocketService';
 
 
 class _EventDetails extends Component {
+
     state = {
         currentScrollHeight: 0,
         display: 'grid',
         loc: null,
     };
 
+
     componentDidMount() {
+
         SocketService.setup();
         const { eventId } = this.props.match.params;
         SocketService.on('new review', this.props.loadEvent(eventId));
         window.addEventListener('scroll', this.handleScroll, { passive: true });
+
     }
 
     componentDidUpdate() {
-        if (this.props.event && !this.state.loc) {
-            GeolocationService.getLatLng(this.props.event.place).then((loc) =>
+        const { event } = this.props;
+        //Map
+        if (event && !this.state.loc) {
+            GeolocationService.getLatLng(event.place).then((loc) =>
                 this.setState({ loc })
             );
+
         }
+
+        // Review
         const { eventId } = this.props.match.params;
         // work only on componentDidUpdate , why?
         SocketService.on('new review', this.props.loadEvent(eventId));
     }
-    
+
     componentWillUnmount() {
         SocketService.off();
     }
-    
+
     handleScroll = () => {
         if (window.visualViewport.width > 960) {
             this.setState({ currentScrollHeight: window.scrollY });
-        }if (window.pageYOffset > 500 && window.visualViewport.width < 960) {
+        } if (window.pageYOffset > 500 && window.visualViewport.width < 960) {
             this.setState({ display: 'none' });
-        }else{
+        } else {
             this.setState({ display: 'grid' });
         }
     };
@@ -61,14 +70,35 @@ class _EventDetails extends Component {
 
     }
 
+    onToggleLike = async ({ target }) => {
+
+        const { event, user } = this.props;
+        if (target.style.color === 'black') {
+            // this.setState({isLiked: 'blue'})
+            target.style.color = 'blue';
+            event.likes.push(user._id)
+            await this.props.saveEvent(event)
+        } else {
+            // this.setState({isLiked: 'black'})
+            target.style.color = 'black';
+            const idx = event.likes.find(userInArr => (userInArr === user._id))
+            event.likes.splice(idx, 1);
+            await this.props.saveEvent(event)
+        }
+
+    }
+
     render() {
-        const { event } = this.props;
+        const { event, user } = this.props;
+
         const top =
             this.state.currentScrollHeight > 360
                 ? this.state.currentScrollHeight - 360
                 : 0;
 
         return (
+
+
             event && (
                 <section className="event-detail">
                     <div className="image-slide">
@@ -83,7 +113,7 @@ class _EventDetails extends Component {
                             <div className="side-content" style={{ marginTop: top, display: this.state.display }}>
                                 <div className="top-side">
                                     <p>{event.place}</p>
-                                    <p>{event.startAt}</p>
+                                    <p>{moment.unix(event.startAt).format("LLL")}</p>
                                 </div>
                                 <div className="join">
                                     <h2>{event.title}</h2>
@@ -120,7 +150,7 @@ class _EventDetails extends Component {
                                 <h2>What we're about</h2>
                                 <p>
                                     {event.desc}
-                      </p>
+                                </p>
                                 <div className="bottom-event-content">
                                     <div className="attendees">
                                         <h2>Attendees</h2>
@@ -155,6 +185,19 @@ class _EventDetails extends Component {
                                             reviews={event.reviews}
                                         />
                                     </div>
+
+
+                                    {/* {this.props.user &&
+                                        <div>
+                                            <i onClick={this.onToggleLike} className="fas fa-heart" style={{ color: (event.likes.find(userId => userId === user._id)) ? 'blue' : 'black' }} />   {event.likes.length}
+                                        </div>} */}
+                                    <div className="event-chat">
+                                        <h2>Reviews</h2>
+                                        <Review
+                                            onAddReview={this.onAddReview}
+                                            reviews={event.reviews}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -174,6 +217,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     loadEvent,
+    saveEvent,
     addReview,
 };
 

@@ -1,23 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { EventService } from '../services/EventService'
-import { loadEvent , saveEvent } from '../store/actions/EventActions'
+import { EventService } from '../services/EventService';
+import { loadEvent, saveEvent } from '../store/actions/EventActions';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import TextField from '@material-ui/core/TextField';
+
 
 class _EventEdit extends Component {
+  state = {
+    event: {
+      title: '',
+      desc: '',
+      category: '',
+      price: '',
+      createdBy: '',
+      createdAt: '',
+      startAt: new Date(),
+      place: '',
+      capacity: '',
+      imgUrls: [],
+    },
+  };
 
-    state = {
-        event: {
-            title: '',
-            desc: '',
-            category: '',
-            price: '',
-            createdBy: '',
-            startAt: '',
-            place: '',
-            capacity: '',
-            imgUrls: []
-        }
-    }
+
 
     async componentDidMount() {
 
@@ -66,36 +72,137 @@ class _EventEdit extends Component {
 
     }
 
-    render() {
-        return (
-            <div className="edit">
-                <h1>Edit Area</h1>
-                <form onSubmit={this.onHandelSubmit}>
-                    <input autoFocus type="text" maxLength="100" value={Event.title} placeholder="Event name" name="title" onChange={this.onHandelChange} />
-                    <input type="date" value={Event.startAt} name="startAt" placeholder="Event start time" onChange={this.onHandelChange} />
-                    <input type="text" value={Event.price} name="price" placeholder="Price" onChange={this.onHandelChange} />
-                    <input name="category" placeholder="category" onChange={this.onHandelChange} />
-                    <input type="text" value={Event.place} name="place" placeholder="Place" onChange={this.onHandelChange} />
-                    <input type="text" value={Event.capacity} name="capacity" placeholder="Attendees Limit" onChange={this.onHandelChange} />
-                    <input autoFocus type="text" value={Event.desc} name="desc" placeholder="description" onChange={this.onHandelChange} />
-                    <input type="file" name="imgUrls" onChange={this.onHandelChange} />
-                    <button>Save</button>
-                </form>
-            </div>
-        )
-    }
-}
+   
 
+
+  handleDate = (date) => {
+    this.setState((prevState) => ({
+      event: { ...prevState.event, startAt: date },
+    }));
+  };
+
+  onSaveEvent = (ev) => {
+    ev.preventDefault();
+    
+    EventService.save(this.state.event)
+      .then((savedEvent) => {
+        this.props.history.push('/');
+      })
+      .catch((err) => {
+        alert('Ops somthing went wrong');
+      });
+  };
+
+  render() {
+    return (
+      <div className="edit">
+        <h2>Edit Area</h2>
+        <form onSubmit={this.onSaveEvent}>
+          <TextField
+            className="edit-input"
+            size="small"
+            label="Title"
+            autoFocus
+            type="text"
+            placeholder="Title"
+            maxLength="100"
+            value={Event.title}
+            onChange={this.onHandleChange}
+            name="title"
+            variant="outlined"
+          />
+          <TextField
+          className="edit-input"
+            size="small"
+            label="Description"
+            value={Event.desc}
+            onChange={this.onHandleChange}
+            name="desc"
+            type="text"
+            placeholder="Description"
+            variant="outlined"
+          />
+          <TextField
+          className="edit-input"
+            size="small"
+            label="Price"
+            type="text"
+            placeholder="Price"
+            value={Event.price}
+            onChange={this.onHandleChange}
+            name="price"
+            variant="outlined"
+          />
+          <TextField
+          className="edit-input"
+            size="small"
+            label="Address"
+            type="text"
+            placeholder="Address"
+            value={Event.place}
+            onChange={this.onHandleChange}
+            name="place"
+            variant="outlined"
+          />
+          <TextField
+          className="edit-input"
+            size="small"
+            label="Capacity"
+            type="text"
+            placeholder="Capacity"
+            value={Event.capacity}
+            onChange={this.onHandleChange}
+            name="capacity"
+            variant="outlined"
+          />
+
+          <DatePicker
+            selected={this.state.event.startAt}
+            className="date"
+            showTimeSelect
+            dateFormat="Pp"
+            onChange={this.handleDate}
+            name="startAt"
+          />
+
+          <select
+            className="category-input"
+            name="category"
+            value={Event.category}
+            onChange={this.onHandleChange}
+          >
+            <option value="">Category</option>
+            <option value="Sport">Sport</option>
+            <option value="Health">Health</option>
+            <option value="Animals">Animals</option>
+          </select>
+
+          <input
+          className="img-input"
+            type="file"
+            onChange={this.onHandleChange}
+            name="imgUrls"
+          />
+
+          <button className="save">Save</button>
+        </form>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = (state) => {
-    return {
-        event: state.events.currEvent,
-    }
-}
+  return {
+    event: state.events.currEvent,
+  };
+};
 
 const mapDispatchToProps = {
     loadEvent,
-    saveEvent,
+    saveEvent
 }
 
-export const EventEdit = connect(mapStateToProps, mapDispatchToProps)(_EventEdit)
+export const EventEdit = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_EventEdit);

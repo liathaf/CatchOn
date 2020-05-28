@@ -13,7 +13,7 @@ async function getEvents(req, res) {
 }
 
 async function getEvent(req, res) {
-
+  
     try {
         const event = await eventService.getById(req.params.eventId);
         res.send(event);

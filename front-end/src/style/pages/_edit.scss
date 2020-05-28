@@ -2,30 +2,49 @@
     position: relative; 
     width: 80vw;
     margin: rem(100px) auto;
-
-    h1 {
-        text-align: center;
-    }
-
-    form {
-    display: flex;
-    flex-direction: column;
+    border: 1px solid rgb(212, 207, 207);
+    border-radius: 5px;
+    text-align: center;
     
-
-        input {
-            width: 400px;
-            padding: 0.5rem;
-            margin: 1rem auto;
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .edit-input {
+            margin: rem(5px);
+            width: 70%;
+            text-align: center;
         }
 
-        button {
-            max-width: 100px;
-            padding: 0.5rem;
-            margin: 0.5rem auto;
+        .date {
+            width: rem(200px);
+            padding: rem(5px);
+            border-radius: 10px;
+            background: none;
+            border: solid 1px rgb(212, 207, 207);
+            outline: none;
+            text-align: center;
+            margin: rem(15px) 0;
         }
 
-        label {
-            margin: 0.5rem auto;
+        .category-input {
+            background: none;
+            outline: none;
+            padding: rem(5px);
+            border-radius: rem(5px);
+            margin: rem(5px) 0;
+        }
+
+        .img-input {
+            border: solid 1px rgb(212, 207, 207);
+                margin: rem(5px) 0;
+                border-radius: 10px;
+ 
         }
     }
+
+    
+   
+
+    
 }
