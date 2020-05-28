@@ -1,4 +1,9 @@
 <<<<<<< HEAD
+Tue, 26 May 2020 16:42:31 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 18:07:36 GMT - Info - Server is running on port: 3030
+Tue, 26 May 2020 19:41:57 GMT - Info - Server is running on port: 3030
+=======
+<<<<<<< HEAD
 Tue, 26 May 2020 16:34:03 GMT - Info - Server is running on port: 3030
 Tue, 26 May 2020 16:36:07 GMT - Info - Server is running on port: 3030
 Tue, 26 May 2020 17:32:38 GMT - Debug - auth.service - login with email: mati@gmail.com
@@ -888,7 +893,31 @@ Wed, 27 May 2020 10:29:37 GMT - Error - Cannot get event
 Wed, 27 May 2020 10:30:34 GMT - Error - Cannot get event
 =======
 >>>>>>> 9b3c3d09add38a8192628057480adb99110bcbe6
+<<<<<<< HEAD
+Wed, 27 May 2020 07:44:09 GMT - Info - Server is running on port: 3030
+Wed, 27 May 2020 08:26:48 GMT - Info - Server is running on port: 3030
+Wed, 27 May 2020 08:52:07 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:07 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:07 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:07 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:08 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:08 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:08 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 08:52:09 GMT - Error - Cannot get event
+Wed, 27 May 2020 11:23:25 GMT - Info - Server is running on port: 3030
+Wed, 27 May 2020 14:20:30 GMT - Error - Cannot get event
+=======
 Wed, 27 May 2020 11:25:04 GMT - Error - Cannot get event
+<<<<<<< HEAD
 >>>>>>> c6bf711e73e3ce40dc694802e8eda121cbbaa435
 Wed, 27 May 2020 11:39:20 GMT - Info - Server is running on port: 3030
 Wed, 27 May 2020 16:44:24 GMT - Debug - , 
@@ -981,3 +1010,29 @@ Thu, 28 May 2020 09:57:49 GMT - Debug - auth.service - signup with email: puki@g
 Thu, 28 May 2020 09:57:49 GMT - Debug - auth.route - new account created: {"email":"puki@gmail.com","password":"$2b$10$vGQ0JP0cTh/32aP3Kf2sl..enGwaSGSufAZxi79gZXWrHVO5LoNze","username":"puki","imgUrl":"http://res.cloudinary.com/dlzwnajfq/image/upload/v1590659865/ji4vwg9zbq1dl3nlmyz1.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ecf8b1d1f46efe13c501341"}
 Thu, 28 May 2020 09:57:49 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 10:12:42 GMT - Info - Server is running on port: 3030
+=======
+Wed, 27 May 2020 15:05:30 GMT - Error - Cannot get event
+Wed, 27 May 2020 15:05:39 GMT - Error - Cannot get event
+Wed, 27 May 2020 15:20:49 GMT - Error - Cannot get event
+Wed, 27 May 2020 15:20:51 GMT - Error - Cannot get event
+Wed, 27 May 2020 15:20:51 GMT - Error - Cannot get event
+Wed, 27 May 2020 15:45:03 GMT - Error - Cannot get event
+Wed, 27 May 2020 15:45:04 GMT - Error - Cannot get event
+Wed, 27 May 2020 15:45:05 GMT - Error - Cannot get event
+Wed, 27 May 2020 18:42:54 GMT - Info - Server is running on port: 3030
+Wed, 27 May 2020 18:45:57 GMT - Info - Server is running on port: 3030
+Wed, 27 May 2020 18:47:20 GMT - Info - Server is running on port: 3030
+Wed, 27 May 2020 18:56:28 GMT - Info - Server is running on port: 3030
+Wed, 27 May 2020 19:23:19 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Wed, 27 May 2020 19:23:36 GMT - Debug - adi, adi
+Wed, 27 May 2020 19:23:36 GMT - Debug - auth.service - signup with email: adi, username: adi
+Wed, 27 May 2020 19:23:36 GMT - Debug - auth.route - new account created: {"email":"adi","password":"$2b$10$eDw5Jdtd4NgO2auUmw0HBeMz.iN/iJcU/w.J3Wsd4jpZwIP8X5vxO","username":"adi","imgUrl":"","attendedEvents":[],"isAdmin":false,"_id":"5ecebe384f93f431343bc02b"}
+Wed, 27 May 2020 19:23:36 GMT - Debug - auth.service - login with email: adi
+Wed, 27 May 2020 19:25:34 GMT - Debug - auth.service - login with email: adi
+Wed, 27 May 2020 20:17:24 GMT - Debug - auth.service - login with email: adi
+Wed, 27 May 2020 20:21:48 GMT - Debug - auth.service - login with email: adi
+Wed, 27 May 2020 21:35:00 GMT - Debug - auth.service - login with email: adi
+Wed, 27 May 2020 22:00:11 GMT - Debug - auth.service - login with email: adi
+>>>>>>> 84a5f648e35b7713936671113279bdf001832b9e
+>>>>>>> 32862b1c793e6dca4d6f1dc25c55df64a9507b67
+Thu, 28 May 2020 11:22:55 GMT - Debug - auth.service - login with email: puki@gmail.com

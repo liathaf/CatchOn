@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import avatar from '../img/avatar.jpg'
 
+import moment from 'moment'
 import { MyMapComponent } from '../cmps/Map';
 import { GeolocationService } from '../services/GeolocationService';
 
@@ -21,10 +22,12 @@ class _EventDetails extends Component {
 
     state = {
         currentScrollHeight: 0,
+        display: 'grid',
         loc: null,
         isAttend: false,
         isOpenModal: false
     };
+
 
     componentDidMount() {
 
@@ -40,18 +43,23 @@ class _EventDetails extends Component {
         const isAttend = (user) ? UserService.isAttend(user, eventId) : ''
         this.setState({ isAttend })
     }
+
+
     loadEvent = () => {
         const { eventId } = this.props.match.params;
         this.props.loadEvent(eventId)
     }
 
-    // componentDidUpdate() {
-    //     if (this.props.event && !this.state.loc) {
-    //         GeolocationService.getLatLng(this.props.event.place).then((loc) =>
-    //             this.setState({ loc })
-    //         );
-    //     }
-    // }
+    componentDidUpdate() {
+        const { event } = this.props;
+        //Map
+        if (event && !this.state.loc) {
+            GeolocationService.getLatLng(event.place).then((loc) =>
+                this.setState({ loc })
+            );
+
+        }
+    }
 
     componentWillUnmount() {
         SocketService.off('new review', this.loadEvent);
@@ -60,7 +68,13 @@ class _EventDetails extends Component {
     }
 
     handleScroll = () => {
-        this.setState({ currentScrollHeight: window.scrollY });
+        if (window.visualViewport.width > 960) {
+            this.setState({ currentScrollHeight: window.scrollY });
+        } if (window.pageYOffset > 500 && window.visualViewport.width < 960) {
+            this.setState({ display: 'none' });
+        } else {
+            this.setState({ display: 'grid' });
+        }
     };
 
     onAddReview = async (msg) => {
@@ -100,29 +114,54 @@ class _EventDetails extends Component {
     }
 
     onRemoveModal = () =>{
-        console.log('hi')
         this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
     }
 
+
+    onToggleLike = async ({ target }) => {
+
+        const { event, user } = this.props;
+        if (target.style.color === 'black') {
+            // this.setState({isLiked: 'blue'})
+            target.style.color = 'blue';
+            event.likes.push(user._id)
+            await this.props.saveEvent(event)
+        } else {
+            // this.setState({isLiked: 'black'})
+            target.style.color = 'black';
+            const idx = event.likes.find(userInArr => (userInArr === user._id))
+            event.likes.splice(idx, 1);
+            await this.props.saveEvent(event)
+        }
+
+    }
+
     render() {
-        const { event } = this.props;
-        const top = this.state.currentScrollHeight > 360
-            ? this.state.currentScrollHeight - 360
-            : 0;
+        const { event, user } = this.props;
+
+        const top =
+            this.state.currentScrollHeight > 360
+                ? this.state.currentScrollHeight - 360
+                : 0;
+
         return (
+
+
             event && (
                 <section className="event-detail">
-                    <div className="event-gallery">
-                        {event.imgUrls.map((url, idx) => (
-                            <div key={idx} style={{ backgroundImage: `url(${url})` }}></div>
-                        ))}
+                    <div className="image-slide">
+                        <div className="event-gallery">
+                            {event.imgUrls.map((url, idx) => (
+                                <div key={idx} style={{ backgroundImage: `url(${url})` }}></div>
+                            ))}
+                        </div>
                     </div>
                     <div className="event-main">
                         <div className="middle-content">
-                            <div className="side-content" style={{ marginTop: top }}>
+                            <div className="side-content" style={{ marginTop: top, display: this.state.display }}>
                                 <div className="top-side">
                                     <p>{event.place}</p>
-                                    <p>{event.startAt}</p>
+                                    <p>{moment.unix(event.startAt).format("LLL")}</p>
                                 </div>
                                 <div className="join">
                                     <h2>{event.title}</h2>
@@ -135,6 +174,7 @@ class _EventDetails extends Component {
                                     </span>
 
                                 </div>
+                                {/* <p className="createdAt">created at: {event.createdAt}</p> */}
                                 {/* <p>2/{event.capacity}</p> */}
                             </div>
                             <div className="all-content">
@@ -156,40 +196,49 @@ class _EventDetails extends Component {
                                 <div className="line"></div>
 
                                 <h2>What we're about</h2>
-                                <p>{event.desc}</p>
-                                <div className="attendees">
-                                    <h2>Attendees</h2>
-                                    {event.attendees.map((attendee, idx) => (
-                                        <Link to={`/user/${attendee._id}`} key={idx}>
-                                            <img
-                                                className="attendees-details"
-                                                src={(attendee.imgUrl) ? attendee.imgUrl : avatar}>
-                                            </img>
-                                        </Link>
-                                    ))}
-                                </div>
-                                <div className="map">
-                                    {this.state.loc && (
-                                        <MyMapComponent
-                                            isMarkerShown
-                                            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
-                                            loadingElement={<div style={{ height: `100%` }} />}
-                                            containerElement={
-                                                <div style={{ height: `45vh` }} />
-                                            }
-                                            mapElement={<div style={{ height: `100%` }} />}
-                                            lat={this.state.loc.lat}
-                                            lng={this.state.loc.lng}
-                                        />
-                                    )}
-                                </div>
-                                <div className="event-chat">
+                                <p>
+                                    {event.desc}
+                                </p>
+                                <div className="bottom-event-content">
+                                    <div className="attendees">
+                                        <h2>Attendees</h2>
+                                        {event.attendees.map((attendee, idx) => (
+                                            <Link to={`/user/${attendee._id}`} key={idx}>
+                                                <img
+                                                    className="attendees-details"
+                                                    src={attendee.imgUrl}>
+                                                </img>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                    <div className="map">
+                                        {this.state.loc && (
+                                            <MyMapComponent
+                                                isMarkerShown
+                                                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
+                                                loadingElement={<div style={{ height: `100%` }} />}
+                                                containerElement={
+                                                    <div style={{ height: `45vh` }} />
+                                                }
+                                                mapElement={<div style={{ height: `100%` }} />}
+                                                lat={this.state.loc.lat}
+                                                lng={this.state.loc.lng}
+                                            />
+                                        )}
+                                    </div>
+                                
+                                    {/* {this.props.user &&
+                                        <div>
+                                            <i onClick={this.onToggleLike} className="fas fa-heart" style={{ color: (event.likes.find(userId => userId === user._id)) ? 'blue' : 'black' }} />   {event.likes.length}
+                                        </div>} */}
+                                    <div className="event-chat">
                                     <h2>Reviews</h2>
                                     <Review
                                         onAddReview={this.onAddReview}
                                         reviews={event.reviews}
                                     />
                                     {(this.state.isOpenModal) && <Modal event={event} onRemoveModal={this.onRemoveModal} />}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -209,6 +258,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     loadEvent,
+    saveEvent,
     addReview,
     updateUser,
     saveEvent

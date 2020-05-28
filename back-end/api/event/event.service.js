@@ -60,6 +60,7 @@ async function getById(eventId) {
     const collection = await dbService.getCollection('event');
     try {
         const event = await collection.findOne({ "_id": ObjectId(eventId) });
+ 
         return event;
     } catch (err) {
         console.log('ERROR: cannot find event');

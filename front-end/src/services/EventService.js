@@ -1,7 +1,7 @@
 import { UtilService } from './UtileService'
 import HttpService from './HttpService'
 import Axios from 'axios';
-
+import moment from 'moment'
 
 function query(filterBy) {
 
@@ -34,16 +34,26 @@ function addReview(event, review) {
 async function save(event) {
     var savedEvent; 
     if (!event._id) {
+        const timestamp = moment.utc(event.startAt).unix()
+        event.startAt = timestamp
+    
         event.createdAt = Date.now();
         event.attendees = [];
         event.reviews = [];
-        var savedEvent = await HttpService.post('event', event);
-    } else {
-        var savedEvent = await HttpService.put(`event/${event._id}`, event);
+        const savedEvent  = await HttpService.post('event', event);
+       
+
+    }
+    else {
+        const savedEvent  = await HttpService.put(`event/${event._id}`, event);
+        
     }
     return savedEvent;
 }
 
+
+
+  
 
 
 async function uploadImg(ev) {
