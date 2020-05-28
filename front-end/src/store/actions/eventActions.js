@@ -36,11 +36,13 @@ export function removeEvent(eventId) {
 }
 
 export function saveEvent(event) {
+
   return async (dispatch) => {
+
     try {
       const type = event._id ? 'UPDATE_EVENT' : 'ADD_EVENT';
-      await EventService.save(event);
-      dispatch({ type, event });
+      const savedEvent = await EventService.save(event);
+      dispatch({ type, savedEvent });
     } catch (err) {
       console.log('cant save event');
     }

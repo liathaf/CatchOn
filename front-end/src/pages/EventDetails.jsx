@@ -82,11 +82,15 @@ class _EventDetails extends Component {
                         <div className="middle-content">
                             <div className="side-content" style={{ marginTop: top, display: this.state.display }}>
                                 <div className="top-side">
-                                    <p className="lead">${event.price}</p>
+                                    <p>{event.place}</p>
                                     <p>{event.startAt}</p>
                                 </div>
                                 <div className="join">
-                                    <Link to="">
+                                    <h2>{event.title}</h2>
+                                    <p className={`event-price ${(event.price === 0) ? 'free' : ''}`}>
+                                        {(event.price === 0) ? "Free" : "$" + event.price}
+                                    </p>
+                                    <Link to="/login">
                                         <span className="btn btn-primary">
                                             Join
                                         </span>
@@ -106,8 +110,7 @@ class _EventDetails extends Component {
                                             <img
                                                 className="userImg-details"
                                                 src={event.createdBy.imgUrl} />
-                                            <p>{event.createdBy.userName}</p>
-                                            {/* <p>{event.createdBy.rank}</p> */}
+                                            <p>{event.createdBy.username}</p>
                                         </div>
                                     </Link>
                                 </div>
@@ -116,11 +119,7 @@ class _EventDetails extends Component {
 
                                 <h2>What we're about</h2>
                                 <p>
-                                    {event.desc}. Lorem ipsum dolor, sit amet consectetur
-                        adipisicing elit. Officiis eaque consequuntur atque.
-                        Doloremque, molestias debitis vel eligendi itaque eius
-                        quia culpa, minima quisquam hic dolorum sint accusamus
-                        explicabo iusto in?
+                                    {event.desc}
                       </p>
                                 <div className="bottom-event-content">
                                     <div className="attendees">

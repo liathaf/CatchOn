@@ -2,42 +2,52 @@
 const dbService = require('../../service/db.service');
 const ObjectId = require('mongodb').ObjectId;
 
+
 module.exports = {
     query,
     getById,
     update,
+    add
 }
 
 function _buildCriteria(filterBy) {
-    
-    const criteria = {};
+    console.log(filterBy)
+    if(!filterBy.title &&  !filterBy.isFree && !filterBy.category && !filterBy.thisMonth){
+       return;
+    }
+    const criteria = { $and: []};
     if (filterBy.title) {
-        criteria.title =  {'$regex': filterBy.title, '$options': 'i'}
-        // criteria.desc =  {'$regex': filterBy.title, '$options': 'i'}
-        // criteria.place =  {'$regex': filterBy.title, '$options': 'i'}
+        
+        criteria.$and.push({ $or: [{ title: {'$regex': filterBy.title, '$options': 'i'}}, { desc: {'$regex': filterBy.title, '$options': 'i'}}, { place: {'$regex': filterBy.title, '$options': 'i'}}]});
+  
+     
     }
     if (filterBy.category) {
-        criteria.category =  filterBy.category
+        criteria.$and.push({ category: {'$regex': filterBy.category, '$options': 'i'}})
+        
     }
     if (filterBy.isFree) {
-        criteria.price = {$eq: 0}
+        criteria.$and.push({ price:  {$eq: 0}})
+        
     }
     if (filterBy.thisMonth) {
-        criteria.startAt = {$eq: 0}
-    }
     
+        const wantedDate = Date.now() + 2678400000;
+        criteria.$and.push({ startAt : {$lt: wantedDate}});
+    }
+
+    console.log('criteria', criteria)
     return criteria;
 }
 
 
 async function query(filterBy) {
     const filter = _buildCriteria(filterBy)
-   
+    // console.log(filter)
     const collection = await dbService.getCollection('event');
 
     try {
         let events = await collection.find(filter).toArray();
-        console.log(events.length)
         return events;
     } catch (err) {
         console.log('ERROR: cannot find events');
@@ -66,6 +76,20 @@ async function update(event) {
         return event;
     } catch (err) {
         console.log(`ERROR: cannot update event ${event._id}`);
+        throw err;
+    }
+}
+
+
+async function add(event) {
+
+    const collection = await dbService.getCollection('event')
+    try {
+        await collection.insertOne(event);
+        console.log('*************************************************************' , event)
+        return event;
+    } catch (err) {
+        console.log(`ERROR: cannot insert event`)
         throw err;
     }
 }

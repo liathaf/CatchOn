@@ -15,37 +15,23 @@ export function EventPreview(props) {
             <Link to={`/event/${event._id}`}>
                 <img className="event-img" src={event.imgUrls[0]} />
             </Link>
-            {/* <div className="button-container">
-                <button className="btn" onClick={() => {
-                 imageChoice+1;
-                }}>left</button>
-                <button className="btn">right</button>
-            </div> */}
-            <div className="event-content">
-                <div className="content-top">
-                    <div className="user-rank-avatar">
-                        <Link to={`/user/${event.createdBy._id}`} className="usr-prev">
+                        <Link to={`/user/${event.createdBy._id}`} className="user-prev">
                             <img className="userImg-preview" src={userImg}></img>
-                            <p className="username-prev">{event.createdBy.username}</p>
                         </Link>
-                        <div className="user-rank"><i className="fas fa-star"></i><p>5.0</p></div>
-                    </div>
-                        <h3>5/10<i className="far fa-user"></i></h3>
-                </div>
-
+                        <h5 className="attendees">5/10<i className="far fa-user"></i></h5>
+            <div className="event-content">
                 <div className="event-price-title">
                     <h3>{event.title}</h3>
-                    <p>{price}</p>
+                    <p className={`event-price ${(event.price === 0) ? 'free' : ''}`}>{price}</p>
                 </div>
                 <div>
                     <div className="event-time-place">
                         <p>{event.place}</p>
                         <p>{timeService.convertToRelativeTime(event.startAt)}</p>
                     </div>
-                    {/* <div className="event-price">
-                    </div> */}
                 </div>
             </div>
         </div>
     )
 }
+

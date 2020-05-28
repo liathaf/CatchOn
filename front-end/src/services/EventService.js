@@ -1,5 +1,6 @@
 import { UtilService } from './UtileService'
 import HttpService from './HttpService'
+import Axios from 'axios';
 
 
 function query(filterBy) {
@@ -30,9 +31,41 @@ function addReview(event, review) {
 }
 
 
+async function save(event) {
+    console.log('in event service');
+    
+    event.createdAt = Date.now();
+    event.attendees = [];
+    event.reviews = [];
+    const savedEvent  = await HttpService.post('event', event);
+    return savedEvent;
+  }
+  
+
+
+async function uploadImg(ev) {
+
+    const CLOUD_NAME = 'dlzwnajfq';
+    const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
+
+    const formData = new FormData();
+    formData.append('file', ev.target.files[0]);
+    formData.append('upload_preset', 'aeyn7n9g');
+    try {
+        const res = await Axios.post(UPLOAD_URL, formData);
+        return res.data.url;
+    } catch (err) {
+        console.error(err)
+    }
+}
+
+
+
 export const EventService = {
 	query,
 	getById,
-	addReview,
+    addReview,
+    save,
+	uploadImg,
 }
 
