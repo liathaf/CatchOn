@@ -57,8 +57,8 @@
                 width: 250px;
                 height: 1rem;
                 z-index: 3;
+                
             }
-
 
             i {
                 background-color: #fff;
@@ -67,19 +67,14 @@
                 margin: 0 0.5rem;
                 outline: none;
             }
-
-
+            @media screen and (max-width: $normal-breakpoint) {
+                input{
+                    width: 60vw;
+                }
+                }
         }
 
-        // button {
-        //     // position: relative;
-        //     opacity: 0.9;
-        //     border: 0px;
-        //     outline: none;
-        //     border-radius: 0 rem(8px) rem(8px) 0;
-        //     // margin: auto 0.5rem;
-        //     // margin: 0 0 5px
-        // }
+
     }
 
     ul {
@@ -90,6 +85,13 @@
             &:nth-child(1),
             &:nth-child(2) {
                 margin-inline-end: rem(20px);
+            }
+
+            color: #f34573;
+            cursor: pointer;
+
+            &:hover {
+                color: $dark-color;
             }
         }
     }
@@ -105,13 +107,84 @@
 
     .logout {
         cursor: pointer;
+        color: $dark-color;
+    }
+
+    .burger {
+        div {
+            display: none;
+        }
     }
 
     @media screen and (max-width: $normal-breakpoint) {
-
-        ul,
+        body,html{
+            overflow-x: hidden;
+        }
+        display: block;
+        padding-bottom: 5px;
+        // overflow: hidden;
+        // width: 100vw;
+        align-items: center;
         .logo {
             display: none;
+        }
+
+        .nav-search {
+            margin-right: 0;
+            margin-top: 10px;
+            // input{
+            //     width: 40vw;
+            // }
+        }
+
+        ul {
+            position: absolute;
+            right: 0;
+            top: 8vh;
+            height: 50vh;
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+            background: rgba(85, 123, 129, 0.9);
+
+            li {
+                opacity: 0;
+                transition: opacity 1s ease-in;
+                font-size: 24px;
+                margin-left: 25%;
+                color: #e7d6db;
+
+            }
+        }
+
+        .nav-active {
+            transform: translateX(0%);
+            li {
+                opacity: 1;
+            }
+        }
+
+        .burger {
+            right: 15px;
+            top: 12.500px;
+            position: absolute;
+            div {
+                width: 25px;
+                height: 2px;
+                display: block;
+                background-color: #f34573;
+
+                &:first-child {
+                    margin-bottom: 5px;
+                }
+
+                &:nth-child(2) {
+                    margin-bottom: 5px;
+                }
+            }
         }
     }
 }

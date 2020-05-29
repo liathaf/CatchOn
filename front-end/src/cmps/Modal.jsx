@@ -2,19 +2,19 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-export function Modal(props) {
-    const {event , onRemoveModal} = props
+export function Modal({ children ,  onRemoveModal}) {
+    
     return (
-        <div className="screen">
-            <div className="modal">
-                <button className="close-modal-btn" onClick={onRemoveModal}>X</button>
-                <div className="modal-details">
-                    <p>Joining <span><h2 className="event-title">{event.title}</h2></span> requires login </p>
-                    <button className="login-modal-btn"><Link to="/login">LOGIN</Link></button>
-                    <div className="signup"><p>New member?</p> <Link to="/signup">Sign up</Link></div>
+        <main>
+            <div className="screen">
+                <div className="modal">
+                    <button className="close-modal-btn" onClick={onRemoveModal}>X</button>
+                    <div className="modal-details">
+                        {children}
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
     )
 }
 

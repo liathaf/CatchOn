@@ -124,8 +124,6 @@ class _Login extends Component {
             <button className="loginBtn">Continue</button>
             <div className="signup"><p>New member?</p> <Link to="/signup">Sign up</Link></div>
           </div>
-
-          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
         </form>
       </div>
     );

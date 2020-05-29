@@ -64,9 +64,8 @@ export class EventFilter extends Component {
             document.querySelector('.default-option p').innerText = 'All'
             this.toggleClass()
         }
-
-
     }
+    
     toggleClass = () => {
         if (this.state.toggleClass === 'category-filter-container') {
             this.setState({ toggleClass: 'category-filter-container active' })
@@ -74,6 +73,14 @@ export class EventFilter extends Component {
             this.setState({ toggleClass: 'category-filter-container' })
         }
     }
+
+    // toggleFree = () => {
+    //     if (this.state.toggleClass === 'category-filter-container') {
+    //         this.setState({ toggleClass: 'category-filter-container active' })
+    //     } else {
+    //         this.setState({ toggleClass: 'category-filter-container' })
+    //     }
+    // }
 
     setFilter = () => {
         
@@ -127,8 +134,11 @@ export class EventFilter extends Component {
                     </div>
 
                     <div>
-                        <button type='button' className="isFree-button btn" name="isFree" onClick={this.state.isFree,this.handleChange} >Free</button>
+                        <button type='button' className="isFree-button btn" name="isFree" onClick={this.state.isFree} >Free</button>
                     </div>
+                    {/* <div>
+                        <button type='button' className="isFree-button btn" name="isFree" onClick={this.state.isFree,this.handleChange} >Free</button>
+                    </div> */}
                     <div>
                         <h4>Up Coming Month</h4>
                         <input className="thisMonth-input" type="checkbox" name="thisMonth" checked={this.state.filter.thisMonth} onChange={this.handleChange} />

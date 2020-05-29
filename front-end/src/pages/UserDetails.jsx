@@ -20,7 +20,7 @@ class _UserDetails extends Component {
         return (
             (user) &&
             <section className="container">
-                <div className="profile-grid">
+                <div className="profile">
                     <div className="profile-top">
 
                         <div>
@@ -49,37 +49,43 @@ class _UserDetails extends Component {
                             <h2 className="text-primary">{user.username}</h2>
                             <p>{user.dsc}</p>
                             <div className="line"></div>
+                            <div className="profile-event">
+                                <div className="attended-events"> 
+                                    <h1>
+                                        <i className="fas fa-calendar-week"></i> {`${user.username.split(' ')[0]}'s Events`}
+                                    </h1>
+                                    <div className="line"></div>
+                                    {user.attendedEvents.map((event , idx) => {
+                                        if (idx < 2) return (<div className="event" kay={event._id}>
+                                            <Link to={`/event/${event._id}`}>
+                                                <h4 className="event-title">{event.title}</h4>
+                                                <img className="event-img-user-details" src={event.imgUrl}></img>
+                                                <p className="user-desc">{event.desc.split('.')[0]}</p>
+                                            </Link>
+                                        </div>)
+                                    })}
+                                </div>
+
+                                <div className="attended-events"> 
+                                    <h1>
+                                        <i className="fas fa-calendar-week"></i>{` ${user.username.split(' ')[0]}'s created Events`}
+                                    </h1>
+                                    <div className="line"></div>
+                                    {user.createdEvents.map((event , idx) => {
+                                        if (idx < 2) return (<div className="event" kay={event._id}>
+                                            <Link to={`/event/${event._id}`}>
+                                                <h4 className="event-title">{event.title}</h4>
+                                                <img className="event-img-user-details" src={event.imgUrl}></img>
+                                                <p className="user-desc"> {event.desc.split('.')[0]}</p>
+                                            </Link>
+                                        </div>)
+                                    })}
+                                </div>
                         </div>
 
                     </div>
 
-                    <div className="profile-event">
-                        <h1>
-                            <i className="fas fa-calendar-week"></i> {`${user.username.split(' ')[0]}'s Events`}
-                        </h1>
-                        <div className="line"></div>
-                        {user.attendedEvents.map((event , idx) => {
-                            if (idx < 2) return (<div className="event" kay={event._id}>
-                                <Link to={`/event/${event._id}`}>
-                                    <h4>{event.title}</h4>
-                                    <img className="event-img-user-details" src={event.imgUrl}></img>
-                                </Link>
-                            </div>)
-                        })}
-                        <h1>
-                            <i className="fas fa-calendar-week"></i> {`${user.username.split(' ')[0]}'s created Events`}
-                        </h1>
-                        <div className="line"></div>
-                        {user.createdEvents.map((event , idx) => {
-                            if (idx < 2) return (<div className="event" kay={event._id}>
-                                <Link to={`/event/${event._id}`}>
-                                    <h4>
-                                        {event.title}
-                                    </h4>
-                                    <img className="event-img-user-details" src={event.imgUrl}></img>
-                                </Link>
-                            </div>)
-                        })}
+
                     </div>
                 </div>
             </section>

@@ -1162,4 +1162,42 @@ Thu, 28 May 2020 13:49:34 GMT - Debug - auth.service - login with email: puki@gm
 Thu, 28 May 2020 14:12:28 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 15:47:38 GMT - Debug - auth.service - login with email: puki@gmail.com
 >>>>>>> bbace4c57b52514e843727ca0c78fe6f4aa66c1e
+<<<<<<< HEAD
 >>>>>>> 51e31ffb0cd9a9b2982cbd974eb3658a20c3d18a
+=======
+Fri, 29 May 2020 09:22:19 GMT - Debug - auth.service - login with email: puki@gmail.com
+Fri, 29 May 2020 09:22:37 GMT - Debug - auth.service - login with email: puki@gmail.com
+Fri, 29 May 2020 11:19:37 GMT - Debug - auth.service - login with email: puki@gmail.com
+Fri, 29 May 2020 11:20:09 GMT - Debug - liathaf@gmail.com, liathaf
+Fri, 29 May 2020 11:20:09 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: liathaf
+Fri, 29 May 2020 11:20:09 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$HYkeCRS1S8cklLfdonNz3O6BpQkcC3zKyOSsigYyCXiIuQdL4SJ7W","username":"liathaf","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed0efe98653a8e40c1fa12c"}
+Fri, 29 May 2020 11:20:09 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 11:34:03 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:40:47 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:43:39 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:44:12 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:45:06 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:46:22 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:47:25 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:48:24 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:50:33 GMT - Debug - liathaf@gmail.com, liathaf
+Fri, 29 May 2020 11:50:33 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: liathaf
+Fri, 29 May 2020 11:50:33 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$RWeYqEBIdggSyyamvN9BbuQllqxRnfg46mpgweuBaCS0TdI1V04I2","username":"liathaf","imgUrl":"http://res.cloudinary.com/dlzwnajfq/image/upload/v1590753032/ixsylzrw5y3egnrdsaon.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed0f7098653a8e40c1fa135"}
+Fri, 29 May 2020 11:50:33 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 11:50:56 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:53:12 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:55:02 GMT - Error - Cannot get event
+Fri, 29 May 2020 12:02:29 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 12:30:59 GMT - Debug - auth.service - login with email: liathaf@gamil.com
+Fri, 29 May 2020 12:31:22 GMT - Debug - auth.service - login with email: liathaf@gamil.com
+Fri, 29 May 2020 12:31:24 GMT - Debug - auth.service - login with email: 
+Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email: 
+Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email: 
+Fri, 29 May 2020 12:31:45 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 12:38:28 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+>>>>>>> 6c4a6e6a8cb071d811158e5f6d515c2982746a6b
+Fri, 29 May 2020 14:10:47 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 16:54:22 GMT - Debug - sdv, zvds
+Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - signup with email: sdv, username: zvds
+Fri, 29 May 2020 16:54:22 GMT - Debug - auth.route - new account created: {"email":"sdv","password":"$2b$10$w6yPFLz6oqChJnQ3CHrPReUVSoLBVzrqrBHlKwIitB5Ge9kWJHalC","username":"zvds","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed13e3eed75880888e7ed8e"}
+Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - login with email: sdv

@@ -93,8 +93,7 @@ class _EventDetails extends Component {
 
         var { user, event } = this.props
         const { isAttend } = this.state
-        if (!user || event.price !== 0) {
-            
+        if (!user) {
             this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
             return
         }
@@ -239,13 +238,21 @@ class _EventDetails extends Component {
                                     <Review
                                         onAddReview={this.onAddReview}
                                         reviews={event.reviews}
+                                        user={user}
                                     />
-                                    {(this.state.isOpenModal) && <Modal event={event} onRemoveModal={this.onRemoveModal} />}
+                                   { (this.state.isOpenModal) && <Modal onRemoveModal={this.onRemoveModal}>
+                                        <div>Joining <span><h2 className="event-title">{event.title}</h2></span> requires login </div>
+                                        <button className="login-modal-btn"><Link to="/login">LOGIN</Link></button>
+                                        <div className="signup">
+                                            <p>New member?</p> <Link to="/signup">Sign up</Link>
+                                        </div>
+                                    </Modal>}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                   
                 </section>
             )
         );
