@@ -12,7 +12,7 @@ async function signup(req, res) {
         logger.debug(`auth.route - new account created: ` + JSON.stringify(account))
         const savedUser = await authService.login(email, password);
         req.session.user = savedUser
-        res.json(user)
+        res.json(savedUser)
     } catch (err) {
         logger.error('[SIGNUP] ' + err)
         res.status(401).send({ error: 'could not signup, please try later' })

@@ -9,6 +9,7 @@ function getById(userId) {
 
 
 async function login(userCred) {
+
     try {
         const user = await HttpService.post('auth/login', userCred);
         return _handleLogin(user)
@@ -53,6 +54,23 @@ async function uploadImg(ev) {
     }
 }
 
+async function updateUser(user){
+    try {
+        const savedUser = await HttpService.put(`user/${user._id}`, user)
+        return _handleLogin(savedUser)
+    } catch (err) {
+        throw err;
+    }
+}
+
+function isAttend(user , eventId){
+    return user.attendedEvents.some(event => event._id === eventId)
+}
+
+function findIdxById(user,eventId){
+    return user.attendedEvents.findIndex(event => event._id === eventId)
+}
+
 
 export const UserService = {
     login,
@@ -60,5 +78,8 @@ export const UserService = {
     signup,
     uploadImg,
     getById,
+    updateUser,
+    isAttend,
+    findIdxById
    
 }

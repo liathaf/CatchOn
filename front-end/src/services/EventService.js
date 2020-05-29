@@ -12,27 +12,27 @@ function query(filterBy) {
         if (filterBy.isFree) queryStr += `&isFree=${filterBy.isFree}`
         if (filterBy.thisMonth) queryStr += `&thisMonth=${filterBy.thisMonth}`
     }
-    
 
-	return HttpService.get(`event?${queryStr}`);
+
+    return HttpService.get(`event?${queryStr}`);
 }
 
 function getById(eventId) {
-	return HttpService.get(`event/${eventId}`);
+    return HttpService.get(`event/${eventId}`);
 }
 
 
 function addReview(event, review) {
-	
-	review.createdAt = Date.now();
-	review._id = UtilService.makeId();
-	event.reviews.push(review);
-	return HttpService.put(`event/${event._id}`, event);
+
+    review.createdAt = Date.now();
+    review._id = UtilService.makeId();
+    event.reviews.push(review);
+    save(event);
 }
 
 
 async function save(event) {
-
+    var savedEvent; 
     if (!event._id) {
         const timestamp = moment.utc(event.startAt).unix()
         event.startAt = timestamp
@@ -41,15 +41,18 @@ async function save(event) {
         event.attendees = [];
         event.reviews = [];
         const savedEvent  = await HttpService.post('event', event);
-        return savedEvent;
+       
 
     }
     else {
         const savedEvent  = await HttpService.put(`event/${event._id}`, event);
         
-        return savedEvent;
     }
-  }
+    return savedEvent;
+}
+
+
+
   
 
 
@@ -69,13 +72,16 @@ async function uploadImg(ev) {
     }
 }
 
-
+function findIdxById(event , userId){
+    return event.attendees.findIndex(user => user._id === userId)
+}
 
 export const EventService = {
-	query,
-	getById,
+    query,
+    getById,
     addReview,
     save,
-	uploadImg,
+    uploadImg,
+    findIdxById
 }
 

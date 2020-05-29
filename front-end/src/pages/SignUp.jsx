@@ -13,6 +13,7 @@ class _SignUp extends Component {
             email: '',
             password: '',
             imgUrl: '',
+            dsc: ''
         },
         msg: ''
     }
@@ -57,11 +58,7 @@ class _SignUp extends Component {
                     <input type="text" name="email" placeholder="Email" onChange={this.onHandelChange} />
                     <input type="password" name="password" placeholder="Password" onChange={this.onHandelChange} />
                     <input name="imgUrl" type="file" onChange={this.onHandelChange}></input>
-                    {/* <input type="password" placeholder=" Repeat Password" onChange={this.onHandleChange}/> */}
-                    {/* <div className="">
-                        <p>I have read and agreed with the <a href="#">terms and conditions</a></p>
-                        <input type="checkbox" />
-                    </div> */}
+                    <textarea type="text" name="dsc" placeholder="description..." onChange={this.onHandelChange} />
                     <p style={{ color: "red", fontSize: "0.8rem" }}>{this.state.msg}</p>
                     <button>Sign Up</button>
                     <p>Already have an account? <Link to="/login">Login Here</Link></p>

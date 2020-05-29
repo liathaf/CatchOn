@@ -9,13 +9,25 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         .logo {
             width: 100px;
         }
 
         .nav-search {
             display: flex;
+            align-items: center;
+
+            li {
+                &:nth-child(1),
+                &:nth-child(2) {
+                    margin-inline-end: rem(20px);
+                }
+                &:nth-child(3) {
+                    a {
+                        padding: 0;
+                    }
+                }
+            }
             flex-direction: row;
             width: fit-content;
             border: 1px solid transparent;
@@ -33,7 +45,6 @@
                 border: white;
                 outline: none;
                 // margin: 0 0.5rem;
-                font-family: 'Roboto', arial, sans-serif;
                 font-size: 1rem;
                 font-weight: 500;
                 // line-height: 1.5rem;
@@ -69,7 +80,6 @@
         display: flex;
 
         li {
-            font-family: Raleway,sans-serif;
             &:nth-child(1),
             &:nth-child(2) {
                 margin-inline-end: rem(20px);
@@ -86,7 +96,7 @@
         }
     }
 
-    .login {
+    .logout {
         cursor: pointer;
     }
 }

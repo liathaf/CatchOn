@@ -68,8 +68,8 @@ export class _NavBar extends Component {
                             </>}
                         {(user) &&
                             <>
-                                <li className="login" onClick={this.onLogout}>Logout</li>
-                                <img className="userImg-preview" src={(user.imgUrl) ? user.imgUrl : avatar} />
+                                <li className="logout" onClick={this.onLogout}>Logout</li>
+                                <li><Link to={`/user/${user._id}`}><img className="userImg-preview" src={(user.imgUrl) ? user.imgUrl : avatar} /></Link></li>
                             </>
                         }
 

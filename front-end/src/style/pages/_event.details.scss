@@ -233,7 +233,17 @@
                 margin: 15px 0 20px;
 
                 span {
-                    padding: 10px 80px;
+                    padding: 5px 50px;
+
+                    i {
+                        padding-left: 10px;
+                        margin-left: 5px;
+                        border-left: 1px solid #fff;
+                    }
+
+                    &.attend{
+                        background-color: rgb(192, 176, 176);
+                    }
                 }
 
             }

@@ -42,13 +42,19 @@
   }
   
   .profile-event{
-    div:first-child{
-      margin: 20px 0;
-    }
+    // div:first-child{
+    //   margin: 20px 0;
+    // }
     .event{
       display: grid;
       grid-template-columns: 2fr 1fr;
-      div{
+
+      .event-img-user-details{
+        width: 150px;
+        border-radius: 5px;
+      }
+
+      div {
         display: flex;
         flex-direction: column;
         justify-content: space-around;

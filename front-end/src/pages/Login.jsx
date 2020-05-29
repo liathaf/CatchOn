@@ -122,6 +122,7 @@ class _Login extends Component {
           <div className="form">
             <p style={{ color: "red", fontSize: "0.8rem" }}>{this.state.msg}</p>
             <button className="loginBtn">Continue</button>
+            <div className="signup"><p>New member?</p> <Link to="/signup">Sign up</Link></div>
           </div>
 
           <p>Don't have an account? <Link to="/signup">Sign up</Link></p>

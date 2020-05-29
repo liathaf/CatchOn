@@ -12,12 +12,9 @@ export function UserReducer(state = initialState, action) {
   switch (action.type) {
     
     case 'SET_LOGGEDIN_USER':
-      console.log('LOGGEDIN')
       return { ...state, loggedInUser: action.user };
-      case 'SET_USER':
-        console.log('SET_USER')
+    case 'SET_USER':
       return { ...state, currUser: action.user };
-
     default:
       return state;
   }
