@@ -1145,3 +1145,49 @@ Thu, 28 May 2020 13:49:34 GMT - Debug - auth.service - login with email: puki@gm
 Thu, 28 May 2020 14:12:28 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 15:47:38 GMT - Debug - auth.service - login with email: puki@gmail.com
 >>>>>>> bbace4c57b52514e843727ca0c78fe6f4aa66c1e
+Fri, 29 May 2020 07:25:14 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 07:25:14 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 07:25:14 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$ATxLWUZ0aFEYNojyBWoTf.kPlt.AYXp8mye/1ybTv73LfnjlJE/4a","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593329114&hash=AeTMjXwWXPc9F7K_","attendedEvents":[],"isAdmin":false,"_id":"5ed0b8da7e78526d083c1b0b"}
+Fri, 29 May 2020 07:25:14 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 07:25:14 GMT - Error - [SIGNUP] Invalid email or password
+Fri, 29 May 2020 07:25:37 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 07:25:37 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 07:25:37 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$qNmuou3WlXRbw1ubWV8NMejQ143eGT8c1qbE2hiky4Z0PkfPcMDzG","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593329137&hash=AeRruN86zv-YSx7E","attendedEvents":[],"isAdmin":false,"_id":"5ed0b8f17e78526d083c1b0c"}
+Fri, 29 May 2020 07:25:37 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 07:25:37 GMT - Error - [SIGNUP] Invalid email or password
+Fri, 29 May 2020 07:25:47 GMT - Debug - adi.ahronov@gmail.com, adi aharonov
+Fri, 29 May 2020 07:25:47 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: adi aharonov
+Fri, 29 May 2020 07:25:47 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$Y53DXpxElaElB86KPzpybeC4kmya3cqcK.wHgZmJ7T0/De5D6ta0y","username":"adi aharonov","imgUrl":"https://lh5.googleusercontent.com/-sjxtFAUb_XY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnTcPZVEgZlEOZXKYSnRATgF7hP9A/s96-c/photo.jpg","attendedEvents":[],"isAdmin":false,"_id":"5ed0b8fb7e78526d083c1b0d"}
+Fri, 29 May 2020 07:25:47 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 07:25:53 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 07:25:53 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 07:25:53 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$DFLHQ4EWWcpXS.1eELgqnOhhgvOsgeoUgSgSaylY0ecFWTzy.8iEi","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593329153&hash=AeQeKRotggzxrLcy","attendedEvents":[],"isAdmin":false,"_id":"5ed0b9017e78526d083c1b0e"}
+Fri, 29 May 2020 07:25:53 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 07:25:53 GMT - Error - [SIGNUP] Invalid email or password
+Fri, 29 May 2020 07:26:20 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 07:26:20 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 07:26:20 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$qYn6AaMo954tPAZrQL6MaOIwTWZ/cQ0YL.CQ.GcqBFCenFxVATsMa","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593329180&hash=AeSUztG2_U5h55ii","attendedEvents":[],"isAdmin":false,"_id":"5ed0b91c7e78526d083c1b0f"}
+Fri, 29 May 2020 07:26:20 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 07:26:20 GMT - Error - [SIGNUP] Invalid email or password
+Fri, 29 May 2020 07:27:05 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 07:27:05 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 07:27:05 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$wf4AsZWNMk9RBEVUveMWNe8LQzZiW2S.nniQa1vVDr1nMMSwUwb8G","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593329225&hash=AeRbIBRVFgWbIHC5","attendedEvents":[],"isAdmin":false,"_id":"5ed0b9497e78526d083c1b10"}
+Fri, 29 May 2020 07:27:05 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 07:27:05 GMT - Error - [SIGNUP] Invalid email or password
+Fri, 29 May 2020 07:27:34 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 07:27:34 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 07:27:34 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$PukYUNx/i5azWF/IImgGhu6UZ2ohoDTqAPePO7/pupFRipiSn00Ye","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593329254&hash=AeQNdGGLcA_0C_8O","attendedEvents":[],"isAdmin":false,"_id":"5ed0b9667e78526d083c1b11"}
+Fri, 29 May 2020 07:27:34 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 13:05:38 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 13:05:38 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 13:05:39 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$Wxzx4Gnb0psp380PWQasQerhBzvlvV3748oH.Tm.DmZamcf77ZAZO","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593349539&hash=AeT7oNimC_OoaUzG","attendedEvents":[],"isAdmin":false,"_id":"5ed108a37e78526d083c1b12"}
+Fri, 29 May 2020 13:05:39 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 13:05:53 GMT - Debug - adi.ahronov@gmail.com, adi aharonov
+Fri, 29 May 2020 13:05:53 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: adi aharonov
+Fri, 29 May 2020 13:05:53 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$lVwvkUV7IWICUj8/jknAW.7yb2OrDEG4naZ5Ly1e02PAQu4FhVYsK","username":"adi aharonov","imgUrl":"https://lh5.googleusercontent.com/-sjxtFAUb_XY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnTcPZVEgZlEOZXKYSnRATgF7hP9A/s96-c/photo.jpg","attendedEvents":[],"isAdmin":false,"_id":"5ed108b17e78526d083c1b13"}
+Fri, 29 May 2020 13:05:53 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Fri, 29 May 2020 13:05:53 GMT - Error - [SIGNUP] Invalid email or password
+Fri, 29 May 2020 13:06:12 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Fri, 29 May 2020 13:06:12 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Fri, 29 May 2020 13:06:12 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$KLmj3A5MWn55gPYHponNQu9mhKANe4xt7xQAtBD4BX/0U.NYH60xC","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593349572&hash=AeQM1zSh5wLkHdH3","attendedEvents":[],"isAdmin":false,"_id":"5ed108c47e78526d083c1b14"}
+Fri, 29 May 2020 13:06:12 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com

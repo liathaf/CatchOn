@@ -63,9 +63,9 @@ async function updateUser(user){
     }
 }
 
-function isAttend(user , eventId){
-    return user.attendedEvents.some(event => event._id === eventId)
-}
+// function isAttend(user , eventId){
+//     return user.attendedEvents.some(event => event._id === eventId)
+// }
 
 function findIdxById(user,eventId){
     return user.attendedEvents.findIndex(event => event._id === eventId)
@@ -79,7 +79,24 @@ export const UserService = {
     uploadImg,
     getById,
     updateUser,
-    isAttend,
+    // isAttend,
     findIdxById
    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
