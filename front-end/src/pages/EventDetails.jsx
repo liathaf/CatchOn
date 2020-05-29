@@ -122,21 +122,23 @@ class _EventDetails extends Component {
         
         if (target.viewBox) return
         const { event, user } = this.props;
-        if (target.style.fill === 'rgb(72, 72, 72)') {
+        if (target.style.fill === 'rgb(72, 72, 72)') {    
+           
+            event.likes.push({ _id : user._id , username: user.username})
+            await this.props.saveEvent(event)
             target.style.fill = 'rgb(243, 69, 115)';
-            event.likes.push(user.username)
 
         } else {
-            target.style.fill = 'rgb(72, 72, 72)';
-            const idx = event.likes.find(userInArr => (userInArr === user.username))
+            const idx = event.likes.findIndex(like => like._id === user._id)
             event.likes.splice(idx, 1);
+            await this.props.saveEvent(event)
+            target.style.fill = 'rgb(72, 72, 72)';
         }
-        await this.props.saveEvent(event)
+        this.loadEvent();
     }
 
     render() {
         const { event, user } = this.props;
-        
         const top =
             this.state.currentScrollHeight > 360
                 ? this.state.currentScrollHeight - 360
@@ -184,7 +186,7 @@ class _EventDetails extends Component {
 
                                     {this.props.user &&
                                         <div className="likeBtn">
-                                            <Like onClick={this.onToggleLike}  style={{ fill: (event.likes.find(userName => userName === user.username)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />   
+                                            <Like onClick={this.onToggleLike}  style={{ fill: (event.likes.find(like => like._id === user._id)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />   
                                             <p>{event.likes.length}</p>
                                         </div>}
 

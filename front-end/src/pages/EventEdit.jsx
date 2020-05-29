@@ -32,7 +32,12 @@ class _EventEdit extends Component {
 
 
 
-    async componentDidMount() {
+    componentDidMount() {
+
+        this.loadEvent();
+    }
+
+    loadEvent = async () => {
 
         const eventId = this.props.match.params.eventId
 

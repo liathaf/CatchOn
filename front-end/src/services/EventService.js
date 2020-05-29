@@ -34,6 +34,7 @@ function addReview(event, review) {
 async function save(event) {
     var savedEvent; 
     if (!event._id) {
+        
         const timestamp = moment.utc(event.startAt).unix()
         event.startAt = timestamp
         event.likes = []
@@ -41,8 +42,6 @@ async function save(event) {
         event.attendees = [];
         event.reviews = [];
         savedEvent  = await HttpService.post('event', event);
-       
-
     }
     else {
         savedEvent  = await HttpService.put(`event/${event._id}`, event);
@@ -75,6 +74,8 @@ async function uploadImg(ev) {
 function findIdxById(event , userId){
     return event.attendees.findIndex(user => user._id === userId)
 }
+
+
 
 export const EventService = {
     query,

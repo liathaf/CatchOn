@@ -21,7 +21,7 @@ export function EventPreview(props) {
             <div className="event-content">
                 <div className="preview-like">
                     <Like  />
-                    {/* <p>{event.likes.length}</p> */}
+                    <p>{event.likes.length}</p>
                 </div>
 
                 <div className="event-content">
