@@ -53,7 +53,6 @@
                 z-index: 3;
             }
 
-
             i {
                 background-color: #fff;
                 opacity: 0.56;
@@ -61,8 +60,6 @@
                 margin: 0 0.5rem;
                 outline: none;
             }
-
-
         }
 
         // button {
@@ -84,6 +81,12 @@
             &:nth-child(2) {
                 margin-inline-end: rem(20px);
             }
+
+            color: #f34573;
+            cursor: pointer;
+            &:hover {
+                color: $dark-color;
+            }
         }
     }
 
@@ -98,6 +101,7 @@
 
     .logout {
         cursor: pointer;
+        color: $dark-color;
     }
 }
 

@@ -26,7 +26,6 @@
             display: flex;
             flex-direction: column;
             font-size: rem(18px);
-            
 
             .event-title {
                 color:#49beb7;
@@ -37,7 +36,7 @@
                 margin: 0 rem(5px);
                
             }
-            p {
+            div {
                 display: flex;
                 justify-content: center;
             }
@@ -50,6 +49,10 @@
                 width: 25%;
                 border: none;
                 margin-bottom: rem(10px);
+
+                &.nav-bar{
+                    margin-top: rem(10px);
+                }
                 
 
                 a {
@@ -62,18 +65,33 @@
                 }
             }
 
-            .signup{
+            .signup {
                 display: flex;
                 justify-content: center;
                 margin-inline-end: rem(5px); 
 
                 p{
-                    margin-inline-end: rem(3px);;
+                    margin-inline-end: rem(3px);
                 }
 
-                &:hover a{
-                    text-decoration: underline;
+                a {
+                    padding: 0;
+
+                    &:hover {
+                        text-decoration: underline;
+                        padding: 0;
+                    }
                 }
+                  
+            }
+        }
+
+        .links {
+
+            text-decoration: underline;
+            a:first-child {
+           margin-inline-end: rem(10px);
+
             }
         }
 

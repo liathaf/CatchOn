@@ -40,12 +40,12 @@ async function save(event) {
         event.createdAt = Date.now();
         event.attendees = [];
         event.reviews = [];
-        const savedEvent  = await HttpService.post('event', event);
+        savedEvent  = await HttpService.post('event', event);
        
 
     }
     else {
-        const savedEvent  = await HttpService.put(`event/${event._id}`, event);
+        savedEvent  = await HttpService.put(`event/${event._id}`, event);
         
     }
     return savedEvent;

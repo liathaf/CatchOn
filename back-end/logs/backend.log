@@ -1137,14 +1137,12 @@ Fri, 29 May 2020 03:28:59 GMT - Debug - adi.ahronov@gmail.com, adi aharonov
 Fri, 29 May 2020 03:28:59 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: adi aharonov
 Fri, 29 May 2020 03:28:59 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$4cGlsJMzt8iu1iGIG0JK0etELDUoN8bpwNVJjAKSRScZh8PHV1BcO","username":"adi aharonov","imgUrl":"https://lh5.googleusercontent.com/-sjxtFAUb_XY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnTcPZVEgZlEOZXKYSnRATgF7hP9A/s96-c/photo.jpg","attendedEvents":[],"isAdmin":false,"_id":"5ed0817b7e78526d083c1b0a"}
 Fri, 29 May 2020 03:28:59 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
-=======
->>>>>>> 84a5f648e35b7713936671113279bdf001832b9e
->>>>>>> 32862b1c793e6dca4d6f1dc25c55df64a9507b67
+
 Thu, 28 May 2020 11:22:55 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 13:49:34 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 14:12:28 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 15:47:38 GMT - Debug - auth.service - login with email: puki@gmail.com
->>>>>>> bbace4c57b52514e843727ca0c78fe6f4aa66c1e
+
 Fri, 29 May 2020 07:25:14 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
 Fri, 29 May 2020 07:25:14 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
 Fri, 29 May 2020 07:25:14 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$ATxLWUZ0aFEYNojyBWoTf.kPlt.AYXp8mye/1ybTv73LfnjlJE/4a","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593329114&hash=AeTMjXwWXPc9F7K_","attendedEvents":[],"isAdmin":false,"_id":"5ed0b8da7e78526d083c1b0b"}
@@ -1191,3 +1189,34 @@ Fri, 29 May 2020 13:06:12 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
 Fri, 29 May 2020 13:06:12 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
 Fri, 29 May 2020 13:06:12 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$KLmj3A5MWn55gPYHponNQu9mhKANe4xt7xQAtBD4BX/0U.NYH60xC","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593349572&hash=AeQM1zSh5wLkHdH3","attendedEvents":[],"isAdmin":false,"_id":"5ed108c47e78526d083c1b14"}
 Fri, 29 May 2020 13:06:12 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+=======
+Fri, 29 May 2020 09:22:19 GMT - Debug - auth.service - login with email: puki@gmail.com
+Fri, 29 May 2020 09:22:37 GMT - Debug - auth.service - login with email: puki@gmail.com
+Fri, 29 May 2020 11:19:37 GMT - Debug - auth.service - login with email: puki@gmail.com
+Fri, 29 May 2020 11:20:09 GMT - Debug - liathaf@gmail.com, liathaf
+Fri, 29 May 2020 11:20:09 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: liathaf
+Fri, 29 May 2020 11:20:09 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$HYkeCRS1S8cklLfdonNz3O6BpQkcC3zKyOSsigYyCXiIuQdL4SJ7W","username":"liathaf","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed0efe98653a8e40c1fa12c"}
+Fri, 29 May 2020 11:20:09 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 11:34:03 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:40:47 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:43:39 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:44:12 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:45:06 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:46:22 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:47:25 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:48:24 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:50:33 GMT - Debug - liathaf@gmail.com, liathaf
+Fri, 29 May 2020 11:50:33 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: liathaf
+Fri, 29 May 2020 11:50:33 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$RWeYqEBIdggSyyamvN9BbuQllqxRnfg46mpgweuBaCS0TdI1V04I2","username":"liathaf","imgUrl":"http://res.cloudinary.com/dlzwnajfq/image/upload/v1590753032/ixsylzrw5y3egnrdsaon.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed0f7098653a8e40c1fa135"}
+Fri, 29 May 2020 11:50:33 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 11:50:56 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:53:12 GMT - Error - Cannot get event
+Fri, 29 May 2020 11:55:02 GMT - Error - Cannot get event
+Fri, 29 May 2020 12:02:29 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 12:30:59 GMT - Debug - auth.service - login with email: liathaf@gamil.com
+Fri, 29 May 2020 12:31:22 GMT - Debug - auth.service - login with email: liathaf@gamil.com
+Fri, 29 May 2020 12:31:24 GMT - Debug - auth.service - login with email: 
+Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email: 
+Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email: 
+Fri, 29 May 2020 12:31:45 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 12:38:28 GMT - Debug - auth.service - login with email: liathaf@gmail.com
