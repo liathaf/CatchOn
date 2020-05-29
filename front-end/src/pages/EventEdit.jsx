@@ -49,7 +49,6 @@ class _EventEdit extends Component {
             try {
                 const savedImgUrl = await EventService.uploadImg(ev);
                 this.setState(prevState => ({ event: { ...prevState.event, [field]: [...prevState.event.imgUrls, savedImgUrl] } }))
-
             } catch (err) {
                 console.log('edit cmp: cannot upload img')
             }

@@ -21,7 +21,8 @@ function App() {
           <Route exact component={Home} path="/" />
           <Route exact component={EventEdit} path="/edit/:eventId?" />
           <Route exact component={EventDetails} path="/event/:eventId" />
-          <Route exact component={Events} path="/event" />
+          <Route exact component={Events} path="/events/:search?" />
+          <Route exact component={EventDetails} path="/event/:eventId" />
           <Route exact component={Login} path="/login"/>
           <Route exact component={SignUp} path="/signup" />
           <Route exact component={UserDetails} path="/user/:userId" />

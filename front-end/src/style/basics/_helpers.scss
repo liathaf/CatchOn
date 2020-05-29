@@ -1,5 +1,5 @@
 .container {
-    max-width: 90vw;
+    max-width: 90%;
     margin: auto;
 }
 
@@ -52,8 +52,6 @@
     display: flex;
     align-content: center;
     justify-content: center;
-  
-    
 }
 
 .userImg-preview {
@@ -77,14 +75,14 @@
 
 
 .event-price-free {
-    color: green;
+    color: #f34573;
 }
 
 .event-price {
-    color: red;
-    
+    color: darken(#49beb7, 30%);
 
-    &.free{
-        color: green;
+
+    &.free {
+        color: darken(#f34573, 20%);
     }
 }

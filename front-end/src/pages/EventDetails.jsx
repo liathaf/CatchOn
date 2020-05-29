@@ -7,15 +7,15 @@ import { loadEvent, addReview, saveEvent } from '../store/actions/EventActions';
 import { Review } from '../cmps/Review';
 import { GeolocationService } from '../services/GeolocationService';
 import { SocketService } from '../services/SocketService';
-
+import {ReactComponent as Like} from '../img/icons/like.svg'
 
 
 class _EventDetails extends Component {
 
-   state = {
+    state = {
         currentScrollHeight: 0,
-        loc: null
-      
+        display: 'grid',
+        loc: null,
     };
 
 
@@ -25,7 +25,7 @@ class _EventDetails extends Component {
         const { eventId } = this.props.match.params;
         SocketService.on('new review', this.props.loadEvent(eventId));
         window.addEventListener('scroll', this.handleScroll, { passive: true });
-        
+
     }
 
     componentDidUpdate() {
@@ -37,20 +37,25 @@ class _EventDetails extends Component {
             );
 
         }
-       
+
         // Review
         const { eventId } = this.props.match.params;
         // work only on componentDidUpdate , why?
         SocketService.on('new review', this.props.loadEvent(eventId));
     }
 
-
     componentWillUnmount() {
-        SocketService.off();
+        // SocketService.off();
     }
 
     handleScroll = () => {
-        this.setState({ currentScrollHeight: window.scrollY });
+        if (window.visualViewport.width > 960) {
+            this.setState({ currentScrollHeight: window.scrollY });
+        } if (window.pageYOffset > 500 && window.visualViewport.width < 960) {
+            this.setState({ display: 'none' });
+        } else {
+            this.setState({ display: 'grid' });
+        }
     };
 
     onAddReview = async (msg) => {
@@ -65,45 +70,45 @@ class _EventDetails extends Component {
 
     }
 
-    onToggleLike = async ({target}) => {
-
+    onToggleLike = async ({ target }) => {
+        
+        if (target.viewBox) return
         const { event, user } = this.props;
-        if (target.style.color === 'black') {
-            // this.setState({isLiked: 'blue'})
-            target.style.color = 'blue';
-           event.likes.push(user._id)
-           await this.props.saveEvent(event)
+        if (target.style.fill === 'rgb(72, 72, 72)') {
+            target.style.fill = 'rgb(243, 69, 115)';
+            event.likes.push(user.username)
+
         } else {
-            // this.setState({isLiked: 'black'})
-            target.style.color = 'black';
-            const idx = event.likes.find(userInArr => ( userInArr === user._id ))
+            target.style.fill = 'rgb(72, 72, 72)';
+            const idx = event.likes.find(userInArr => (userInArr === user.username))
             event.likes.splice(idx, 1);
-            await this.props.saveEvent(event)
         }
-      
+        await this.props.saveEvent(event)
     }
 
     render() {
         const { event, user } = this.props;
-   
+        
         const top =
             this.state.currentScrollHeight > 360
                 ? this.state.currentScrollHeight - 360
                 : 0;
 
         return (
-        
-        
-            event &&   ( 
+
+
+            event && (
                 <section className="event-detail">
-                    <div className="event-gallery">
-                        {event.imgUrls.map((url, idx) => (
-                            <div key={idx} style={{ backgroundImage: `url(${url})` }}></div>
-                        ))}
+                    <div className="image-slide">
+                        <div className="event-gallery">
+                            {event.imgUrls.map((url, idx) => (
+                                <div key={idx} style={{ backgroundImage: `url(${url})` }}></div>
+                            ))}
+                        </div>
                     </div>
                     <div className="event-main">
                         <div className="middle-content">
-                            <div className="side-content" style={{ marginTop: top }}>
+                            <div className="side-content" style={{ marginTop: top, display: this.state.display }}>
                                 <div className="top-side">
                                     <p>{event.place}</p>
                                     <p>{moment.unix(event.startAt).format("LLL")}</p>
@@ -119,6 +124,7 @@ class _EventDetails extends Component {
                                         </span>
                                     </Link>
                                 </div>
+                                {/* <p className="createdAt">created at: {event.createdAt}</p> */}
                                 {/* <p>2/{event.capacity}</p> */}
                             </div>
                             <div className="all-content">
@@ -127,6 +133,14 @@ class _EventDetails extends Component {
                                         <h1 className="large">{event.title}</h1>
                                         <p>{event.place}</p>
                                     </div>
+
+                                    {this.props.user &&
+                                        <div className="likeBtn">
+                                            <Like onClick={this.onToggleLike}  style={{ fill: (event.likes.find(userName => userName === user.username)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />   
+                                            <p>{event.likes.length}</p>
+                                        </div>}
+
+
                                     <Link to={`/user/${event.createdBy._id}`}>
                                         <div className="user-preview">
                                             <img
@@ -140,52 +154,55 @@ class _EventDetails extends Component {
                                 <div className="line"></div>
 
                                 <h2>What we're about</h2>
-                                <p>{event.desc}</p>
-                                <div className="attendees">
-                                    <h2>Attendees</h2>
-                                    {event.attendees.map((attendee, idx) => (
-                                        <Link to={`/user/${attendee._id}`} key={idx}>
-                                            <img
-                                                className="attendees-details"
-                                                src={attendee.imgUrl}>
-                                            </img>
-                                        </Link>
-                                    ))}
-                                </div>
-                                <div className="map">
-                                    {this.state.loc && (
-                                        <MyMapComponent
-                                            isMarkerShown
-                                            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
-                                            loadingElement={<div style={{ height: `100%` }} />}
-                                            containerElement={
-                                                <div style={{ height: `45vh` }} />
-                                            }
-                                            mapElement={<div style={{ height: `100%` }} />}
-                                            lat={this.state.loc.lat}
-                                            lng={this.state.loc.lng}
-                                        />
-                                    )}
-                                </div>
+                                <p>
+                                    {event.desc}
+                                </p>
+                                <div className="bottom-event-content">
+                                    <div className="attendees">
+                                        <h2>Attendees</h2>
+                                        {event.attendees.map((attendee, idx) => (
+                                            <Link to={`/user/${attendee._id}`} key={idx}>
+                                                <img
+                                                    className="attendees-details"
+                                                    src={attendee.imgUrl}>
+                                                </img>
+                                            </Link>
+                                        ))}
+                                    </div>
+                                    <div className="map">
+                                        {this.state.loc && (
+                                            <MyMapComponent
+                                                isMarkerShown
+                                                googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyADuPfbNl1fArD6HxZl0O_qsDUmwNLfIPY"
+                                                loadingElement={<div style={{ height: `100%` }} />}
+                                                containerElement={
+                                                    <div style={{ height: `45vh` }} />
+                                                }
+                                                mapElement={<div style={{ height: `100%` }} />}
+                                                lat={this.state.loc.lat}
+                                                lng={this.state.loc.lng}
+                                            />
+                                        )}
+                                    </div>
+                                   
 
-                               
-                                {this.props.user && 
-                                <div>
-   <i onClick={this.onToggleLike} className="fas fa-heart" style={{color: (event.likes.find(userId => userId === user._id)) ? 'blue' : 'black'}}/>   {event.likes.length}
-                </div>}
-                                <div className="event-chat">
-                                    <h2>Reviews</h2>
-                                    <Review
-                                        onAddReview={this.onAddReview}
-                                        reviews={event.reviews}
-                                    />
+                                    
+
+
+                                    <div className="event-chat">
+                                        <h2>Reviews</h2>
+                                        <Review
+                                            onAddReview={this.onAddReview}
+                                            reviews={event.reviews}
+                                        />
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
             )
-       );
+        );
     }
 }
 

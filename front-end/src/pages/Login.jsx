@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
-
-
-import { login } from '../store/actions/UserActions'
+import FacebookLogin from 'react-facebook-login';
+import GoogleLogin from 'react-google-login';
+import { login, signup } from '../store/actions/UserActions'
+import { Link } from 'react-router-dom';
 
 
 class _Login extends Component {
@@ -40,33 +41,79 @@ class _Login extends Component {
 
   }
 
+  handleLogin = async (res, supplier) => {
+    let user = {}
+    if (supplier === 'facebook') {
+      const {name, email, picture, id} = res
+      user = {
+        username: name,
+        email,
+        imgUrl: picture.data.url,
+        password: id
+    }
+  }
+    if (supplier === 'google') {
+      const {name, email, imageUrl, googleId} = res.profileObj
+      user = {
+        username: name,
+        email,
+        imgUrl: imageUrl,
+        password: googleId
+     }
+    }
+    
+      try {
+        await this.props.signup(user);
+        this.props.history.push('/');
+    } catch (err) {
+        console.log('Problem in login with supplier')
+    }
+  
+ 
+  }
+  
   render() {
+    const responseFacebook = (response) => {
+      this.handleLogin(response, 'facebook');
+    }
+
+    const responseGoogle = (response) => {
+      this.handleLogin(response, 'google');
+    }
     
     return (
       <div className="loginForm">
         <form onSubmit={this.onHandelSubmit}>
           <h1>Login</h1>
 
-          <div className="continue-with-facebook">
-            <a href="#">
-              <i className="fab fa-facebook-square"></i>
-              <p>Continue with Facebook</p>
-            </a>
-          </div>
+        
+    
+         
+            <FacebookLogin
+    appId="2615909622063165"
+    fields="name,email,picture"
+    onClick={this.handle}
+    callback={responseFacebook}
+    icon="fa-facebook"
+    textButton="Continue with facebook"
+    cssClass="continue-with-facebook"
+     />
+    
+        
 
-          <div className="continue-with-google">
-            <a href="#">
-              <i className="fab fa-google"></i>
-              <p>Continue with Google</p>
-            </a>
-          </div>
+       
+           
+  
+              <GoogleLogin
+    clientId="426820236890-n3qrl4u3514kjph5o4mfscumqn96ijam.apps.googleusercontent.com"
+    buttonText="Continue with Google"
+    onSuccess={responseGoogle}
+    onFailure={responseGoogle}
+    cookiePolicy={'single_host_origin'}
+    className="continue-with-google"
+  />
+         
 
-          <div className="continue-with-apple">
-            <a href="#">
-              <i className="fab fa-apple"></i>
-              <p>Continue with Apple</p>
-            </a>
-          </div>
 
           <div className="login-or"><span>OR</span></div>
 
@@ -76,14 +123,23 @@ class _Login extends Component {
             <p style={{ color: "red", fontSize: "0.8rem" }}>{this.state.msg}</p>
             <button className="loginBtn">Continue</button>
           </div>
+
+          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
         </form>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = {
-  login,
+const mapStateToProps = (state) => {
+  return {
+      user: state.users.loggedInUser
+  }
 }
 
-export const Login = connect(null, mapDispatchToProps)(withRouter(_Login));
+const mapDispatchToProps = {
+  login,
+  signup
+}
+
+export const Login = connect(mapStateToProps, mapDispatchToProps)(withRouter(_Login));

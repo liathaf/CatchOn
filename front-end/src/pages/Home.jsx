@@ -11,14 +11,33 @@ class _Home extends Component {
 
     state = {
         categories: [
-            { name: "sport", class: "fas fa-basketball-ball fa-3x" },
-            { name: "outdoors", class: "fas fa-campground  fa-3x" },
-            { name: "traveling", class: "fas fa-plane fa-3x" },
-            { name: "culinary", class: "fas fa-utensils fa-3x" },
-            { name: "gamming", class: "fas fa-gamepad fa-3x" },
-            { name: "coding", class: "fab fa-connectdevelop fa-3x" }
-        ]
+            { name: "Sport", className: "fas fa-basketball-ball fa-3x" },
+            { name: "Outdoors", className: "fas fa-campground  fa-3x" },
+            { name: "Traveling", className: "fas fa-plane fa-3x" },
+            { name: "Culinary", className: "fas fa-utensils fa-3x" },
+            { name: "Gaming", className: "fas fa-gamepad fa-3x" },
+            { name: "Health", className: "fas fa-heartbeat fa-3x" },
+            { name: "Arts & Culture", className: "fas fa-palette fa-3x" },
+            { name: "Pets", className: "fas fa-paw fa-3x" },
+            { name: "Tech", className: "fas fa-microchip fa-3x" },
+            { name: "Family", className: "fas fa-home fa-3x" },
+            { name: "Learning", className: "fas fa-graduation-cap fa-3x" },
+            { name: "Photography", className: "fas fa-camera-retro fa-3x" },
+            { name: "Writing", className: "fas fa-pen-square fa-3x" },
+            { name: "Music", className: "fas fa-music fa-3x" },
+            { name: "Film", className: "fas fa-film fa-3x" },
+            { name: "Dance", className: "fas fa-child fa-3x" },
+            { name: "Carrier & Business", className: "fas fa-briefcase fa-3x" },
+            { name: "Coding", className: "fab fa-connectdevelop fa-3x" }
+        ],
+        searchValue: ''
     }
+
+    onHandelChange = ({ target }) => {
+        const field = target.name;
+        const value = target.value;
+        this.setState({ [field]: value });
+      }
 
     componentDidMount() {
         this.props.loadEvents();
@@ -30,18 +49,75 @@ class _Home extends Component {
 
     render() {
         const { events } = this.props
+  
         return (
             <>
-            <div className="top-on"></div>
+                <div className="top-on"></div>
                 <section className="landing">
                     {/* <div className="main-img">
                         <img className="group1-main-img" src={group1}></img>
                         <img className="group2-main-img" src={group2}></img>
                     </div> */}
                     <div className="landing-inner container">
-                        <h1 className="large">Explore new events and meet new people</h1>
-                        <Link to="/login" className="btn btn-primary">Join Venyou</Link>
+                        <h1 className="large">Explore new events and meet new people.</h1>
+                        {/* <Link to="/login" className="btn btn-primary">Join VENYOU</Link> */}
+                        <div>
+                            <div className="home-search">
+                            <i className="fas fa-search fa-lg"></i>
+                                <input onChange={this.onHandelChange} type="text" name="searchValue"/>
+                            </div>
+                            <Link to={`/events/search=${this.state.searchValue}`}> <button className="btn btn-primary">Search</button></Link>
+                        </div>
+                        <div className="landing-categories">
+                            <h4>Popular:</h4>
+                            <Link to="/events/category=Coding" className="btn"> Coding</Link>
+                            <Link to="/events/category=Gaming" className="btn">Gaming </Link>
+                            <Link to="/events/category=Music" className="btn">Music </Link>
+                            <Link to="/events/category=Pets" className="btn">Pets </Link>
+                        </div>
                     </div>
+                </section>
+                <div className="group-title container">
+                    <h2>Sport</h2>
+                    <Link to="/events/category=Sport"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                </div>
+                <div className="events-home">
+                    <EventList events={events} atHome={true} category={'Sport'} />
+                </div>
+                <div className="group-title container">
+                    <h2>Health</h2>
+                    <Link to="/events/category=Health"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                </div>
+                <div className="events-home">
+                    <EventList events={events} atHome={true} category={'Health'}/>
+                </div>
+                <div className="group-title container">
+                    <h2>Outdoor</h2>
+                    <Link to="/events/category=Outdoor"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                </div>
+                <div className="events-home">
+                    <EventList events={events} atHome={true} category={'Outdoor'} />
+                </div>
+                <div className="group-title container">
+                    <h2>Coding</h2>
+                    <Link to="/events/category=Coding"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                </div>
+                <div className="events-home">
+                    <EventList events={events} atHome={true} category={'Coding'}/>
+                </div>
+                <div className="group-title container">
+                    <h2>Gaming</h2>
+                    <Link to="/events/category=Gaming"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                </div>
+                <div className="events-home">
+                    <EventList events={events} atHome={true} category={'Gaming'}/>
+                </div>
+
+                <section className="about-preview">
+                     {events.length && <div>
+                        <h2>Check Out A Random Event</h2>
+                        <Link to={`/event/${events[Math.floor(Math.random() * events.length)]._id}`} className="btn btn-control">Be Spontaneous</Link>
+                    </div>}
                 </section>
                 <div className="group-title container">
                     <h2>Start Your Venue</h2>
@@ -50,36 +126,8 @@ class _Home extends Component {
                 <section className="categories container">
                     {this.state.categories.map((category, idx) => (
                         <div className="category-preview" key={idx}>
-                            <Link to={`/event/category/${category.name}`}><i className={category.class}></i><p>{category.name}</p></Link>
+                            <Link to={`/events/category=${category.name}`}><i className={category.className}></i><p>{category.name}</p></Link>
                         </div>))}
-                </section>
-                <div className="group-title container">
-                    <h2>Events From Top Creators</h2>
-                    <Link to="/event"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
-                </div>
-                <div className="events-home">
-                    <EventList events={events} atHome={true} />
-                </div>
-                <div className="group-title container">
-                    <h2>New Events</h2>
-                    <Link to="/event">See More ></Link>
-                </div>
-                <div className="events-home">
-                    <EventList events={events} atHome={true} />
-                </div>
-                <div className="group-title container">
-                    <h2>Free Events</h2>
-                    <Link to="/event">See More ></Link>
-                </div>
-                <div className="events-home">
-                    <EventList events={events} atHome={true} />
-                </div>
-
-                <section className="about-preview container">
-                    <div>
-                    <h2>Check out a Random Event</h2>
-                    <Link to="/login" className="btn btn-control">Be spontaneous</Link>
-                    </div>
                 </section>
                 <footer>
                     <Link className="logo large" to="/">VenYou </Link>
