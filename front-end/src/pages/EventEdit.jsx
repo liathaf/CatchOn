@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import { EventService } from '../services/EventService';
 import { loadEvent, saveEvent } from '../store/actions/EventActions';
 import { updateUser } from '../store/actions/UserActions';
+import { Modal } from '../cmps/Modal'
+
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import TextField from '@material-ui/core/TextField';
@@ -23,6 +27,7 @@ class _EventEdit extends Component {
         },
         msg: '',
         amptyInputClass: '',
+        isOpenModal: false
     };
 
 
@@ -67,25 +72,27 @@ class _EventEdit extends Component {
 
 
     onHandelSubmit = async (ev) => {
+
         ev.preventDefault();
         const { event } = this.state;
         const { user } = this.props;
         if (!user) return
-       
+
         if (!event.title || !event.place) {
             this.setState({ msg: 'Please fill the required fields!', amptyInputClass: 'amptyInput' });
             return;
         }
-        user.createdEvents.push({
-            _id: event._id,
-            title: event.title,
-            imgUrl: event.imgUrls[0]
-        });
         try {
-            await this.props.saveEvent(event);
-            await this.props.updateUser(user)
-            this.props.history.push('/')
-
+            const savedEvent = await this.props.saveEvent(event);
+            await this.props.loadEvent(savedEvent._id)
+            user.createdEvents.push({
+                _id: savedEvent._id,
+                title: savedEvent.title,
+                imgUrl: savedEvent.imgUrls[0],
+                desc: savedEvent.desc
+            });
+            await this.props.updateUser(user);
+            this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
         } catch (err) {
             console.log('eventEdit cmp : cannot save event')
         }
@@ -96,8 +103,13 @@ class _EventEdit extends Component {
         this.setState({ amptyInputClass: '' });
     }
 
-    render() {
+    onRemoveModal = () =>{
+        this.props.history.push('/');
+    }
 
+
+
+    render() {
         return (
             <div className="edit">
                 <h2>Edit Area</h2>
@@ -187,6 +199,12 @@ class _EventEdit extends Component {
                     <p style={{ color: "red" }}>{this.state.msg}</p>
                     <button className="save">Save</button>
                 </form>
+                {(this.state.isOpenModal && this.props.event) && <Modal onRemoveModal={this.onRemoveModal}>
+                        <h2>Your event was created!</h2>
+                        <div className="links">
+                            <Link to={`/event/${this.props.event._id}`}>Go check it out</Link>
+                        </div>
+                </Modal>}
             </div>
         );
     }
