@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import avatar from '../img/avatar.jpg'
+
 import moment from 'moment'
 import { MyMapComponent } from '../cmps/Map';
-import { loadEvent, addReview, saveEvent } from '../store/actions/EventActions';
-import { Review } from '../cmps/Review';
 import { GeolocationService } from '../services/GeolocationService';
+
+import { loadEvent, addReview, saveEvent } from '../store/actions/EventActions';
+import { UserService } from '../services/UserService'
+import { EventService } from '../services/EventService'
+import { updateUser } from '../store/actions/UserActions';
+import { Review } from '../cmps/Review';
 import { SocketService } from '../services/SocketService';
+import {ReactComponent as Like} from '../img/icons/like.svg'
+import { Modal } from '../cmps/Modal'
 
 
 
@@ -16,6 +25,8 @@ class _EventDetails extends Component {
         currentScrollHeight: 0,
         display: 'grid',
         loc: null,
+        isAttend: false,
+        isOpenModal: false
     };
 
 
@@ -23,9 +34,21 @@ class _EventDetails extends Component {
 
         SocketService.setup();
         const { eventId } = this.props.match.params;
-        SocketService.on('new review', this.props.loadEvent(eventId));
-        window.addEventListener('scroll', this.handleScroll, { passive: true });
+        this.loadEvent(eventId)
 
+        SocketService.on('new review', this.loadEvent);
+        // todo: react about 'passive' https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
+        window.addEventListener('scroll', this.handleScroll, { passive: true });
+        const { event } = this.props
+        const { user } = this.props
+        const isAttend = (user) ? UserService.isAttend(user, eventId) : ''
+        this.setState({ isAttend })
+    }
+
+
+    loadEvent = () => {
+        const { eventId } = this.props.match.params;
+        this.props.loadEvent(eventId)
     }
 
     componentDidUpdate() {
@@ -37,15 +60,12 @@ class _EventDetails extends Component {
             );
 
         }
-
-        // Review
-        const { eventId } = this.props.match.params;
-        // work only on componentDidUpdate , why?
-        SocketService.on('new review', this.props.loadEvent(eventId));
     }
 
     componentWillUnmount() {
-        SocketService.off();
+        SocketService.off('new review', this.loadEvent);
+        window.removeEventListener('scroll', this.handleScroll);
+
     }
 
     handleScroll = () => {
@@ -59,8 +79,7 @@ class _EventDetails extends Component {
     };
 
     onAddReview = async (msg) => {
-        const { event } = this.props;
-        var { user } = this.props;
+        var { user, event } = this.props;
         const review = {
             msg,
             user
@@ -70,27 +89,55 @@ class _EventDetails extends Component {
 
     }
 
-    onToggleLike = async ({ target }) => {
+    onAddAttend = async () => {
 
-        const { event, user } = this.props;
-        if (target.style.color === 'black') {
-            // this.setState({isLiked: 'blue'})
-            target.style.color = 'blue';
-            event.likes.push(user._id)
-            await this.props.saveEvent(event)
-        } else {
-            // this.setState({isLiked: 'black'})
-            target.style.color = 'black';
-            const idx = event.likes.find(userInArr => (userInArr === user._id))
-            event.likes.splice(idx, 1);
-            await this.props.saveEvent(event)
+        var { user, event } = this.props
+        const { isAttend } = this.state
+        if (!user || event.price !== 0) {
+            
+            this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
+            return
         }
+        if (!isAttend) {
+            user.attendedEvents.push({
+                _id: event._id,
+                title: event.title,
+                imgUrl: event.imgUrls[0]
+            });
+            event.attendees.push(user);
+        } else {
+            user.attendedEvents.splice(UserService.findIdxById(user, event._id), 1);
+            event.attendees.splice(EventService.findIdxById(event, user._id), 1);
+        }
+        await this.props.updateUser(user)
+        await this.props.saveEvent(event)
+        this.setState(prevState => ({ isAttend: !prevState.isAttend }))
+    }
 
+    onRemoveModal = () =>{
+        this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
+    }
+
+
+    onToggleLike = async ({ target }) => {
+        
+        if (target.viewBox) return
+        const { event, user } = this.props;
+        if (target.style.fill === 'rgb(72, 72, 72)') {
+            target.style.fill = 'rgb(243, 69, 115)';
+            event.likes.push(user.username)
+
+        } else {
+            target.style.fill = 'rgb(72, 72, 72)';
+            const idx = event.likes.find(userInArr => (userInArr === user.username))
+            event.likes.splice(idx, 1);
+        }
+        await this.props.saveEvent(event)
     }
 
     render() {
         const { event, user } = this.props;
-
+        
         const top =
             this.state.currentScrollHeight > 360
                 ? this.state.currentScrollHeight - 360
@@ -120,11 +167,11 @@ class _EventDetails extends Component {
                                     <p className={`event-price ${(event.price === 0) ? 'free' : ''}`}>
                                         {(event.price === 0) ? "Free" : "$" + event.price}
                                     </p>
-                                    <Link to="/login">
-                                        <span className="btn btn-primary">
-                                            Join
-                                        </span>
-                                    </Link>
+
+                                    <span className={`btn btn-primary ${(this.state.isAttend) ? 'attend' : ''}`} onClick={this.onAddAttend}>
+                                        {(this.state.isAttend) ? 'Leave' : 'Join'}
+                                    </span>
+
                                 </div>
                                 {/* <p className="createdAt">created at: {event.createdAt}</p> */}
                                 {/* <p>2/{event.capacity}</p> */}
@@ -135,11 +182,19 @@ class _EventDetails extends Component {
                                         <h1 className="large">{event.title}</h1>
                                         <p>{event.place}</p>
                                     </div>
+
+                                    {this.props.user &&
+                                        <div className="likeBtn">
+                                            <Like onClick={this.onToggleLike}  style={{ fill: (event.likes.find(userName => userName === user.username)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />   
+                                            <p>{event.likes.length}</p>
+                                        </div>}
+
+
                                     <Link to={`/user/${event.createdBy._id}`}>
                                         <div className="user-preview">
                                             <img
                                                 className="userImg-details"
-                                                src={event.createdBy.imgUrl} />
+                                                src={(event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar} />
                                             <p>{event.createdBy.username}</p>
                                         </div>
                                     </Link>
@@ -178,16 +233,14 @@ class _EventDetails extends Component {
                                             />
                                         )}
                                     </div>
-                                    {/* {this.props.user &&
-                                        <div>
-                                            <i onClick={this.onToggleLike} className="fas fa-heart" style={{ color: (event.likes.find(userId => userId === user._id)) ? 'blue' : 'black' }} />   {event.likes.length}
-                                        </div>} */}
+                                   
                                     <div className="event-chat">
-                                        <h2>Reviews</h2>
-                                        <Review
-                                            onAddReview={this.onAddReview}
-                                            reviews={event.reviews}
-                                        />
+                                    <h2>Reviews</h2>
+                                    <Review
+                                        onAddReview={this.onAddReview}
+                                        reviews={event.reviews}
+                                    />
+                                    {(this.state.isOpenModal) && <Modal event={event} onRemoveModal={this.onRemoveModal} />}
                                     </div>
                                 </div>
                             </div>
@@ -210,8 +263,8 @@ const mapDispatchToProps = {
     loadEvent,
     saveEvent,
     addReview,
+    updateUser,
+    saveEvent
 };
 
 export const EventDetails = connect(mapStateToProps, mapDispatchToProps)(_EventDetails);
-
-

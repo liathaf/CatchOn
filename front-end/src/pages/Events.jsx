@@ -23,16 +23,16 @@ class _Events extends Component {
       })
       
   }
-
-
-
-    render() {
+  
+  
+  render() {
+    const { search } = this.props.match.params
         const { events } = this.props
         return (
             <div className="events">
 
               <div className="filter">
-              <EventFilter onSetFilter={this.onSetFilter}/>
+              <EventFilter onSetFilter={this.onSetFilter} search={search}/>
               </div>
               
               <div className="events-prev">
@@ -53,3 +53,5 @@ const mapDispatchToProps = {
     
 }
 export const Events = connect(mapStateToProps, mapDispatchToProps)(_Events)
+
+

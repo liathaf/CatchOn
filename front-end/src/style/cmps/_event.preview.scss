@@ -36,6 +36,25 @@
         }
     }
 
+    .preview-like {
+        width: 35px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: rem(20px);
+        font-weight: bold;
+
+        svg {
+            width: 18px;
+            fill: #f34573;
+        }
+
+        p {
+            margin-left: 5px;
+        }
+    }
+
     .event-content {
         line-height: 2;
         font-size: 0.9em;

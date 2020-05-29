@@ -11,7 +11,8 @@ export class _NavBar extends Component {
 
     state = {
         currentScrollHeight: 0,
-        display: 'none'
+        display: 'none',
+        searchValue: ''
     }
 
     componentDidMount() {
@@ -25,6 +26,12 @@ export class _NavBar extends Component {
         }
 
     };
+
+    onHandelChange = ({ target }) => {
+        const field = target.name;
+        const value = target.value;
+        this.setState({ [field]: value });
+      }
 
     onLogout = async () => {
 
@@ -44,14 +51,16 @@ export class _NavBar extends Component {
                 <div className="navbar-content container">
                     <Link className="logo" to="/"><img src={logo}></img></Link>
                     <div>
-                        <div className="nav-search" style={{ display: display }}>
+                    <div className="nav-search" style={{ display: display }}>
+                        <Link to={`/events/search=${this.state.searchValue}`}>                       
                             <i className="fas fa-search"></i>
-                            <input type="text" />
+                        </Link>
+                            <input type="text" onChange={this.onHandelChange} name="searchValue"/>
                         </div>
                         {/* <button className="btn btn-primary">Search</button> */}
                     </div>
                     <ul className="links">
-                        <li><Link to="/event/edit">Create Event</Link></li>
+                        <li><Link to="/edit">Create Event</Link></li>
                         {(!user) &&
                             <>
                                 <li><Link to="/signup">Register</Link></li>
@@ -59,8 +68,8 @@ export class _NavBar extends Component {
                             </>}
                         {(user) &&
                             <>
-                                <li className="login" onClick={this.onLogout}>Logout</li>
-                                <img className="userImg-preview" src={(user.imgUrl) ? user.imgUrl : avatar} />
+                                <li className="logout" onClick={this.onLogout}>Logout</li>
+                                <li><Link to={`/user/${user._id}`}><img className="userImg-preview" src={(user.imgUrl) ? user.imgUrl : avatar} /></Link></li>
                             </>
                         }
 

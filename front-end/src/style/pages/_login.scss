@@ -8,63 +8,37 @@
     min-width: 400px;
 
     .continue-with-facebook {
-        
-        background-color: #4267B2;
+        width: 100%;
         padding: rem(10px);
+        margin: rem(10px) 0;
         border-radius: 5px;
-        margin: rem(20px) 0;
-    
-        a {
-            display: flex;
-            justify-content: space-around;
-            font-size: rem(20px);
-            line-height: 1;
-            color: #ffffff;
+        background-color: #3b5998;
+        color: #fff;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        outline: none;
+        i {
+            margin-right: 15px;
         }
 
-        i {
-            margin-left: 7px;
+        &:hover {
+            background-color: darken(#3b5998, 3);
         }
     }
     
     .continue-with-google {
-        
-        border: lightgray solid 1px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
         padding: rem(10px);
+        margin: rem(10px) 0;
         border-radius: 5px;
-        margin: rem(20px) 0;
-    
-        a {
-            display: flex;
-            justify-content: space-around;
-            font-size: rem(20px);
-            line-height: 1;
-            color: #727272;
-        }
-
-       
+        outline: none;
     }
     
-    .continue-with-apple {
-        
-        border: lightgray solid 1px;
-        padding: rem(10px);
-        border-radius: 5px;
-        margin: rem(20px) 0;
     
-        a {
-            display: flex;
-            justify-content: space-around;
-            font-size: rem(20px);
-            line-height: 1;
-            color: #727272;
-        }
-
-        i {
-            color: rgb(26, 26, 26);
-            
-        }
-    }
 
     .login-or {
         margin: rem(20px) 0;
@@ -74,7 +48,7 @@
         height: 12px;
         
         span {
-            background-color: #fff;
+            background-color: #f4f7f6;
             padding: rem(5px);
         }
     }
@@ -95,13 +69,25 @@
         border: lightgray solid 1px;
         outline: none;
         cursor: pointer;
-        font-family: Roboto;
         font-size: rem(20px);
         &:hover {
             background-color: rgb(226, 220, 220);
         }
     }
 
+    .signup{
+        display: flex;
+        justify-content: center;
+        margin-inline-end: rem(5px); 
+
+        p{
+            margin-inline-end: rem(3px);;
+        }
+
+        &:hover a{
+            text-decoration: underline;
+        }
+    }
     
 
 }

@@ -35,6 +35,11 @@ export class EventFilter extends Component {
         ], toggleClass: 'category-filter-container'
     }
 
+    componentDidMount() {
+        this.setFilter()
+        
+    }
+
     handleChange = (ev) => {
         // console.log(ev.target.innerText);
         console.log(ev.currentTarget.type);
@@ -70,16 +75,33 @@ export class EventFilter extends Component {
         }
     }
 
-
-
+    setFilter = () => {
+        
+        const type = this.props.search.slice(0, 1)
+        if(type === 's') {
+            const valueToSearch = this.props.search.slice(7, this.props.search.length)
+            this.setState(prevState => ({ filter: { ...prevState.filter, title: valueToSearch } }), () => {
+                this.props.onSetFilter(this.state.filter)
+            })
+        }
+        if (type === 'c') {
+            const valueToSearch = this.props.search.slice(9, this.props.search.length)
+            this.setState(prevState => ({ filter: { ...prevState.filter, category: valueToSearch } }), () => {
+                this.props.onSetFilter(this.state.filter)
+            })
+        }
+        
+    }
+    
     render() {
+ 
         return (
             <section className="event-filter container">
                 <div className="input-filter">
                     <h2>Find your next event</h2>
                     <div className="filter-search">
                         <i className="fas fa-search fa-lg"></i>
-                        <input type="text" label="Search..." name="title" value={this.state.title} onChange={this.handleChange} type="search" />
+                        <input type="text" label="Search..." name="title" value={this.state.filter.title} onChange={this.handleChange} type="search" />
                         <button className="btn btn-primary">Search</button>
                     </div>
                 </div>
@@ -104,25 +126,15 @@ export class EventFilter extends Component {
                         </ul>
                     </div>
 
-                    {/* </section> */
-                    /* <select className="category-input" name="category" value={this.state.category} onChange={this.handleChange}>
-                    <option value="">All</option>
-                    <option value="Sport">Sport</option>
-                    <option value="Health">Health</option>
-                    <option value="Animals">Animals</option>
-                </select> */}
                     <div>
                         <button type='button' className="isFree-button btn" name="isFree" onClick={this.state.isFree,this.handleChange} >Free</button>
                     </div>
                     <div>
                         <h4>Up Coming Month</h4>
-                        <input className="thisMonth-input" type="checkbox" name="thisMonth" checked={this.state.thisMonth} onChange={this.handleChange} />
+                        <input className="thisMonth-input" type="checkbox" name="thisMonth" checked={this.state.filter.thisMonth} onChange={this.handleChange} />
                     </div>
                 </div>
                 {/* <input className="isFree-input" type="checkbox" name="isFree" checked={this.state.isFree} onChange={this.handleChange}></input> */}
-
-
-
 
             </section>
         )
