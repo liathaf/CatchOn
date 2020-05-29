@@ -8,7 +8,6 @@ export function EventList(props) {
 
     const { events, atHome  } = props
     var limitEvents = events.length;
-    console.log(events);
     if (atHome) limitEvents = 4;
     return (
         <div className="event-list  container">

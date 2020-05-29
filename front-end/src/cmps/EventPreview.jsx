@@ -32,7 +32,7 @@ export function EventPreview(props) {
                     <div>
                         <div className="event-time-place">
                             <p>{event.place}</p>
-                            <p>{timeService.convertToRelativeTime(event.startAt)}</p>
+                            {/* <p>{timeService.convertToRelativeTime(event.startAt)}</p> */}
                         </div>
                     </div>
                 </div>

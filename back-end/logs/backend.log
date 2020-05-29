@@ -935,3 +935,18 @@ Wed, 27 May 2020 20:21:48 GMT - Debug - auth.service - login with email: adi
 Wed, 27 May 2020 21:35:00 GMT - Debug - auth.service - login with email: adi
 Wed, 27 May 2020 22:00:11 GMT - Debug - auth.service - login with email: adi
 >>>>>>> 84a5f648e35b7713936671113279bdf001832b9e
+Thu, 28 May 2020 13:02:16 GMT - Info - Server is running on port: 3030
+Thu, 28 May 2020 15:15:37 GMT - Error - Cannot get events
+Thu, 28 May 2020 15:16:03 GMT - Info - Server is running on port: 3030
+Thu, 28 May 2020 19:51:35 GMT - Error - Cannot get event
+Fri, 29 May 2020 07:56:40 GMT - Error - Cannot get event
+Fri, 29 May 2020 09:12:37 GMT - Error - Cannot get event
+Fri, 29 May 2020 09:12:38 GMT - Error - Cannot get event
+Fri, 29 May 2020 09:12:38 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:29:23 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:29:23 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:29:23 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:44:15 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:44:15 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:44:15 GMT - Error - Cannot get event
+Fri, 29 May 2020 12:02:03 GMT - Error - Cannot get event

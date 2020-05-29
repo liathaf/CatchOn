@@ -178,15 +178,6 @@ class _EventDetails extends Component {
                                             />
                                         )}
                                     </div>
-                                    <div className="event-chat">
-                                        <h2>Reviews</h2>
-                                        <Review
-                                            onAddReview={this.onAddReview}
-                                            reviews={event.reviews}
-                                        />
-                                    </div>
-
-
                                     {/* {this.props.user &&
                                         <div>
                                             <i onClick={this.onToggleLike} className="fas fa-heart" style={{ color: (event.likes.find(userId => userId === user._id)) ? 'blue' : 'black' }} />   {event.likes.length}
