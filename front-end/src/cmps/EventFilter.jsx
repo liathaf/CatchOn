@@ -7,7 +7,12 @@ export class EventFilter extends Component {
             category: '',
             title: '',
             isFree: false,
+<<<<<<< HEAD
             thisMonth: false,
+=======
+            thisWeek: false,
+
+>>>>>>> 2259bbcaf041c4584b654c89c24694635efb4f16
         },
         categories: [
             { name: "Sport", className: "fas fa-basketball-ball fa-1x" },
@@ -111,7 +116,7 @@ export class EventFilter extends Component {
                         <button className="isFree-button btn" name="isFree" onClick={this.onToggelButtonsFilter} >Free</button>
                     </div>
                     <div>
-                        <button onClick={this.onToggelButtonsFilter} name="thisMonth" >Up Coming Month</button>
+                        <button onClick={this.onToggelButtonsFilter} name="thisWeek" >Up Coming Week</button>
                     </div>
                 </div>
             </section>
@@ -119,3 +124,14 @@ export class EventFilter extends Component {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+

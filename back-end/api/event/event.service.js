@@ -11,8 +11,7 @@ module.exports = {
 }
 
 function _buildCriteria(filterBy) {
-   
-    if(!filterBy.title &&  !filterBy.isFree && !filterBy.category && !filterBy.thisMonth){
+    if(!filterBy.title &&  !filterBy.isFree && !filterBy.category && !filterBy.thisWeek){
        return filterBy;
     }
     const criteria = { $and: []};
@@ -30,18 +29,19 @@ function _buildCriteria(filterBy) {
         criteria.$and.push({ price:  {$eq: 0}})
         
     }
-    if (filterBy.thisMonth) {
-    
-        const wantedDate = Date.now() + 2678400000;
-        criteria.$and.push({ startAt : {$lt: wantedDate}});
+    if (filterBy.thisWeek) {
+      
+        const wantedDate = Date.now() + 604800000;
+        criteria.$and.push({ startAt : {$lt: wantedDate}});  
     }
 
-
+   
     return criteria;
 }
 
 
 async function query(filterBy) {
+
     const filter = _buildCriteria(filterBy)
   
     const collection = await dbService.getCollection('event');
