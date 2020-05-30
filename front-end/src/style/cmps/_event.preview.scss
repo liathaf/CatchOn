@@ -86,19 +86,28 @@
 
             h3 {
                 font-weight: 800;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 130px;
+                white-space: nowrap;
             }
             
             p {
                 display: inline;
                 margin-left: 5px;
                 font-size: 15px;
-
             }
         }
 
         .event-time-place {
             display: flex;
             justify-content: space-between;
+            p{
+                text-overflow: ellipsis;
+                overflow: hidden;
+                width: 100px;
+                white-space: nowrap;
+            }
             p:first-child{
                 font-size: 13px;
                 color: #adadad;

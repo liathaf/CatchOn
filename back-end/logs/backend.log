@@ -1195,12 +1195,17 @@ Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email:
 Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email: 
 Fri, 29 May 2020 12:31:45 GMT - Debug - auth.service - login with email: liathaf@gmail.com
 Fri, 29 May 2020 12:38:28 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+<<<<<<< HEAD
+Fri, 29 May 2020 14:09:20 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 15:09:55 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+=======
 >>>>>>> 6c4a6e6a8cb071d811158e5f6d515c2982746a6b
 Fri, 29 May 2020 14:10:47 GMT - Info - Server is running on port: 3030
 Fri, 29 May 2020 16:54:22 GMT - Debug - sdv, zvds
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - signup with email: sdv, username: zvds
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.route - new account created: {"email":"sdv","password":"$2b$10$w6yPFLz6oqChJnQ3CHrPReUVSoLBVzrqrBHlKwIitB5Ge9kWJHalC","username":"zvds","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed13e3eed75880888e7ed8e"}
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - login with email: sdv
+<<<<<<< HEAD
 Fri, 29 May 2020 20:09:32 GMT - Info - Server is running on port: 3030
 Fri, 29 May 2020 20:22:03 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 10:27:54 GMT - Debug - ujk7,, errev
@@ -1215,3 +1220,12 @@ Sat, 30 May 2020 13:01:22 GMT - Debug - koko, koko
 Sat, 30 May 2020 13:01:22 GMT - Debug - auth.service - signup with email: koko, username: koko
 Sat, 30 May 2020 13:01:22 GMT - Debug - auth.route - new account created: {"email":"koko","password":"$2b$10$iTkel5ZA7a8/B6gRFT9Ee.uKWAIphtWshfiYOhqOq4FxPsY00Nd9G","username":"koko","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed259223c0b730db0f96677"}
 Sat, 30 May 2020 13:01:22 GMT - Debug - auth.service - login with email: koko
+=======
+>>>>>>> aff1b1425211613b8733ced8847b771fb126ba45
+Fri, 29 May 2020 17:42:13 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 20:00:17 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 20:45:34 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 08:27:20 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sat, 30 May 2020 11:47:52 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+>>>>>>> 43376ea6f0f40b05771cb3baf6090de3251000cd
+Sat, 30 May 2020 13:42:59 GMT - Info - Server is running on port: 3030

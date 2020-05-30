@@ -9,6 +9,7 @@ import { MyMapComponent } from '../cmps/Map';
 import { GeolocationService } from '../services/GeolocationService';
 
 import { loadEvent, addReview, saveEvent } from '../store/actions/EventActions';
+
 import { UserService } from '../services/UserService'
 import { EventService } from '../services/EventService'
 import { updateUser } from '../store/actions/UserActions';
@@ -16,8 +17,6 @@ import { Review } from '../cmps/Review';
 import { SocketService } from '../services/SocketService';
 import { ReactComponent as Like } from '../img/icons/like.svg'
 import { Modal } from '../cmps/Modal'
-
-
 
 class _EventDetails extends Component {
 
@@ -37,12 +36,14 @@ class _EventDetails extends Component {
         this.loadEvent(eventId)
 
         SocketService.on('new review', this.loadEvent);
-        // todo: react about 'passive' https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners
+        SocketService.on('new like', this.loadEvent);
+
         window.addEventListener('scroll', this.handleScroll, { passive: true });
-        const { event } = this.props
+
         const { user } = this.props
         const isAttend = (user) ? UserService.isAttend(user, eventId) : ''
         this.setState({ isAttend })
+        
     }
 
 
@@ -53,7 +54,7 @@ class _EventDetails extends Component {
 
     componentDidUpdate() {
         const { event } = this.props;
-        //Map
+
         if (event && !this.state.loc) {
             GeolocationService.getLatLng(event.place).then((loc) =>
                 this.setState({ loc })
@@ -64,6 +65,7 @@ class _EventDetails extends Component {
 
     componentWillUnmount() {
         SocketService.off('new review', this.loadEvent);
+        SocketService.off('new like', this.loadEvent);
         window.removeEventListener('scroll', this.handleScroll);
 
     }
@@ -98,6 +100,7 @@ class _EventDetails extends Component {
             return
         }
         if (!isAttend) {
+            
             user.attendedEvents.push({
                 _id: event._id,
                 title: event.title,
@@ -123,20 +126,23 @@ class _EventDetails extends Component {
         if (target.viewBox) return
         const { event, user } = this.props;
         if (target.style.fill === 'rgb(72, 72, 72)') {
+
+            event.likes.push({ _id: user._id, username: user.username })
+            await this.props.saveEvent(event)
             target.style.fill = 'rgb(243, 69, 115)';
-            event.likes.push(user.username)
 
         } else {
-            target.style.fill = 'rgb(72, 72, 72)';
-            const idx = event.likes.find(userInArr => (userInArr === user.username))
+            const idx = event.likes.findIndex(like => like._id === user._id)
             event.likes.splice(idx, 1);
+            await this.props.saveEvent(event)
+            target.style.fill = 'rgb(72, 72, 72)';
         }
-        await this.props.saveEvent(event)
+        await SocketService.emit('change like');
+        this.loadEvent();
     }
 
     render() {
         const { event, user } = this.props;
-
         const top =
             this.state.currentScrollHeight > 360
                 ? this.state.currentScrollHeight - 360
@@ -170,9 +176,7 @@ class _EventDetails extends Component {
                                     <span className={`btn btn-primary ${(this.state.isAttend) ? 'attend' : ''}`} onClick={this.onAddAttend}>
                                         {(this.state.isAttend) ? 'Leave' : 'Join'}
                                     </span>
-
                                 </div>
-                                {/* <p className="createdAt">created at: {event.createdAt}</p> */}
                             </div>
                             <div className="all-content">
                                 <div className="event-detail-top">
@@ -193,9 +197,9 @@ class _EventDetails extends Component {
                                     <div className="capacity-likes">
                                         {this.props.user &&
                                             <div className="likeBtn">
-                                                <Like onClick={this.onToggleLike} style={{ fill: (event.likes.find(userName => userName === user.username)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />
-                                                <p>{event.likes.length}</p>
-                                            </div>}
+                                            <Like onClick={this.onToggleLike} style={{ fill: (event.likes.find(like => like._id === user._id)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />
+                                            <p>{event.likes.length}</p>
+                                        </div>}
                                         <h4>{event.attendees.length}/{event.capacity} <i className="far fa-user"></i></h4>
                                     </div>
                                 </div>
@@ -276,3 +280,4 @@ const mapDispatchToProps = {
 };
 
 export const EventDetails = connect(mapStateToProps, mapDispatchToProps)(_EventDetails);
+

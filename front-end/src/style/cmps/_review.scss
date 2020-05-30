@@ -33,13 +33,13 @@
             padding: 10px;
             background-color:#49beb7;
             border-radius: 8px;
-            color: black;
+            color: white;
             transition: 0.5s;
             font-size: rem(13px);
 
             &:hover{
                 background-color: #f34573;
-                color:white
+                color: black
             }
         }
     }

@@ -6,6 +6,7 @@ import * as moment from 'moment'
 import avatar from '../img/avatar.jpg'
 
 export function ReviewPreview(props) {
+
     const { review } = props
     const { user } = review
     const createAt = moment(review.createdAt).fromNow();

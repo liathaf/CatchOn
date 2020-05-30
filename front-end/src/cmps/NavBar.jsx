@@ -7,6 +7,7 @@ import avatar from '../img/avatar.jpg'
 import logo from '../../src/img/logo-stright.png'
 import { logout } from '../store/actions/UserActions'
 import { Modal } from './Modal'
+import {EventFilter} from '../cmps/EventFilter'
 
 export class _NavBar extends Component {
 
@@ -37,10 +38,10 @@ export class _NavBar extends Component {
         }
     }
 
-    onHandelChange = ({ target }) => {
-        const field = target.name;
-        const value = target.value;
-        this.setState({ [field]: value });
+    onHandelChange = (ev) => {
+        const field = ev.target.name;
+        const value = ev.target.value;
+        this.setState({ [field]: value.toLowerCase() });
     }
 
     onLogout = async () => {
@@ -71,7 +72,6 @@ export class _NavBar extends Component {
                         </Link>
                         <input type="text" onChange={this.onHandelChange} name="searchValue" />
                     </div>
-                    {/* <button className="btn btn-primary">Search</button> */}
                     <div className='burger btn' onClick={this.toggleClass}>
                         <div className='line1'></div>
                         <div className='line2'></div>
@@ -97,12 +97,14 @@ export class _NavBar extends Component {
 
                     </ul>
                 </div>
-                {(this.state.isOpenModal) && <Modal onRemoveModal={this.onRemoveModal}>
-                    <div>Create an event requires login</div>
-                    <button className="login-modal-btn nav-bar"><Link to="/login">LOGIN</Link></button>
-                    <div className="signup">
-                        <p>New member?</p> <Link to="/signup">Sign up</Link>
-                    </div>
+                { (this.state.isOpenModal) && <Modal onRemoveModal={this.onRemoveModal}>
+                        <div>Creating an event requires login</div>
+                        <button className="login-modal-btn nav-bar" onClick={() => {
+                            this.setState(prevState => ({ isOpenModal: false }))
+                        }}><Link to="/login">LOGIN</Link></button>
+                        <div className="signup">
+                            <p>New member?</p> <Link to="/signup">Sign up</Link>
+                        </div>
                 </Modal>}
             </nav>
         )

@@ -13,37 +13,45 @@ import TextField from '@material-ui/core/TextField';
 
 
 class _EventEdit extends Component {
-  state = {
-    event: {
-      title: '',
-      desc: '',
-      category: '',
-      price: '',
-      createdBy: '',
-      startAt: new Date(),
-      place: '',
-      capacity: '',
-      imgUrls: [],
-    },
-    msg: '',
-    amptyInputClass: '',
-    isOpenModal: false
-  };
+    state = {
+        event: {
+            title: '',
+            desc: '',
+            category: '',
+            price: '',
+            createdBy: '',
+            startAt: new Date(),
+            place: '',
+            capacity: '',
+            imgUrls: [],
+        },
+        msg: '',
+        amptyInputClass: '',
+        isOpenModal: false
+    };
+  
 
 
-  async componentDidMount() {
 
-    const eventId = this.props.match.params.eventId
+    componentDidMount() {
 
-    if (eventId) {
-      try {
-        const event = await this.props.loadEvent()
-        this.setState({ event })
-      } catch (err) {
-        console.log('eventEdit: cannot load event')
-      }
+        this.loadEvent();
     }
-  }
+
+    loadEvent = async () => {
+
+        const eventId = this.props.match.params.eventId
+
+        if (eventId) {
+            try {
+                const event = await this.props.loadEvent()
+                this.setState({ event })
+            } catch (err) {
+                console.log('eventEdit: cannot load event')
+            }
+        }
+    }
+  
 
   onHandelChange = async (ev) => {
 
@@ -190,6 +198,7 @@ class _EventEdit extends Component {
     );
   }
 }
+
 
 const mapStateToProps = (state) => {
   return {

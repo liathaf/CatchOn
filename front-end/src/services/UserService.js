@@ -67,7 +67,9 @@ function isAttend(user , eventId){
     return user.attendedEvents.some(event => event._id === eventId)
 }
 
+
 function findIdxById(user,eventId){
+
     return user.attendedEvents.findIndex(event => event._id === eventId)
 }
 
@@ -80,6 +82,7 @@ export const UserService = {
     getById,
     updateUser,
     isAttend,
-    findIdxById
+    findIdxById,
+    
    
 }
