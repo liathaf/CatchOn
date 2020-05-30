@@ -5,6 +5,7 @@ async function getEvents(req, res) {
     
     try {
         const events = await eventService.query(req.query);
+        
         res.send(events);
     } catch (err) {
         logger.error('Cannot get events', err);

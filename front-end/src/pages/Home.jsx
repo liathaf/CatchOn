@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import { connect } from 'react-redux';
-import { loadEvents } from '../store/actions/EventActions'
+import { loadEvents } from '../store/actions/EventActions';
 import { EventList } from '../cmps/EventList';
 
 
@@ -36,7 +36,7 @@ class _Home extends Component {
     onHandelChange = ({ target }) => {
         const field = target.name;
         const value = target.value;
-        this.setState({ [field]: value });
+        this.setState({ [field]: value.toLowerCase()});
       }
 
     componentDidMount() {
@@ -70,44 +70,44 @@ class _Home extends Component {
                         </div>
                         <div className="landing-categories">
                             <h4>Popular:</h4>
-                            <Link to="/events/category=Coding" className="btn"> Coding</Link>
-                            <Link to="/events/category=Gaming" className="btn">Gaming </Link>
-                            <Link to="/events/category=Music" className="btn">Music </Link>
-                            <Link to="/events/category=Pets" className="btn">Pets </Link>
+                            <Link to="/events/category=coding" className="btn"> Coding</Link>
+                            <Link to="/events/category=gaming" className="btn">Gaming </Link>
+                            <Link to="/events/category=music" className="btn">Music </Link>
+                            <Link to="/events/category=pets" className="btn">Pets </Link>
                         </div>
                     </div>
                 </section>
                 <div className="group-title container">
                     <h2>Sport</h2>
-                    <Link to="/events/category=Sport"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                    <Link to={`/events/category=${'Sport'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} category={'Sport'} />
                 </div>
                 <div className="group-title container">
                     <h2>Health</h2>
-                    <Link to="/events/category=Health"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                    <Link to={`/events/category=${'Health'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} category={'Health'}/>
                 </div>
                 <div className="group-title container">
-                    <h2>Outdoor</h2>
-                    <Link to="/events/category=Outdoor"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                    <h2>Outdoors</h2>
+                    <Link to={`/events/category=${'Outdoors'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
-                    <EventList events={events} atHome={true} category={'Outdoor'} />
+                    <EventList events={events} atHome={true} category={'Outdoors'} />
                 </div>
                 <div className="group-title container">
                     <h2>Coding</h2>
-                    <Link to="/events/category=Coding"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                    <Link to={`/events/category=${'Coding'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} category={'Coding'}/>
                 </div>
                 <div className="group-title container">
                     <h2>Gaming</h2>
-                    <Link to="/events/category=Gaming"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                    <Link to={`/events/category=${'Gaming'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
                     <EventList events={events} atHome={true} category={'Gaming'}/>
@@ -171,3 +171,5 @@ const mapDispatchToProps = {
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)
+
+

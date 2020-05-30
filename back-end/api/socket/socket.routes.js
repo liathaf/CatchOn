@@ -5,5 +5,9 @@ function connectSockets(io) {
         socket.on('added new review' , ()=>{
             io.emit('new review')
         })
+        socket.on('change like' , ()=>{
+            io.emit('new like')
+        })
     })
 }
+

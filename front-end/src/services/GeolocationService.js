@@ -24,7 +24,7 @@ function getLatLng(loc) {
 async function getClosestEvents(userLoc) {
     try {
         const events = await EventService.query()
-       console.log(events)
+      
 
     } catch {
 

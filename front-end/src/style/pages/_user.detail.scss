@@ -4,24 +4,43 @@
   
   .profile-top {
     margin: 0 0 3rem;
-    
-    img {
-      width: 250px;
-      height: 250px;
 
-    }
+    .main-profile{
+     
+      .icons-desc-container{
+        margin-inline-start: rem(50px);
+        display: flex;
+        flex-direction: column;
 
-    .icons {
-      margin-top: 1rem;
-      width: 250px;
+        .user-desc{
+          width: 50%;
+          margin-bottom: rem(50px);
+        }
+      }
+
       display: flex;
-      justify-content: space-between;
-      margin: 0 0 3rem;
-      a{
-         &:hover {
-        color: var(--dark-color);
+      img {
+        width: 250px;
+        height: 250px;
+
+  
       }
-      }
+
+     
+  
+      .icons {
+        margin-top: 1rem;
+        width: 250px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 3rem;
+        a{
+           &:hover {
+          color: var(--dark-color);
+        }
+        }
+    }
+    
      
     }
   }
@@ -49,7 +68,7 @@
     padding-top: 30px;   
 
     .event {
-
+      margin-bottom: rem(20px);
       .event-img-user-details{
         width: 100px;
         height: 50px;

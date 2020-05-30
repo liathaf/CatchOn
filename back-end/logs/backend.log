@@ -1137,11 +1137,35 @@ Fri, 29 May 2020 03:28:59 GMT - Debug - adi.ahronov@gmail.com, adi aharonov
 Fri, 29 May 2020 03:28:59 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: adi aharonov
 Fri, 29 May 2020 03:28:59 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$4cGlsJMzt8iu1iGIG0JK0etELDUoN8bpwNVJjAKSRScZh8PHV1BcO","username":"adi aharonov","imgUrl":"https://lh5.googleusercontent.com/-sjxtFAUb_XY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnTcPZVEgZlEOZXKYSnRATgF7hP9A/s96-c/photo.jpg","attendedEvents":[],"isAdmin":false,"_id":"5ed0817b7e78526d083c1b0a"}
 Fri, 29 May 2020 03:28:59 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 84a5f648e35b7713936671113279bdf001832b9e
+<<<<<<< HEAD
+Thu, 28 May 2020 13:02:16 GMT - Info - Server is running on port: 3030
+Thu, 28 May 2020 15:15:37 GMT - Error - Cannot get events
+Thu, 28 May 2020 15:16:03 GMT - Info - Server is running on port: 3030
+Thu, 28 May 2020 19:51:35 GMT - Error - Cannot get event
+Fri, 29 May 2020 07:56:40 GMT - Error - Cannot get event
+Fri, 29 May 2020 09:12:37 GMT - Error - Cannot get event
+Fri, 29 May 2020 09:12:38 GMT - Error - Cannot get event
+Fri, 29 May 2020 09:12:38 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:29:23 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:29:23 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:29:23 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:44:15 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:44:15 GMT - Error - Cannot get event
+Fri, 29 May 2020 10:44:15 GMT - Error - Cannot get event
+Fri, 29 May 2020 12:02:03 GMT - Error - Cannot get event
+=======
+>>>>>>> 32862b1c793e6dca4d6f1dc25c55df64a9507b67
+>>>>>>> 2259bbcaf041c4584b654c89c24694635efb4f16
 Thu, 28 May 2020 11:22:55 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 13:49:34 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 14:12:28 GMT - Debug - auth.service - login with email: puki@gmail.com
 Thu, 28 May 2020 15:47:38 GMT - Debug - auth.service - login with email: puki@gmail.com
+<<<<<<< HEAD
 
 Fri, 29 May 2020 07:25:14 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
 Fri, 29 May 2020 07:25:14 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
@@ -1190,6 +1214,11 @@ Fri, 29 May 2020 13:06:12 GMT - Debug - auth.service - signup with email: adi.ah
 Fri, 29 May 2020 13:06:12 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$KLmj3A5MWn55gPYHponNQu9mhKANe4xt7xQAtBD4BX/0U.NYH60xC","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593349572&hash=AeQM1zSh5wLkHdH3","attendedEvents":[],"isAdmin":false,"_id":"5ed108c47e78526d083c1b14"}
 Fri, 29 May 2020 13:06:12 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
 =======
+>>>>>>> bbace4c57b52514e843727ca0c78fe6f4aa66c1e
+<<<<<<< HEAD
+>>>>>>> 51e31ffb0cd9a9b2982cbd974eb3658a20c3d18a
+>>>>>>> 2259bbcaf041c4584b654c89c24694635efb4f16
+=======
 Fri, 29 May 2020 09:22:19 GMT - Debug - auth.service - login with email: puki@gmail.com
 Fri, 29 May 2020 09:22:37 GMT - Debug - auth.service - login with email: puki@gmail.com
 Fri, 29 May 2020 11:19:37 GMT - Debug - auth.service - login with email: puki@gmail.com
@@ -1220,4 +1249,50 @@ Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email:
 Fri, 29 May 2020 12:31:25 GMT - Debug - auth.service - login with email: 
 Fri, 29 May 2020 12:31:45 GMT - Debug - auth.service - login with email: liathaf@gmail.com
 Fri, 29 May 2020 12:38:28 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+<<<<<<< HEAD
 Sat, 30 May 2020 14:33:49 GMT - Info - Server is running on port: 3030
+=======
+<<<<<<< HEAD
+Fri, 29 May 2020 14:09:20 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 15:09:55 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+=======
+>>>>>>> 6c4a6e6a8cb071d811158e5f6d515c2982746a6b
+Fri, 29 May 2020 14:10:47 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 16:54:22 GMT - Debug - sdv, zvds
+Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - signup with email: sdv, username: zvds
+Fri, 29 May 2020 16:54:22 GMT - Debug - auth.route - new account created: {"email":"sdv","password":"$2b$10$w6yPFLz6oqChJnQ3CHrPReUVSoLBVzrqrBHlKwIitB5Ge9kWJHalC","username":"zvds","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed13e3eed75880888e7ed8e"}
+Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - login with email: sdv
+>>>>>>> aff1b1425211613b8733ced8847b771fb126ba45
+Fri, 29 May 2020 17:42:13 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Fri, 29 May 2020 20:00:17 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 20:45:34 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 08:27:20 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sat, 30 May 2020 11:47:52 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sat, 30 May 2020 15:09:54 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:10:52 GMT - Error - Cannot get event
+Sat, 30 May 2020 15:11:00 GMT - Error - Cannot get event
+Sat, 30 May 2020 15:13:05 GMT - Error - Cannot get event
+Sat, 30 May 2020 15:18:13 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:19:26 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:21:26 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:23:31 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:24:45 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:26:10 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:27:13 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:28:14 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:29:46 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:43:55 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:47:58 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:49:41 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 15:51:45 GMT - Info - Server is running on port: 3030
+>>>>>>> 2259bbcaf041c4584b654c89c24694635efb4f16
+Sat, 30 May 2020 17:08:49 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:11:03 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:11:57 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:16:22 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:20:45 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:21:35 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:25:29 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:26:28 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:27:03 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 17:29:45 GMT - Info - Server is running on port: 3030
