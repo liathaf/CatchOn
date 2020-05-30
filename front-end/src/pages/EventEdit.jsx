@@ -34,7 +34,6 @@ class _EventEdit extends Component {
 
 
     componentDidMount() {
-
         this.loadEvent();
     }
 
@@ -125,7 +124,7 @@ class _EventEdit extends Component {
           <div className="double-box">
 
             <div className="box">
-              <input type="text" name="" required value={Event.title}
+              <input type="text" name="title" required value={Event.title}
                 onChange={this.onHandleChange}></input>
               <label>Title</label>
             </div>

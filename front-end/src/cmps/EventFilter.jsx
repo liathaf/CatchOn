@@ -7,12 +7,8 @@ export class EventFilter extends Component {
             category: '',
             title: '',
             isFree: false,
-<<<<<<< HEAD
-            thisMonth: false,
-=======
             thisWeek: false,
 
->>>>>>> 2259bbcaf041c4584b654c89c24694635efb4f16
         },
         categories: [
             { name: "Sport", className: "fas fa-basketball-ball fa-1x" },
@@ -47,18 +43,19 @@ export class EventFilter extends Component {
         let { name, value } = ev.target;
         value = ev.currentTarget.type === 'category' ? ev.target.innerText : value;
 
-        if (ev.currentTarget.type === 'category') {
+        if (ev.currentTarget.type === 'category') {  
+            document.querySelector('.default-option p').innerText = value
+            this.toggleClass()
             this.setState(prevState => ({ filter: { ...prevState.filter, category: value } }), () => {
                 this.props.onSetFilter(this.state.filter)
             })
-            document.querySelector('.default-option p').innerText = value
+          
+        } else if (ev.currentTarget.type === 'all') {  
+            document.querySelector('.default-option p').innerText = 'All'
             this.toggleClass()
-        } else if (ev.currentTarget.type === 'all') {
             this.setState(prevState => ({ filter: { ...prevState.filter, category: '' } }), () => {
                 this.props.onSetFilter(this.state.filter)
             })
-            document.querySelector('.default-option p').innerText = 'All'
-            this.toggleClass()
         }
         this.setState(prevState => ({ filter: { ...prevState.filter, [name]: value } }), () => {
             this.props.onSetFilter(this.state.filter)
@@ -113,10 +110,10 @@ export class EventFilter extends Component {
                     </div>
 
                     <div>
-                        <button className="isFree-button btn" name="isFree" onClick={this.onToggelButtonsFilter} >Free</button>
+                        <button className="filter-btn btn" name="isFree" onClick={this.onToggelButtonsFilter} >Free</button>
                     </div>
                     <div>
-                        <button onClick={this.onToggelButtonsFilter} name="thisWeek" >Up Coming Week</button>
+                        <button className="filter-btn btn" onClick={this.onToggelButtonsFilter} name="thisWeek" >Up Coming Week</button>
                     </div>
                 </div>
             </section>
