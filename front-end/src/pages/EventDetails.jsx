@@ -26,7 +26,8 @@ class _EventDetails extends Component {
         display: 'grid',
         loc: null,
         isAttend: false,
-        isOpenModal: false
+        isOpenModal: false,
+        eventLikes: null
     };
 
 
@@ -41,8 +42,8 @@ class _EventDetails extends Component {
         window.addEventListener('scroll', this.handleScroll, { passive: true });
         const { event } = this.props
         const { user } = this.props
-        const isAttend = (user) ? UserService.isAttend(user, eventId) : ''
-        this.setState({ isAttend })
+        // const isAttend = (user) ? UserService.isAttend(user, eventId) : ''
+        // this.setState({ isAttend })
     }
 
 
@@ -125,11 +126,12 @@ class _EventDetails extends Component {
         if (target.style.fill === 'rgb(72, 72, 72)') {
             target.style.fill = 'rgb(243, 69, 115)';
             event.likes.push(user.username)
-
+   
         } else {
             target.style.fill = 'rgb(72, 72, 72)';
             const idx = event.likes.find(userInArr => (userInArr === user.username))
             event.likes.splice(idx, 1);
+        
         }
         await this.props.saveEvent(event)
     }
