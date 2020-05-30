@@ -7,7 +7,6 @@ import avatar from '../img/avatar.jpg'
 import logo from '../../src/img/logo-stright.png'
 import { logout } from '../store/actions/UserActions'
 import { Modal } from './Modal'
-import {EventFilter} from '../cmps/EventFilter'
 
 export class _NavBar extends Component {
 

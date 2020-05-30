@@ -9,7 +9,7 @@ export class EventFilter extends Component {
             category: '',
             title: '',
             isFree: false,
-            thisMonth: false,
+            thisWeek: false,
 
         },
         categories: [
@@ -105,7 +105,7 @@ export class EventFilter extends Component {
                         <button className="isFree-button btn" name="isFree" onClick={this.onToggelButtonsFilter} >Free</button>
                     </div>
                     <div>
-                        <button onClick={this.onToggelButtonsFilter} name="thisMonth" >Up Coming Month</button>
+                        <button onClick={this.onToggelButtonsFilter} name="thisWeek" >Up Coming Week</button>
                     </div>
                 </div>
             </section>
@@ -113,3 +113,14 @@ export class EventFilter extends Component {
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+

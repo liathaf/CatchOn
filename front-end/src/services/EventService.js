@@ -10,10 +10,10 @@ function query(filterBy) {
 		if (filterBy.title) queryStr += `title=${filterBy.title}`;
         if (filterBy.category) queryStr += `&category=${filterBy.category}`;
         if (filterBy.isFree) queryStr += `&isFree=${filterBy.isFree}`
-        if (filterBy.thisMonth) queryStr += `&thisMonth=${filterBy.thisMonth}`
+        if (filterBy.thisWeek) queryStr += `&thisWeek=${filterBy.thisWeek}`
     }
 
-
+    
     return HttpService.get(`event?${queryStr}`);
 }
 
