@@ -23,32 +23,36 @@ class _UserDetails extends Component {
                 <div className="profile">
                     <div className="profile-top">
 
-                        <div>
+                        <h2 className="text-primary">{user.username}</h2>
+                        <div className="main-profile">
                             <img src={(user.imgUrl) ? user.imgUrl : avatar} />
 
-                            <div className="icons">
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-twitter fa-2x"></i>
-                                </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-facebook fa-2x"></i>
-                                </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-linkedin fa-2x"></i>
-                                </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-youtube fa-2x"></i>
-                                </a>
-                                <a href="#" target="_blank" rel="noopener noreferrer">
-                                    <i className="fab fa-instagram fa-2x"></i>
-                                </a>
+                            <div className="icons-desc-container">
+                                <p className="user-desc">{user.dsc}</p>
+                                <div className="icons">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <i className="fab fa-twitter fa-2x"></i>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <i className="fab fa-facebook fa-2x"></i>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <i className="fab fa-linkedin fa-2x"></i>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <i className="fab fa-youtube fa-2x"></i>
+                                    </a>
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        <i className="fab fa-instagram fa-2x"></i>
+                                    </a>
+                                </div>
                             </div>
+
                         </div>
 
                         <div className="profile-about">
-                            <h2 className="text-primary">{user.username}</h2>
-                            <p>{user.dsc}</p>
-                            <div className="line"></div>
+                         
+                           
                             <div className="profile-event">
                                 <div className="attended-events"> 
                                     <h1>
