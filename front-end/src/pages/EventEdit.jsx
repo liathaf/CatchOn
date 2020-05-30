@@ -107,23 +107,12 @@ class _EventEdit extends Component {
     }));
   };
 
-  onSaveEvent = (ev) => {
-    ev.preventDefault();
-
-    EventService.save(this.state.event)
-      .then((savedEvent) => {
-        this.props.history.push('/');
-      })
-      .catch((err) => {
-        alert('Ops somthing went wrong');
-      });
-  };
 
   render() {
     return (
       <div className="edit">
         <h2>Edit Area</h2>
-        <form onSubmit={this.onSaveEvent}>
+        <form onSubmit={this.onHandelSubmit}>
 
           <div className="double-box">
 

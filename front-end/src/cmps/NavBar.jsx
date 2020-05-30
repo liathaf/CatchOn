@@ -41,7 +41,7 @@ export class _NavBar extends Component {
         const field = target.name;
         const value = target.value;
         this.setState({ [field]: value });
-      }
+    }
 
     onLogout = async () => {
 
@@ -49,8 +49,8 @@ export class _NavBar extends Component {
         this.props.history.push('/')
     }
 
-    
-    onRemoveModal = () =>{
+
+    onRemoveModal = () => {
         this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
     }
 
@@ -66,22 +66,23 @@ export class _NavBar extends Component {
                 <div className="navbar-content container">
                     <Link className="logo" to="/"><img src={logo}></img></Link>
                     <div className="nav-search" style={{ display: display }}>
-                        <Link to={`/events/search=${this.state.searchValue}`}>                       
+                        <Link to={`/events/search=${this.state.searchValue}`}>
                             <i className="fas fa-search"></i>
                         </Link>
-                            <input type="text" onChange={this.onHandelChange} name="searchValue"/>
-                        </div>
-                        {/* <button className="btn btn-primary">Search</button> */}
-                        <div className='burger btn' onClick={this.toggleClass}>
-                         <div className='line1'></div>
-                         <div className='line2'></div>
-                         <div className='line3'></div>
-                        </div>
+                        <input type="text" onChange={this.onHandelChange} name="searchValue" />
+                    </div>
+                    {/* <button className="btn btn-primary">Search</button> */}
+                    <div className='burger btn' onClick={this.toggleClass}>
+                        <div className='line1'></div>
+                        <div className='line2'></div>
+                        <div className='line3'></div>
+                    </div>
                     <ul className={this.state.toggleNav}>
+                        <li><Link className="logo" to="/"><img src={logo}></img></Link></li>
                         <li onClick={() => {
                             if (user) this.props.history.push('/edit')
                             else this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
-                            }} className="creat-event">Create Event</li>
+                        }} className="creat-event">Create Event</li>
                         {(!user) &&
                             <>
                                 <li><Link to="/signup">Register</Link></li>
@@ -96,12 +97,12 @@ export class _NavBar extends Component {
 
                     </ul>
                 </div>
-                { (this.state.isOpenModal) && <Modal onRemoveModal={this.onRemoveModal}>
-                        <div>Create an event requires login</div>
-                        <button className="login-modal-btn nav-bar"><Link to="/login">LOGIN</Link></button>
-                        <div className="signup">
-                            <p>New member?</p> <Link to="/signup">Sign up</Link>
-                        </div>
+                {(this.state.isOpenModal) && <Modal onRemoveModal={this.onRemoveModal}>
+                    <div>Create an event requires login</div>
+                    <button className="login-modal-btn nav-bar"><Link to="/login">LOGIN</Link></button>
+                    <div className="signup">
+                        <p>New member?</p> <Link to="/signup">Sign up</Link>
+                    </div>
                 </Modal>}
             </nav>
         )

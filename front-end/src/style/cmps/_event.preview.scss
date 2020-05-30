@@ -38,10 +38,11 @@
 
     .preview-like {
         position: absolute;
-        width: 35px;
+        width: 50px;
         top: 24.5vh;
         left: 0.3rem;
-        padding: 1px;
+        padding: 0 8px;
+        border-radius: 25px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -50,12 +51,13 @@
         font-weight: bold;
         background-color: rgba(255, 255, 255, 0.836);
         svg {
-            width: 18px;
+            width: 12px;
             fill: #f34573;
         }
 
         p {
-            margin-left: 5px;
+            font-size: 12px;
+            margin-left: 8px;
         }
     }
 

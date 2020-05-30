@@ -1201,3 +1201,17 @@ Fri, 29 May 2020 16:54:22 GMT - Debug - sdv, zvds
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - signup with email: sdv, username: zvds
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.route - new account created: {"email":"sdv","password":"$2b$10$w6yPFLz6oqChJnQ3CHrPReUVSoLBVzrqrBHlKwIitB5Ge9kWJHalC","username":"zvds","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed13e3eed75880888e7ed8e"}
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - login with email: sdv
+Fri, 29 May 2020 20:09:32 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 20:22:03 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 10:27:54 GMT - Debug - ujk7,, errev
+Sat, 30 May 2020 10:27:54 GMT - Debug - auth.service - signup with email: ujk7,, username: errev
+Sat, 30 May 2020 10:27:55 GMT - Debug - auth.route - new account created: {"email":"ujk7,","password":"$2b$10$xXjUGnHP055dNPW3e5XLi.0xpvV1NG.5GPpY.a6ZY/0mIdg5n8zmO","username":"errev","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2352b3c0b730db0f96675"}
+Sat, 30 May 2020 10:27:55 GMT - Debug - auth.service - login with email: ujk7,
+Sat, 30 May 2020 11:56:28 GMT - Debug - sac, zvds
+Sat, 30 May 2020 11:56:28 GMT - Debug - auth.service - signup with email: sac, username: zvds
+Sat, 30 May 2020 11:56:28 GMT - Debug - auth.route - new account created: {"email":"sac","password":"$2b$10$8HHdSV9rRvPDfVpV7Kumm.7l/P4BeKFVZe5tjgXwAmePyGAPQGCRe","username":"zvds","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed249ec3c0b730db0f96676"}
+Sat, 30 May 2020 11:56:28 GMT - Debug - auth.service - login with email: sac
+Sat, 30 May 2020 13:01:22 GMT - Debug - koko, koko
+Sat, 30 May 2020 13:01:22 GMT - Debug - auth.service - signup with email: koko, username: koko
+Sat, 30 May 2020 13:01:22 GMT - Debug - auth.route - new account created: {"email":"koko","password":"$2b$10$iTkel5ZA7a8/B6gRFT9Ee.uKWAIphtWshfiYOhqOq4FxPsY00Nd9G","username":"koko","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed259223c0b730db0f96677"}
+Sat, 30 May 2020 13:01:22 GMT - Debug - auth.service - login with email: koko

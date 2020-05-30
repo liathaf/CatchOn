@@ -14,7 +14,7 @@ import { EventService } from '../services/EventService'
 import { updateUser } from '../store/actions/UserActions';
 import { Review } from '../cmps/Review';
 import { SocketService } from '../services/SocketService';
-import {ReactComponent as Like} from '../img/icons/like.svg'
+import { ReactComponent as Like } from '../img/icons/like.svg'
 import { Modal } from '../cmps/Modal'
 
 
@@ -113,13 +113,13 @@ class _EventDetails extends Component {
         this.setState(prevState => ({ isAttend: !prevState.isAttend }))
     }
 
-    onRemoveModal = () =>{
+    onRemoveModal = () => {
         this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
     }
 
 
     onToggleLike = async ({ target }) => {
-        
+
         if (target.viewBox) return
         const { event, user } = this.props;
         if (target.style.fill === 'rgb(72, 72, 72)') {
@@ -136,7 +136,7 @@ class _EventDetails extends Component {
 
     render() {
         const { event, user } = this.props;
-        
+
         const top =
             this.state.currentScrollHeight > 360
                 ? this.state.currentScrollHeight - 360
@@ -173,30 +173,31 @@ class _EventDetails extends Component {
 
                                 </div>
                                 {/* <p className="createdAt">created at: {event.createdAt}</p> */}
-                                {/* <p>2/{event.capacity}</p> */}
                             </div>
                             <div className="all-content">
                                 <div className="event-detail-top">
                                     <div>
                                         <h1 className="large">{event.title}</h1>
                                         <p>{event.place}</p>
+                                        <Link to={`/user/${event.createdBy._id}`}>
+                                            <div className="user-preview">
+                                                <img
+                                                    className="userImg-details"
+                                                    src={(event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar} />
+                                                <p>{event.createdBy.username}</p>
+                                            </div>
+                                        </Link>
                                     </div>
 
-                                    {this.props.user &&
-                                        <div className="likeBtn">
-                                            <Like onClick={this.onToggleLike}  style={{ fill: (event.likes.find(userName => userName === user.username)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />   
-                                            <p>{event.likes.length}</p>
-                                        </div>}
 
-
-                                    <Link to={`/user/${event.createdBy._id}`}>
-                                        <div className="user-preview">
-                                            <img
-                                                className="userImg-details"
-                                                src={(event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar} />
-                                            <p>{event.createdBy.username}</p>
-                                        </div>
-                                    </Link>
+                                    <div className="capacity-likes">
+                                        {this.props.user &&
+                                            <div className="likeBtn">
+                                                <Like onClick={this.onToggleLike} style={{ fill: (event.likes.find(userName => userName === user.username)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />
+                                                <p>{event.likes.length}</p>
+                                            </div>}
+                                        <h4>{event.attendees.length}/{event.capacity} <i className="far fa-user"></i></h4>
+                                    </div>
                                 </div>
 
                                 <div className="line"></div>
@@ -232,27 +233,27 @@ class _EventDetails extends Component {
                                             />
                                         )}
                                     </div>
-                                   
+
                                     <div className="event-chat">
-                                    <h2>Reviews</h2>
-                                    <Review
-                                        onAddReview={this.onAddReview}
-                                        reviews={event.reviews}
-                                        user={user}
-                                    />
-                                   { (this.state.isOpenModal) && <Modal onRemoveModal={this.onRemoveModal}>
-                                        <div>Joining <span><h2 className="event-title">{event.title}</h2></span> requires login </div>
-                                        <button className="login-modal-btn"><Link to="/login">LOGIN</Link></button>
-                                        <div className="signup">
-                                            <p>New member?</p> <Link to="/signup">Sign up</Link>
-                                        </div>
-                                    </Modal>}
+                                        <h2>Reviews</h2>
+                                        <Review
+                                            onAddReview={this.onAddReview}
+                                            reviews={event.reviews}
+                                            user={user}
+                                        />
+                                        {(this.state.isOpenModal) && <Modal onRemoveModal={this.onRemoveModal}>
+                                            <div>Joining <span><h2 className="event-title">{event.title}</h2></span> requires login </div>
+                                            <button className="login-modal-btn"><Link to="/login">LOGIN</Link></button>
+                                            <div className="signup">
+                                                <p>New member?</p> <Link to="/signup">Sign up</Link>
+                                            </div>
+                                        </Modal>}
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
+
                 </section>
             )
         );

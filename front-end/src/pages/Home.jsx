@@ -93,10 +93,10 @@ class _Home extends Component {
                 </div>
                 <div className="group-title container">
                     <h2>Outdoor</h2>
-                    <Link to="/events/category=Outdoor"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
+                    <Link to="/events/category=Outdoors"> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
-                    <EventList events={events} atHome={true} category={'Outdoor'} />
+                    <EventList events={events} atHome={true} category={'Outdoors'} />
                 </div>
                 <div className="group-title container">
                     <h2>Coding</h2>
