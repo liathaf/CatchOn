@@ -1262,12 +1262,32 @@ Fri, 29 May 2020 16:54:22 GMT - Debug - sdv, zvds
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - signup with email: sdv, username: zvds
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.route - new account created: {"email":"sdv","password":"$2b$10$w6yPFLz6oqChJnQ3CHrPReUVSoLBVzrqrBHlKwIitB5Ge9kWJHalC","username":"zvds","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed13e3eed75880888e7ed8e"}
 Fri, 29 May 2020 16:54:22 GMT - Debug - auth.service - login with email: sdv
+<<<<<<< HEAD
+Fri, 29 May 2020 20:09:32 GMT - Info - Server is running on port: 3030
+Fri, 29 May 2020 20:22:03 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 10:27:54 GMT - Debug - ujk7,, errev
+Sat, 30 May 2020 10:27:54 GMT - Debug - auth.service - signup with email: ujk7,, username: errev
+Sat, 30 May 2020 10:27:55 GMT - Debug - auth.route - new account created: {"email":"ujk7,","password":"$2b$10$xXjUGnHP055dNPW3e5XLi.0xpvV1NG.5GPpY.a6ZY/0mIdg5n8zmO","username":"errev","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2352b3c0b730db0f96675"}
+Sat, 30 May 2020 10:27:55 GMT - Debug - auth.service - login with email: ujk7,
+Sat, 30 May 2020 11:56:28 GMT - Debug - sac, zvds
+Sat, 30 May 2020 11:56:28 GMT - Debug - auth.service - signup with email: sac, username: zvds
+Sat, 30 May 2020 11:56:28 GMT - Debug - auth.route - new account created: {"email":"sac","password":"$2b$10$8HHdSV9rRvPDfVpV7Kumm.7l/P4BeKFVZe5tjgXwAmePyGAPQGCRe","username":"zvds","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed249ec3c0b730db0f96676"}
+Sat, 30 May 2020 11:56:28 GMT - Debug - auth.service - login with email: sac
+Sat, 30 May 2020 13:01:22 GMT - Debug - koko, koko
+Sat, 30 May 2020 13:01:22 GMT - Debug - auth.service - signup with email: koko, username: koko
+Sat, 30 May 2020 13:01:22 GMT - Debug - auth.route - new account created: {"email":"koko","password":"$2b$10$iTkel5ZA7a8/B6gRFT9Ee.uKWAIphtWshfiYOhqOq4FxPsY00Nd9G","username":"koko","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed259223c0b730db0f96677"}
+Sat, 30 May 2020 13:01:22 GMT - Debug - auth.service - login with email: koko
+=======
 >>>>>>> aff1b1425211613b8733ced8847b771fb126ba45
 Fri, 29 May 2020 17:42:13 GMT - Debug - auth.service - login with email: liathaf@gmail.com
 Fri, 29 May 2020 20:00:17 GMT - Info - Server is running on port: 3030
 Fri, 29 May 2020 20:45:34 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 08:27:20 GMT - Debug - auth.service - login with email: liathaf@gmail.com
 Sat, 30 May 2020 11:47:52 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+<<<<<<< HEAD
+>>>>>>> 43376ea6f0f40b05771cb3baf6090de3251000cd
+Sat, 30 May 2020 13:42:59 GMT - Info - Server is running on port: 3030
+=======
 Sat, 30 May 2020 15:09:54 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:10:52 GMT - Error - Cannot get event
 Sat, 30 May 2020 15:11:00 GMT - Error - Cannot get event
@@ -1286,6 +1306,7 @@ Sat, 30 May 2020 15:47:58 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:49:41 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:51:45 GMT - Info - Server is running on port: 3030
 >>>>>>> 2259bbcaf041c4584b654c89c24694635efb4f16
+<<<<<<< HEAD
 Sat, 30 May 2020 17:08:49 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 17:11:03 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 17:11:57 GMT - Info - Server is running on port: 3030
@@ -1296,3 +1317,167 @@ Sat, 30 May 2020 17:25:29 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 17:26:28 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 17:27:03 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 17:29:45 GMT - Info - Server is running on port: 3030
+=======
+>>>>>>> c62a160759d6b76fb35dc0b1abec5ba2a1ad36eb
+Sat, 30 May 2020 18:17:39 GMT - Debug - adi.ahronov@gmail.com, asd
+Sat, 30 May 2020 18:17:39 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: asd
+Sat, 30 May 2020 18:17:40 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$38E545QgdpelppLGWKLi9e8.JA0Rg3Q1nuTE/Z3mJVB7BLA3gqoNy","username":"asd","imgUrl":"http://res.cloudinary.com/dlzwnajfq/image/upload/v1590862651/iohcy8llsm6so4fatgkg.png","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2a3446120297f4c8c1db0"}
+Sat, 30 May 2020 18:17:40 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sat, 30 May 2020 18:17:40 GMT - Error - [SIGNUP] Invalid email or password
+Sat, 30 May 2020 18:17:49 GMT - Debug - , 
+Sat, 30 May 2020 18:17:49 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:17:49 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:03 GMT - Debug - asdasd, 
+Sat, 30 May 2020 18:18:03 GMT - Debug - auth.service - signup with email: asdasd, username: 
+Sat, 30 May 2020 18:18:03 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:05 GMT - Debug - , 
+Sat, 30 May 2020 18:18:05 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:05 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:09 GMT - Debug - , asdasd
+Sat, 30 May 2020 18:18:09 GMT - Debug - auth.service - signup with email: , username: asdasd
+Sat, 30 May 2020 18:18:09 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:17 GMT - Debug - asdasd@asdasd.com, 
+Sat, 30 May 2020 18:18:17 GMT - Debug - auth.service - signup with email: asdasd@asdasd.com, username: 
+Sat, 30 May 2020 18:18:17 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:18 GMT - Debug - , 
+Sat, 30 May 2020 18:18:18 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:18 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:18 GMT - Debug - , 
+Sat, 30 May 2020 18:18:18 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:18 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:19 GMT - Debug - , 
+Sat, 30 May 2020 18:18:19 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:19 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:19 GMT - Debug - , 
+Sat, 30 May 2020 18:18:19 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:19 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:19 GMT - Debug - , 
+Sat, 30 May 2020 18:18:19 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:19 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:21 GMT - Debug - , 
+Sat, 30 May 2020 18:18:21 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:21 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:21 GMT - Debug - , 
+Sat, 30 May 2020 18:18:21 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:21 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:21 GMT - Debug - , 
+Sat, 30 May 2020 18:18:21 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 18:18:21 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 18:18:31 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sat, 30 May 2020 18:18:43 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Sat, 30 May 2020 18:18:43 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Sat, 30 May 2020 18:18:43 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$EjOXrX.ExbDIewVJORuHp.Of7uuhsM/K2gkHguqPnnUrz7L6l5SUO","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593454723&hash=AeQHYM-mqh5R5SoS","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2a3836120297f4c8c1db1"}
+Sat, 30 May 2020 18:18:43 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sat, 30 May 2020 18:52:07 GMT - Debug - asd, asd
+Sat, 30 May 2020 18:52:07 GMT - Debug - auth.service - signup with email: asd, username: asd
+Sat, 30 May 2020 18:52:07 GMT - Debug - auth.route - new account created: {"email":"asd","password":"$2b$10$zztxATvdcE/G0DDuVY2fH.doL/NwKrjrSlgpbLsdUSXhqbyBUwtFy","username":"asd","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2ab576120297f4c8c1db2"}
+Sat, 30 May 2020 18:52:07 GMT - Debug - auth.service - login with email: asd
+Sat, 30 May 2020 19:21:49 GMT - Debug - adi.ahronov@gmail.com, asd
+Sat, 30 May 2020 19:21:49 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: asd
+Sat, 30 May 2020 19:21:49 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$/gFWJyvW2cAS1dJei9Xe.OjM3fpAhfqaXs98J12WHJOqSPpJoaRd6","username":"asd","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2b24d6120297f4c8c1db7"}
+Sat, 30 May 2020 19:21:49 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sat, 30 May 2020 19:21:49 GMT - Error - [SIGNUP] Invalid email or password
+Sat, 30 May 2020 19:21:49 GMT - Debug - , 
+Sat, 30 May 2020 19:21:49 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:49 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:50 GMT - Debug - , 
+Sat, 30 May 2020 19:21:50 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:50 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:52 GMT - Debug - , 
+Sat, 30 May 2020 19:21:52 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:52 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:52 GMT - Debug - , 
+Sat, 30 May 2020 19:21:52 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:52 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:54 GMT - Debug - asd, 
+Sat, 30 May 2020 19:21:54 GMT - Debug - auth.service - signup with email: asd, username: 
+Sat, 30 May 2020 19:21:54 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:56 GMT - Debug - , asd
+Sat, 30 May 2020 19:21:56 GMT - Debug - auth.service - signup with email: , username: asd
+Sat, 30 May 2020 19:21:56 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:56 GMT - Debug - , 
+Sat, 30 May 2020 19:21:56 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:56 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:56 GMT - Debug - , 
+Sat, 30 May 2020 19:21:56 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:56 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:57 GMT - Debug - , 
+Sat, 30 May 2020 19:21:57 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:57 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:57 GMT - Debug - , 
+Sat, 30 May 2020 19:21:57 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:57 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:58 GMT - Debug - , 
+Sat, 30 May 2020 19:21:58 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:58 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:58 GMT - Debug - , 
+Sat, 30 May 2020 19:21:58 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:58 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:58 GMT - Debug - , 
+Sat, 30 May 2020 19:21:58 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:58 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:21:58 GMT - Debug - , 
+Sat, 30 May 2020 19:21:58 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:21:58 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:00 GMT - Debug - , 
+Sat, 30 May 2020 19:22:00 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:00 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:00 GMT - Debug - , 
+Sat, 30 May 2020 19:22:00 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:00 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:00 GMT - Debug - , 
+Sat, 30 May 2020 19:22:00 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:00 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:00 GMT - Debug - , 
+Sat, 30 May 2020 19:22:00 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:00 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:05 GMT - Debug - , 
+Sat, 30 May 2020 19:22:05 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:05 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:05 GMT - Debug - , 
+Sat, 30 May 2020 19:22:05 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:05 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:06 GMT - Debug - , 
+Sat, 30 May 2020 19:22:06 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:06 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:06 GMT - Debug - , 
+Sat, 30 May 2020 19:22:06 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:06 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:07 GMT - Debug - , 
+Sat, 30 May 2020 19:22:07 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:07 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:07 GMT - Debug - , 
+Sat, 30 May 2020 19:22:07 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:07 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:07 GMT - Debug - , 
+Sat, 30 May 2020 19:22:07 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:07 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:09 GMT - Debug - asdasd, 
+Sat, 30 May 2020 19:22:09 GMT - Debug - auth.service - signup with email: asdasd, username: 
+Sat, 30 May 2020 19:22:09 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:09 GMT - Debug - , 
+Sat, 30 May 2020 19:22:09 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:09 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:11 GMT - Debug - , asdasdasd
+Sat, 30 May 2020 19:22:11 GMT - Debug - auth.service - signup with email: , username: asdasdasd
+Sat, 30 May 2020 19:22:11 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:11 GMT - Debug - , 
+Sat, 30 May 2020 19:22:11 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:11 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:11 GMT - Debug - , 
+Sat, 30 May 2020 19:22:11 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:11 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:11 GMT - Debug - , 
+Sat, 30 May 2020 19:22:11 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:11 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:22:58 GMT - Debug - , 
+Sat, 30 May 2020 19:22:58 GMT - Debug - auth.service - signup with email: , username: 
+Sat, 30 May 2020 19:22:58 GMT - Error - [SIGNUP] email, username and password are required!
+Sat, 30 May 2020 19:23:31 GMT - Debug - qweqweqwe, qweqweqwe
+Sat, 30 May 2020 19:23:31 GMT - Debug - auth.service - signup with email: qweqweqwe, username: qweqweqwe
+Sat, 30 May 2020 19:23:31 GMT - Debug - auth.route - new account created: {"email":"qweqweqwe","password":"$2b$10$Jk5pIDAVj7Vf04AyaSDWIue01m7BRBjzKtD1CywIEPnMhdwFswJlu","username":"qweqweqwe","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2b2b36120297f4c8c1db8"}
+Sat, 30 May 2020 19:23:31 GMT - Debug - auth.service - login with email: qweqweqwe
+Sat, 30 May 2020 19:23:54 GMT - Debug - paz, noy
+Sat, 30 May 2020 19:23:54 GMT - Debug - auth.service - signup with email: paz, username: noy
+Sat, 30 May 2020 19:23:54 GMT - Debug - auth.route - new account created: {"email":"paz","password":"$2b$10$i2Dssfn7hPHr68c1foOjOeFBIk5wa6eV8jeoY7AqV.7uTgabt5kDu","username":"noy","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2b2ca6120297f4c8c1db9"}
+Sat, 30 May 2020 19:23:54 GMT - Debug - auth.service - login with email: paz

@@ -176,32 +176,33 @@ class _EventDetails extends Component {
                                     <span className={`btn btn-primary ${(this.state.isAttend) ? 'attend' : ''}`} onClick={this.onAddAttend}>
                                         {(this.state.isAttend) ? 'Leave' : 'Join'}
                                     </span>
-
                                 </div>
-                                <p>{event.attendees.length}/{event.capacity}</p>
                             </div>
                             <div className="all-content">
                                 <div className="event-detail-top">
                                     <div>
                                         <h1 className="large">{event.title}</h1>
                                         <p>{event.place}</p>
+                                        <Link to={`/user/${event.createdBy._id}`}>
+                                            <div className="user-preview">
+                                                <img
+                                                    className="userImg-details"
+                                                    src={(event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar}
+                                                    alt="" />
+                                                <p>{event.createdBy.username}</p>
+                                            </div>
+                                        </Link>
                                     </div>
 
-                                    {this.props.user &&
-                                        <div className="likeBtn">
+
+                                    <div className="capacity-likes">
+                                        {this.props.user &&
+                                            <div className="likeBtn">
                                             <Like onClick={this.onToggleLike} style={{ fill: (event.likes.find(like => like._id === user._id)) ? 'rgb(243, 69, 115)' : 'rgb(72, 72, 72)' }} />
                                             <p>{event.likes.length}</p>
                                         </div>}
-
-
-                                    <Link to={`/user/${event.createdBy._id}`}>
-                                        <div className="user-preview">
-                                            <img
-                                                className="userImg-details"
-                                                src={(event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar} />
-                                            <p>{event.createdBy.username}</p>
-                                        </div>
-                                    </Link>
+                                        <h4>{event.attendees.length}/{event.capacity} <i className="far fa-user"></i></h4>
+                                    </div>
                                 </div>
 
                                 <div className="line"></div>
@@ -217,7 +218,8 @@ class _EventDetails extends Component {
                                             <Link to={`/user/${attendee._id}`} key={idx}>
                                                 <img
                                                     className="attendees-details"
-                                                    src={attendee.imgUrl}>
+                                                    src={attendee.imgUrl}
+                                                    alt="">
                                                 </img>
                                             </Link>
                                         ))}
@@ -275,8 +277,8 @@ const mapDispatchToProps = {
     loadEvent,
     saveEvent,
     addReview,
-    updateUser,
-    saveEvent
+    updateUser
+  
 };
 
 export const EventDetails = connect(mapStateToProps, mapDispatchToProps)(_EventDetails);

@@ -36,6 +36,13 @@
       position: relative;
       color: rgb(24, 21, 21);
       z-index: 2;
+      height: 300px;
+      width: 60%;
+      margin-inline-start: 6.5vw;
+      top: 8rem;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
 
       h1 {
         font-size: 45px;
@@ -96,7 +103,7 @@
       }
 
       .landing-categories {
-        height: 100px;
+        margin-top: 30px;
         align-items: center;
 
         h4 {
@@ -112,23 +119,35 @@
           border-radius: 3px;
           font-weight: 300;
           margin: 0 10px;
-          &:hover{
+
+          &:hover {
             color: white;
             border: 2px solid #49beb7;
           }
         }
+
+        @media screen and (max-width: $normal-breakpoint) {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, 1fr);
+         width: 150px;
+         h4{
+          margin: 0 0;
+           margin-bottom: 10px;
+         }
+          a {
+            background-color: rgba(255, 255, 255, 0.527);
+            margin: 0 0;
+            margin-bottom: 7px;
+            font-size: 16px;
+          }
+        }
       }
 
-      height: 300px;
-      width: 60%;
-      margin-inline-start: 6.5vw;
-      top: 8rem;
-      display: flex;
-      flex-direction: column;
-      align-items: left;
 
 
       @media screen and (max-width: $normal-breakpoint) {
+        top: 3rem;
+
         div {
           .home-search {
             input {

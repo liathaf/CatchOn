@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 // import TextField from '@material-ui/core/TextField';
-import Checkbox from '@material-ui/core/Checkbox';
-
 
 export class EventFilter extends Component {
     state = {
@@ -31,29 +29,43 @@ export class EventFilter extends Component {
             { name: "Dance", className: "fas fa-child fa-1x" },
             { name: "Carrier & Business", className: "fas fa-briefcase fa-1x" },
             { name: "Coding", className: "fab fa-connectdevelop fa-1x" }
-        ], 
+        ],
         toggleClass: 'category-filter-container'
     }
 
+    componentDidMount() {
+        const toFilter = this.props.filter.filterBy
+        if(toFilter.category) {
+           const cate = toFilter.category.charAt(0).toUpperCase() + toFilter.category.slice(1)
+            this.setState({filter: {category: cate}})
+        }
+        if(toFilter.title) {
+            this.setState({filter: {title: toFilter.title}})
+        }
+    }
+
     onHandleChange = (ev) => {
-    
-        let { value } = ev.target;
-        value = ev.target.type === 'button' ? parseInt(value) : value;
-        value = ev.currentTarget.type === 'button' ? ev.target.checked : value;
+        let { name, value } = ev.target;
         value = ev.currentTarget.type === 'category' ? ev.target.innerText : value;
-       
+
         if (ev.currentTarget.type === 'category') {
+            this.setState(prevState => ({ filter: { ...prevState.filter, category: value } }), () => {
+                this.props.onSetFilter(this.state.filter)
+            })
             document.querySelector('.default-option p').innerText = value
             this.toggleClass()
-        } else if (ev.currentTarget.type === 'all'){
+        } else if (ev.currentTarget.type === 'all') {
+            this.setState(prevState => ({ filter: { ...prevState.filter, category: '' } }), () => {
+                this.props.onSetFilter(this.state.filter)
+            })
             document.querySelector('.default-option p').innerText = 'All'
             this.toggleClass()
         }
-        this.setState(prevState => ({ filter: { ...prevState.filter, 'category': '' } }), () => {
+        this.setState(prevState => ({ filter: { ...prevState.filter, [name]: value } }), () => {
             this.props.onSetFilter(this.state.filter)
         })
     }
-    
+
     toggleClass = () => {
         if (this.state.toggleClass === 'category-filter-container') {
             this.setState({ toggleClass: 'category-filter-container active' })
@@ -62,21 +74,21 @@ export class EventFilter extends Component {
         }
     }
 
-    onToggelButtonsFilter = ({target}) => {
+    onToggelButtonsFilter = ({ target }) => {
         const field = target.name;
-        this.setState(prevState => ({ filter: { ...prevState.filter, [field] : !prevState.filter[field] } }), () =>
+        this.setState(prevState => ({ filter: { ...prevState.filter, [field]: !prevState.filter[field] } }), () =>
             this.props.onSetFilter(this.state.filter));
     }
-    
+
     render() {
-     
+
         return (
             <section className="event-filter container">
                 <div className="input-filter">
                     <h2>Find your next event</h2>
                     <div className="filter-search">
                         <i className="fas fa-search fa-lg"></i>
-                        <input type="text" label="Search..." name="title" value={this.state.filter.title} onChange={this.onHandleChange} type="search" />
+                        <input type="text" label="Search..." name="title" value={this.state.filter.title} onChange={this.onHandleChange}  />
                         <button className="btn btn-primary">Search</button>
                     </div>
                 </div>
@@ -85,15 +97,15 @@ export class EventFilter extends Component {
                     <div className={this.state.toggleClass}>
                         <ul className="default-option" onClick={this.toggleClass} >
                             <li>
-                                <p>All</p>
+                                <p>{this.state.filter.category ? this.state.filter.category : 'All'}</p>
                             </li>
                         </ul>
-                        <ul className="category-filter" value={this.state.category} >
+                        <ul className="category-filter" value={this.state.filter.category} >
                             <li type='all' onClick={this.onHandleChange}>
                                 <p>All</p>
                             </li>
                             {this.state.categories.map((category, idx) => (
-                                <li key={idx} type='category' onClick={this.handleChange}>
+                                <li key={idx} type='category' onClick={this.onHandleChange}>
                                     <div className='option'>
                                         <i className={category.className}></i><p >{category.name}</p>
                                     </div>
