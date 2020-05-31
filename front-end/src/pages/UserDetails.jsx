@@ -25,24 +25,24 @@ class _UserDetails extends Component {
 
                         <h2 className="text-primary">{user.username}</h2>
                         <div className="main-profile">
-                            <img src={(user.imgUrl) ? user.imgUrl : avatar} />
+                            <img src={(user.imgUrl) ? user.imgUrl : avatar} alt=""/>
 
                             <div className="icons-desc-container">
                                 <p className="user-desc">{user.dsc}</p>
                                 <div className="icons">
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer">
                                         <i className="fab fa-twitter fa-2x"></i>
                                     </a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
                                         <i className="fab fa-facebook fa-2x"></i>
                                     </a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer">
                                         <i className="fab fa-linkedin fa-2x"></i>
                                     </a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer">
                                         <i className="fab fa-youtube fa-2x"></i>
                                     </a>
-                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <a href="https://instegram.com/" target="_blank" rel="noopener noreferrer">
                                         <i className="fab fa-instagram fa-2x"></i>
                                     </a>
                                 </div>
@@ -63,7 +63,7 @@ class _UserDetails extends Component {
                                         if (idx < 2) return (<div className="event" kay={event._id}>
                                             <Link to={`/event/${event._id}`}>
                                                 <h4 className="event-title">{event.title}</h4>
-                                                <img className="event-img-user-details" src={event.imgUrl}></img>
+                                                <img className="event-img-user-details" src={event.imgUrl} alt=""></img>
                                                 <p className="event-desc">{event.desc}</p>
                                             </Link>
                                         </div>)
@@ -76,10 +76,10 @@ class _UserDetails extends Component {
                                     </h1>
                                     <div className="line"></div>
                                     {user.createdEvents.map((event , idx) => {
-                                        if (idx < 2) return (<div className="event" kay={event._id}>
+                                        if (idx < 2) return (<div className="event" key={event._id}>
                                             <Link to={`/event/${event._id}`}>
                                                 <h4 className="event-title">{event.title}</h4>
-                                                <img className="event-img-user-details" src={event.imgUrl}></img>
+                                                <img className="event-img-user-details" src={event.imgUrl} alt=""></img>
                                                 <p className="event-desc"> {event.desc}</p>
                                             </Link>
                                         </div>)

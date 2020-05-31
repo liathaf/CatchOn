@@ -15,8 +15,8 @@ export function ReviewPreview(props) {
     return (
         <div className="review-msg">
             
-            {(user) &&  <Link to={`/user/${user._id}`}> <img className="userImg-review" src={(user.imgUrl) ? user.imgUrl : avatar}/> </Link>}
-            {(!user) && <img className="userImg-review" src={avatar} />}
+            {(user) &&  <Link to={`/user/${user._id}`}> <img className="userImg-review" src={(user.imgUrl) ? user.imgUrl : avatar} alt=""/> </Link>}
+            {(!user) && <img className="userImg-review" src={avatar} alt=""/>}
             
             <div className="review-detail">
                 <div className="review-name-date">

@@ -25,7 +25,8 @@ class _EventDetails extends Component {
         display: 'grid',
         loc: null,
         isAttend: false,
-        isOpenModal: false
+        isOpenModal: false,
+        eventLikes: null
     };
 
 
@@ -130,7 +131,6 @@ class _EventDetails extends Component {
             event.likes.push({ _id: user._id, username: user.username })
             await this.props.saveEvent(event)
             target.style.fill = 'rgb(243, 69, 115)';
-
         } else {
             const idx = event.likes.findIndex(like => like._id === user._id)
             event.likes.splice(idx, 1);
@@ -187,7 +187,8 @@ class _EventDetails extends Component {
                                             <div className="user-preview">
                                                 <img
                                                     className="userImg-details"
-                                                    src={(event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar} />
+                                                    src={(event.createdBy.imgUrl) ? event.createdBy.imgUrl : avatar}
+                                                    alt="" />
                                                 <p>{event.createdBy.username}</p>
                                             </div>
                                         </Link>
@@ -217,7 +218,8 @@ class _EventDetails extends Component {
                                             <Link to={`/user/${attendee._id}`} key={idx}>
                                                 <img
                                                     className="attendees-details"
-                                                    src={attendee.imgUrl}>
+                                                    src={attendee.imgUrl}
+                                                    alt="">
                                                 </img>
                                             </Link>
                                         ))}
@@ -275,8 +277,8 @@ const mapDispatchToProps = {
     loadEvent,
     saveEvent,
     addReview,
-    updateUser,
-    saveEvent
+    updateUser
+  
 };
 
 export const EventDetails = connect(mapStateToProps, mapDispatchToProps)(_EventDetails);

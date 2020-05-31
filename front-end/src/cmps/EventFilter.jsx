@@ -35,9 +35,14 @@ export class EventFilter extends Component {
     }
 
     componentDidMount() {
-        const filterName = this.props.filter
-        this.setState(prevState => ({ filter: { ...prevState.filter, category: 'csa' } }))
-        console.log(this.state)
+        const toFilter = this.props.filter.filterBy
+        if(toFilter.category) {
+           const cate = toFilter.category.charAt(0).toUpperCase() + toFilter.category.slice(1)
+            this.setState({filter: {category: cate}})
+        }
+        if(toFilter.title) {
+            this.setState({filter: {title: toFilter.title}})
+        }
     }
 
     onHandleChange = (ev) => {
@@ -95,8 +100,8 @@ export class EventFilter extends Component {
                     <div className="input-filter">
                         <div className="filter-search">
                             <i className="fas fa-search fa-lg"></i>
-                            <input type="text" label="Search..." name="title" value={this.state.filter.title} onChange={this.onHandleChange} type="search" />
-                            <button className="btn btn-primary">Search</button>
+                            <input type="text" label="Search..." name="title" value={this.state.filter.title} onChange={this.onHandleChange}  />
+                        <button className="btn btn-primary">Search</button>
                         </div>
                     </div>
 
@@ -104,7 +109,7 @@ export class EventFilter extends Component {
                         <div className={this.state.categoryClass}>
                             <ul className="default-option" onClick={this.categoryClass} >
                                 <li>
-                                    <p>All</p>
+                                <p>{this.state.filter.category ? this.state.filter.category : 'All'}</p>
                                 </li>
                             </ul>
                             <ul className="category-filter" value={this.state.filter.category} >

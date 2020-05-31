@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
 import { connect } from 'react-redux';
-import { loadEvents } from '../store/actions/EventActions'
+import { loadEvents } from '../store/actions/EventActions';
 import { EventList } from '../cmps/EventList';
 
 

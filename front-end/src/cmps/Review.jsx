@@ -34,7 +34,7 @@ export class Review extends Component {
             <>
                 <section className="reviews">
                     <form className="review-form" autoComplete="off" onSubmit={this.onHandelSubmit}>
-                        <img src={(!user || !user.imgUrl) ? avatar : user.imgUrl}></img>
+                        <img src={(!user || !user.imgUrl) ? avatar : user.imgUrl} alt=""></img>
                         <input name="msg" placeholder="write massege..." onChange={this.onHandleChange}></input>
                         <button className="btn" onClick={this.onHandelSubmit}>Comment</button>
                     </form>

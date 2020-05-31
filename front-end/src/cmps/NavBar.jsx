@@ -64,7 +64,7 @@ export class _NavBar extends Component {
         return (
             <nav className="navbar" style={{ backgroundColor: navBgc, borderBottom: `1px solid ${border}` }}>
                 <div className="navbar-content container">
-                    <Link className="logo" to="/"><img src={logo}></img></Link>
+                    <Link className="logo" to="/"><img src={logo} alt=""></img></Link>
                     <div className="nav-search" style={{ display: display }}>
                         <Link to={`/events/search=${this.state.searchValue}`}>
                             <i className="fas fa-search"></i>
@@ -77,7 +77,7 @@ export class _NavBar extends Component {
                         <div className='line3'></div>
                     </div>
                     <ul className={this.state.toggleNav}>
-                        <li><Link className="logo" to="/"><img src={logo}></img></Link></li>
+                        <li><Link className="logo" to="/"><img src={logo} alt=""></img></Link></li>
                         <li onClick={() => {
                             if (user) this.props.history.push('/edit')
                             else this.setState(prevState => ({ isOpenModal: !prevState.isOpenModal }))
@@ -90,7 +90,7 @@ export class _NavBar extends Component {
                         {(user) &&
                             <>
                                 <li className="logout" onClick={this.onLogout}>Logout</li>
-                                <li><Link to={`/user/${user._id}`}><img className="userImg-preview" src={(user.imgUrl) ? user.imgUrl : avatar} /></Link></li>
+                                <li><Link to={`/user/${user._id}`}><img className="userImg-preview" src={(user.imgUrl) ? user.imgUrl : avatar} alt=""/></Link></li>
                             </>
                         }
 
