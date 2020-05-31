@@ -1249,3 +1249,11 @@ Sat, 30 May 2020 15:47:58 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:49:41 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:51:45 GMT - Info - Server is running on port: 3030
 >>>>>>> 2259bbcaf041c4584b654c89c24694635efb4f16
+Sat, 30 May 2020 18:54:19 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 18:54:35 GMT - Debug - auth.service - login with email: koko
+Sat, 30 May 2020 18:54:40 GMT - Debug - auth.service - login with email: 
+Sat, 30 May 2020 18:54:55 GMT - Debug - 123, 123
+Sat, 30 May 2020 18:54:55 GMT - Debug - auth.service - signup with email: 123, username: 123
+Sat, 30 May 2020 18:54:56 GMT - Debug - auth.route - new account created: {"email":"123","password":"$2b$10$/6.onahENPIoI0JJ5UHFvedOk8jxxYJC52A3y5pqfPexTOZv7nZZS","username":"123","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2ac00ea87e435b80f4234"}
+Sat, 30 May 2020 18:54:56 GMT - Debug - auth.service - login with email: 123
+Sun, 31 May 2020 10:24:29 GMT - Debug - auth.service - login with email: 123
