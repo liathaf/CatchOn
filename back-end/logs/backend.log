@@ -1492,3 +1492,126 @@ Sat, 30 May 2020 21:15:45 GMT - Debug - auth.route - new account created: {"emai
 Sat, 30 May 2020 21:15:45 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
 Sat, 30 May 2020 21:15:45 GMT - Error - [SIGNUP] Invalid email or password
 Sat, 30 May 2020 23:04:11 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 12:32:50 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Sun, 31 May 2020 12:32:50 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Sun, 31 May 2020 12:32:50 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$/nkgQ0L98Lpq7FY2glr6XufN/Xr7cYZ1yVwKZcon3Jz2HKM8QbOs2","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593520370&hash=AeTn4Oh2FjGnaW5T","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed3a3f26c87437d0ccc1b64"}
+Sun, 31 May 2020 12:32:50 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sun, 31 May 2020 12:46:17 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Sun, 31 May 2020 12:46:17 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Sun, 31 May 2020 12:46:17 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$sQINo7Bm1G7g1/mqlQuyRO2ygl4NHnjhlO9ckTa337BxYwDeicDw6","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593521177&hash=AeQC6A_OGkTdMHIn","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed3a7196c87437d0ccc1b65"}
+Sun, 31 May 2020 12:46:17 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sun, 31 May 2020 13:08:20 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Sun, 31 May 2020 13:08:20 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Sun, 31 May 2020 13:08:20 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$57oDfDHGkkCaAIKcl4EY1uawI9h.a4lPQs/caCIxe4KCl1dY6j6oq","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593522500&hash=AeT-3BXqWNkQAz_K","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed3ac446c87437d0ccc1b66"}
+Sun, 31 May 2020 13:08:20 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sun, 31 May 2020 16:48:11 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:22:34 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:24:14 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:25:06 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:46:05 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:46:48 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:47:21 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:50:32 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:51:04 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:51:07 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:51:20 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:52:17 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:53:31 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:53:38 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:54:02 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:54:03 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:54:08 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:55:10 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:55:15 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:55:21 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:55:23 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:55:36 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:56:04 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:56:11 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:57:41 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:57:49 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:58:38 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:59:12 GMT - Error - Cannot get events
+Sun, 31 May 2020 17:59:51 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 17:59:58 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:02:10 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:02:15 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:03:06 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:03:14 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:03:42 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:04:04 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:05:51 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:06:00 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:07:25 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:07:37 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:29:33 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:29:36 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:29:42 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:30:38 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:30:54 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:31:03 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:31:05 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:31:05 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:31:06 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:33:57 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:34:03 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:34:38 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:34:59 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:35:44 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:35:47 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:36:08 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:36:13 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:36:49 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:37:08 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:37:09 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:37:21 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:37:24 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:37:27 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:37:27 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:38:08 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:38:09 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:39:13 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:39:14 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:39:15 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:39:17 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:39:19 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:39:19 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:39:21 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:40:46 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:40:48 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:40:52 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:40:58 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:40:59 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:41:07 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:46:30 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:46:37 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:47:39 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:47:50 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:48:47 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:48:54 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:49:18 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:49:28 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:50:34 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:50:39 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:50:58 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:51:03 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:51:05 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:51:06 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:52:14 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:52:18 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:52:19 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:52:25 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:53:33 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:53:38 GMT - Error - Cannot get events
+Sun, 31 May 2020 18:57:28 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 18:57:34 GMT - Error - Cannot get events
+Sun, 31 May 2020 19:00:34 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 19:00:34 GMT - Error - Cannot get events
+Sun, 31 May 2020 19:00:39 GMT - Error - Cannot get events
+Sun, 31 May 2020 19:01:03 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 19:04:22 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 19:05:35 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 19:06:33 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 19:10:57 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 19:12:34 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 19:21:44 GMT - Info - Server is running on port: 3030

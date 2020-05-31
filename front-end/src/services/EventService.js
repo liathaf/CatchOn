@@ -3,17 +3,22 @@ import HttpService from './HttpService'
 import Axios from 'axios';
 import moment from 'moment'
 
-function query(filterBy) {
+function query(filterBy, sortBy) {
    
 	var queryStr = '';
 	if (filterBy) {
-		if (filterBy.title) queryStr += `title=${filterBy.title}`;
+		if (filterBy.title) queryStr += `&title=${filterBy.title}`;
         if (filterBy.category) queryStr += `&category=${filterBy.category}`;
         if (filterBy.isFree) queryStr += `&isFree=${filterBy.isFree}`
         if (filterBy.thisWeek) queryStr += `&thisWeek=${filterBy.thisWeek}`
     }
 
-    
+    if (sortBy) {
+        if (sortBy === 'new') queryStr += `&sort=new&order=1`;
+        if (sortBy === 'price') queryStr += `&sort=price&order=1`;
+    }
+
+    console.log(queryStr)
     return HttpService.get(`event?${queryStr}`);
 }
 

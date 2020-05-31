@@ -8,7 +8,8 @@ import { loadEvents, removeEvent } from '../store/actions/EventActions';
 
 class _Events extends Component {
   state = {
-    filterBy: null
+    filterBy: null,
+    sortBy: null
   }
 
   componentDidMount() {
@@ -17,17 +18,27 @@ class _Events extends Component {
     if (search) {
       filter = this.checkCriteria(search);
     }
-    this.props.loadEvents(filter);
+    this.loadEvents(filter, this.state.sortBy);
   }
-
-
+  
+  
   onSetFilter = (filterBy) => {
-
+    
     this.setState({ filterBy }, () => {
       this.props.loadEvents(filterBy);
     })
-
+    
   }
+  
+  onSort = (sortBy) => {
+    this.setState({ sortBy },() => {
+      this.props.loadEvents(null, sortBy)})
+    
+}
+
+loadEvents (filter, sort) {
+  this.props.loadEvents(filter, sort)
+}
 
 
   checkCriteria = (search) => {
@@ -51,7 +62,7 @@ class _Events extends Component {
       <div className="events">
 
         <div className="filter">
-          {this.state.filterBy && <EventFilter onSetFilter={this.onSetFilter} filter={this.state} />}
+          {this.state.filterBy && <EventFilter onSetFilter={this.onSetFilter} onSort={this.onSort} filter={this.state} />}
         </div>
 
         <div className="events-prev">
