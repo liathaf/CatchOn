@@ -1228,3 +1228,21 @@ Sat, 30 May 2020 15:43:55 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:47:58 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:49:41 GMT - Info - Server is running on port: 3030
 Sat, 30 May 2020 15:51:45 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 01:37:08 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 01:39:04 GMT - Debug - liathaf@gmail.com, ליאת חפצדי
+Sun, 31 May 2020 01:39:04 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: ליאת חפצדי
+Sun, 31 May 2020 01:39:04 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$BWXLNoRqTI9rH19zBpT6wegvQZOUblcmh95MzTMRpYB9cFQy7EYu.","username":"ליאת חפצדי","imgUrl":"https://lh3.googleusercontent.com/-Sl8cGiqqHYY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnXF810VTXJmI4mMw1AgBnfHYR7pg/s96-c/photo.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed30ab8b14ec8c06c0b79b7"}
+Sun, 31 May 2020 01:39:04 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sun, 31 May 2020 01:39:04 GMT - Error - [SIGNUP] Invalid email or password
+Sun, 31 May 2020 01:39:25 GMT - Debug - auth.service - login with email: liahaf@gmail.com
+Sun, 31 May 2020 01:39:37 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sun, 31 May 2020 01:39:58 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sun, 31 May 2020 01:41:24 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 01:43:04 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 01:43:38 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sun, 31 May 2020 01:44:56 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 01:45:51 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 01:55:45 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 02:08:21 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 02:11:45 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 09:30:13 GMT - Info - Server is running on port: 3030
