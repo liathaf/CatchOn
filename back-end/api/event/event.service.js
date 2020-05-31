@@ -53,6 +53,9 @@ function _buildSort(sortBy) {
     if (sort === 'new') {
         return {createdAt: +order}
     }
+    if (sort === 'date') {
+        return {startAt: +order}
+    }
 }
 
 async function query(filterBy) {

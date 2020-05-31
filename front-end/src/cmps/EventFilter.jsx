@@ -9,7 +9,7 @@ export class EventFilter extends Component {
       isFree: false,
       thisWeek: false,
     },
-    sortBy: null,
+    sortBy: "",
     categories: [
       { name: 'Sport', className: 'fas fa-basketball-ball fa-1x' },
       { name: 'Outdoors', className: 'fas fa-campground  fa-1x' },
@@ -77,7 +77,8 @@ export class EventFilter extends Component {
     );
   };
 
-  onSort = (sortBy) => {
+  onSort = (ev) => {
+    const sortBy = ev.target.value
     this.setState({ sortBy }, () => {
       this.props.onSort(this.state.sortBy);
     });
@@ -169,13 +170,17 @@ export class EventFilter extends Component {
             </button>
 
             <div className="sort">
-              <p>Sort By:</p>
-              <button className={this.state.buttonClass} onClick={() => this.onSort('new')}>
-                Newest
-              </button>
-              <button className={this.state.buttonClass}  onClick={() => this.onSort('price')}>
-                Cheapest
-              </button>
+     
+
+  <select value={this.state.sortBy} onChange={this.onSort} >
+    <option value="">All</option>
+    <option value="new">Newest</option>
+    <option value="price">Cheapest</option>
+    <option value="date">Earliest</option>
+  </select>
+
+             
+            
             </div>
 
           </div>

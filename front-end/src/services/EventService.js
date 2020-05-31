@@ -16,6 +16,7 @@ function query(filterBy, sortBy) {
     if (sortBy) {
         if (sortBy === 'new') queryStr += `&sort=new&order=1`;
         if (sortBy === 'price') queryStr += `&sort=price&order=1`;
+        if (sortBy === 'date') queryStr += `&sort=date&order=-1`;
     }
 
     console.log(queryStr)
