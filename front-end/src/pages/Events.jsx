@@ -7,16 +7,17 @@ import { EventFilter } from '../cmps/EventFilter'
 import { loadEvents, removeEvent } from '../store/actions/EventActions';
 
 class _Events extends Component {
-
   state = {
     filterBy: null
-
   }
 
   componentDidMount() {
-      const { search } = this.props.match.params
-      const filterBy = this.checkCriteria(search);
-      this.props.loadEvents(filterBy);
+    const { search } = this.props.match.params;
+    let filter = '';
+    if (search) {
+      filter = this.checkCriteria(search);
+    }
+    this.props.loadEvents(filter);
   }
 
 
@@ -30,7 +31,6 @@ class _Events extends Component {
 
 
   checkCriteria = (search) => {
-    
     var filterBy = {}
     const type = search.slice(0, 1)
     if (type === 's') {
@@ -41,18 +41,17 @@ class _Events extends Component {
       const valueToSearch = search.slice(9, search.length)
       filterBy = { category: valueToSearch }
     }
+    this.setState({ filterBy })
     return filterBy;
-
   }
 
   render() {
-
     const { events } = this.props
     return (
       <div className="events">
 
         <div className="filter">
-          <EventFilter onSetFilter={this.onSetFilter} />
+          {this.state.filterBy && <EventFilter onSetFilter={this.onSetFilter} filter={this.state} />}
         </div>
 
         <div className="events-prev">

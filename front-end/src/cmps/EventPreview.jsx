@@ -29,10 +29,10 @@ class _EventPreview extends React.Component {
         return (
             <div className="event-preview">
                 <Link to={`/event/${event._id}`}>
-                    <img className="event-img" src={event.imgUrls[0]} />
+                    <img className="event-img" src={event.imgUrls[0]} alt=""/>
                 </Link>
                 <Link to={`/user/${event.createdBy._id}`} className="user-prev">
-                    <img className="userImg-preview" src={userImg}></img>
+                    <img className="userImg-preview" src={userImg} alt=""></img>
                 </Link>
                 <h5 className="attendees">{event.attendees.length}/{event.capacity}<i className="far fa-user"></i></h5>
                 <div className="event-content">

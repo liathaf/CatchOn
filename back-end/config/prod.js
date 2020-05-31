@@ -1,4 +1,4 @@
 module.exports = {
-    "dbURL": "mongodb+srv://liat:<unitmo12>@cluster0-lx82h.mongodb.net/test?retryWrites=true&w=majority",
+    "dbURL": "mongodb+srv://liat:unitmo12@cluster0-lx82h.mongodb.net/test?retryWrites=true&w=majority",
   }
-  
+

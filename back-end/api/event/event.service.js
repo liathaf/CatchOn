@@ -31,7 +31,7 @@ function _buildCriteria(filterBy) {
     }
     if (filterBy.thisWeek) {
       
-        const wantedDate = Date.now() + 604800000;
+        const wantedDate = Math.floor(Date.now() / 1000) + 604800;
         criteria.$and.push({ startAt : {$lt: wantedDate}});  
     }
 
