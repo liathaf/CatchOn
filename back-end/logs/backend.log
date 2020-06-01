@@ -1501,4 +1501,37 @@ Sat, 30 May 2020 19:23:54 GMT - Debug - paz, noy
 Sat, 30 May 2020 19:23:54 GMT - Debug - auth.service - signup with email: paz, username: noy
 Sat, 30 May 2020 19:23:54 GMT - Debug - auth.route - new account created: {"email":"paz","password":"$2b$10$i2Dssfn7hPHr68c1foOjOeFBIk5wa6eV8jeoY7AqV.7uTgabt5kDu","username":"noy","imgUrl":"","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2b2ca6120297f4c8c1db9"}
 Sat, 30 May 2020 19:23:54 GMT - Debug - auth.service - login with email: paz
+<<<<<<< HEAD
 >>>>>>> f2829b9b06db405a1902227f6a6288e86afbd247
+=======
+Sat, 30 May 2020 20:39:02 GMT - Info - Server is running on port: 3030
+Sat, 30 May 2020 21:11:37 GMT - Debug - adi.ahronov@gmail.com, Adi Ahronov
+Sat, 30 May 2020 21:11:37 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: Adi Ahronov
+Sat, 30 May 2020 21:11:37 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$8p9/KH/bAUwszZ3Dxd44/uVsyil3FoLqi8diUsCtChonvCIqejtee","username":"Adi Ahronov","imgUrl":"https://platform-lookaside.fbsbx.com/platform/profilepic/?asid=3018459981546481&height=50&width=50&ext=1593465097&hash=AeRkMyDe8d1s0Eb7","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2cc098a0f4a4d3472340c"}
+Sat, 30 May 2020 21:11:37 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sat, 30 May 2020 21:15:45 GMT - Debug - adi.ahronov@gmail.com, adi aharonov
+Sat, 30 May 2020 21:15:45 GMT - Debug - auth.service - signup with email: adi.ahronov@gmail.com, username: adi aharonov
+Sat, 30 May 2020 21:15:45 GMT - Debug - auth.route - new account created: {"email":"adi.ahronov@gmail.com","password":"$2b$10$wtKm5laY05SE2/d8kv259Og0r4ploUIIpkKlmC0djNr10llQwIZdO","username":"adi aharonov","imgUrl":"https://lh5.googleusercontent.com/-sjxtFAUb_XY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnTcPZVEgZlEOZXKYSnRATgF7hP9A/s96-c/photo.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed2cd018a0f4a4d3472340d"}
+Sat, 30 May 2020 21:15:45 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
+Sat, 30 May 2020 21:15:45 GMT - Error - [SIGNUP] Invalid email or password
+Sat, 30 May 2020 23:04:11 GMT - Info - Server is running on port: 3030
+>>>>>>> 24576fc614d0bb5a1d5216e8d3dd70a02be43797
+Sun, 31 May 2020 12:23:28 GMT - Debug - liathaf@gmail.com, ליאת חפצדי
+Sun, 31 May 2020 12:23:28 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: ליאת חפצדי
+Sun, 31 May 2020 12:23:28 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$iiKLrCoqOfmNmH7bKPclneJx.IJwS/bnCGwQtADK.zPQemRm5DAke","username":"ליאת חפצדי","imgUrl":"https://lh3.googleusercontent.com/-Sl8cGiqqHYY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnXF810VTXJmI4mMw1AgBnfHYR7pg/s96-c/photo.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed3a1c0cf3de263c06b89ad"}
+Sun, 31 May 2020 12:23:28 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sun, 31 May 2020 12:23:28 GMT - Error - [SIGNUP] Invalid email or password
+Sun, 31 May 2020 12:23:37 GMT - Debug - liathaf@gmail.com, ליאת חפצדי
+Sun, 31 May 2020 12:23:37 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: ליאת חפצדי
+Sun, 31 May 2020 12:23:37 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$nTSI6vNhY4gj8JIf2HrzputBEbafmvAPAdTifhIIyYB9WfburbeZG","username":"ליאת חפצדי","imgUrl":"https://lh3.googleusercontent.com/-Sl8cGiqqHYY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnXF810VTXJmI4mMw1AgBnfHYR7pg/s96-c/photo.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed3a1c9cf3de263c06b89ae"}
+Sun, 31 May 2020 12:23:37 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Sun, 31 May 2020 12:23:37 GMT - Error - [SIGNUP] Invalid email or password
+Sun, 31 May 2020 12:24:16 GMT - Debug - liathaf@gmail.com, ליאת חפצדי
+Sun, 31 May 2020 12:24:16 GMT - Debug - auth.service - signup with email: liathaf@gmail.com, username: ליאת חפצדי
+Sun, 31 May 2020 12:24:16 GMT - Debug - auth.route - new account created: {"email":"liathaf@gmail.com","password":"$2b$10$RpehOeffDzVIOPbogq3/NeYUu.UkO8y6RYGka1dFpm3b9qMfSQjPe","username":"ליאת חפצדי","imgUrl":"https://lh3.googleusercontent.com/-Sl8cGiqqHYY/AAAAAAAAAAI/AAAAAAAAAAA/AMZuucnXF810VTXJmI4mMw1AgBnfHYR7pg/s96-c/photo.jpg","attendedEvents":[],"createdEvents":[],"isAdmin":false,"_id":"5ed3a1f0cf3de263c06b89af"}
+Sun, 31 May 2020 12:24:16 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Mon, 01 Jun 2020 14:17:40 GMT - Info - Server is running on port: 3030
+Mon, 01 Jun 2020 14:19:37 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Mon, 01 Jun 2020 14:21:49 GMT - Debug - auth.service - login with email: liathaf@gmail.com
+Mon, 01 Jun 2020 14:24:07 GMT - Info - Server is running on port: 3030
+Mon, 01 Jun 2020 14:32:00 GMT - Info - Server is running on port: 3030

@@ -11,14 +11,14 @@
     z-index: 1;
     background-position: center;
     background-size: cover;
-    animation: image 10s infinite alternate;
+    animation: image 8s infinite alternate;
 
     @keyframes image {
-      0% {
+      0%,30% {
         background-image: url("../../img/group2.png");
       }
 
-      100% {
+      50%,80% {
         background-image: url("../../img/group1.png");
       }
     }
