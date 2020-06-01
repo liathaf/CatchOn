@@ -49,7 +49,7 @@ class _EventPreview extends React.Component {
                         <div>
                             <div className="event-time-place">
                                 <p>{event.place}</p>
-                                <p>{moment.unix(event.startAt).format("LLL")}</p>
+                                <p>{moment.unix(event.startAt).format("LL")}</p>
                             </div>
                         </div>
                     </div>
