@@ -21,11 +21,11 @@ export class Review extends Component {
 
 
     onHandelSubmit = (ev) => {
-
         ev.preventDefault();
         const { msg } = this.state;
         this.props.onAddReview(msg);
-
+        this.setState({ msg: '' })
+        document.querySelector('.massage').value = '';
     }
 
     render() {
@@ -35,7 +35,7 @@ export class Review extends Component {
                 <section className="reviews">
                     <form className="review-form" autoComplete="off" onSubmit={this.onHandelSubmit}>
                         <img src={(!user || !user.imgUrl) ? avatar : user.imgUrl} alt=""></img>
-                        <input name="msg" placeholder="write massege..." onChange={this.onHandleChange}></input>
+                        <input className="massage" name="msg" placeholder="write massege..." onChange={this.onHandleChange}></input>
                         <button className="btn" onClick={this.onHandelSubmit}>Comment</button>
                     </form>
                     <ReviewList reviews={reviews} />

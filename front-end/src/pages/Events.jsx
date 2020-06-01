@@ -13,6 +13,7 @@ class _Events extends Component {
   }
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     const { search } = this.props.match.params;
     let filter = '';
     if (search) {
