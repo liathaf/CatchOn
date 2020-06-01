@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { loadEvents } from '../store/actions/EventActions';
 import { EventList } from '../cmps/EventList';
-
+import group1 from '../img/group1.png'
+import group2 from '../img/group2.png'
+import group3 from '../img/group3.png'
+import group4 from '../img/group4.png'
+// import group2 from '../../img/group2.png'
 
 
 class _Home extends Component {
@@ -36,35 +40,38 @@ class _Home extends Component {
     onHandelChange = ({ target }) => {
         const field = target.name;
         const value = target.value;
-        this.setState({ [field]: value.toLowerCase()});
-      }
+        this.setState({ [field]: value.toLowerCase() });
+    }
 
     componentDidMount() {
+        window.scrollTo(0, 0);
         this.props.loadEvents();
-        navigator.geolocation.getCurrentPosition(function(position) {
+        navigator.geolocation.getCurrentPosition(function (position) {
             console.log("Latitude is :", position.coords.latitude);
             console.log("Longitude is :", position.coords.longitude);
-          });
+        });
     }
 
     render() {
         const { events } = this.props
-  
+
         return (
             <>
-                <div className="top-on"></div>
+                <div className="top-on">
+                    <img className="image1" src={group1}></img>
+                    <img className="image2" src={group2}></img>
+                    <img className="image3" src={group3}></img>
+                    <img className="image4" src={group4}></img>
+                </div>
                 <section className="landing">
-                    {/* <div className="main-img">
-                        <img className="group1-main-img" src={group1}></img>
-                        <img className="group2-main-img" src={group2}></img>
-                    </div> */}
+                    <div className="light-overlay"></div>
                     <div className="landing-inner container">
                         <h1 className="large">Explore new events and meet new people.</h1>
                         {/* <Link to="/login" className="btn btn-primary">Join VENYOU</Link> */}
                         <div>
                             <div className="home-search">
-                            <i className="fas fa-search fa-lg"></i>
-                                <input onChange={this.onHandelChange} type="text" name="searchValue"/>
+                                <i className="fas fa-search fa-lg"></i>
+                                <input onChange={this.onHandelChange} type="text" name="searchValue" />
                             </div>
                             <Link to={`/events/search=${this.state.searchValue}`}> <button className="btn btn-primary">Search</button></Link>
                         </div>
@@ -89,7 +96,7 @@ class _Home extends Component {
                     <Link to={`/events/category=${'Health'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
-                    <EventList events={events} atHome={true} category={'Health'}/>
+                    <EventList events={events} atHome={true} category={'Health'} />
                 </div>
                 <div className="group-title container">
                     <h2>Outdoors</h2>
@@ -103,18 +110,18 @@ class _Home extends Component {
                     <Link to={`/events/category=${'Coding'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
-                    <EventList events={events} atHome={true} category={'Coding'}/>
+                    <EventList events={events} atHome={true} category={'Coding'} />
                 </div>
                 <div className="group-title container">
                     <h2>Gaming</h2>
                     <Link to={`/events/category=${'Gaming'.toLowerCase()}`}> <h4><span>S</span><span>e</span><span>e </span><span>M</span><span>o</span><span>r</span><span>e </span><span>></span></h4></Link>
                 </div>
                 <div className="events-home">
-                    <EventList events={events} atHome={true} category={'Gaming'}/>
+                    <EventList events={events} atHome={true} category={'Gaming'} />
                 </div>
 
                 <section className="about-preview">
-                     {events.length && <div>
+                    {events.length && <div>
                         <h2>Check Out A Random Event</h2>
                         <Link to={`/event/${events[Math.floor(Math.random() * events.length)]._id}`} className="btn btn-control">Be Spontaneous</Link>
                     </div>}

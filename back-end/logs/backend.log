@@ -1492,3 +1492,5 @@ Sat, 30 May 2020 21:15:45 GMT - Debug - auth.route - new account created: {"emai
 Sat, 30 May 2020 21:15:45 GMT - Debug - auth.service - login with email: adi.ahronov@gmail.com
 Sat, 30 May 2020 21:15:45 GMT - Error - [SIGNUP] Invalid email or password
 Sat, 30 May 2020 23:04:11 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 12:12:38 GMT - Info - Server is running on port: 3030
+Sun, 31 May 2020 12:18:14 GMT - Info - Server is running on port: 3030
