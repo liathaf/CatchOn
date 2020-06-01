@@ -154,21 +154,6 @@ export class EventFilter extends Component {
                       <i className={category.className}></i>
                       <p>{category.name}</p>
                     </div>
-<<<<<<< HEAD
-
-                    <div className='button-filter'>
-                        <button className={this.state.buttonClass} name="isFree" onClick={this.onToggelButtonsFilter} >Free</button>
-                    </div>
-
-                </div>
-                <div className='button-filter'>
-                    {/* <button className={this.state.buttonClass} onClick={this.onToggelButtonsFilter} name="thisWeek" >Up Coming Week</button> */}
-                </div>
-            </section>
-        )
-
-    }
-=======
                   </li>
                 ))}
               </ul>
@@ -206,5 +191,4 @@ export class EventFilter extends Component {
       </section>
     );
   }
->>>>>>> 78187e16a835dd9078db7d3c8a5ea51810e9b63d
 }
