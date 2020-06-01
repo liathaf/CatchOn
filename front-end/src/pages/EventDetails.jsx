@@ -18,6 +18,8 @@ import { SocketService } from '../services/SocketService';
 import { ReactComponent as Like } from '../img/icons/like.svg'
 import { Modal } from '../cmps/Modal'
 
+import { SubscriptionService } from '../services/SubscripitonService'
+
 class _EventDetails extends Component {
 
     state = {
@@ -100,19 +102,22 @@ class _EventDetails extends Component {
             return
         }
         if (!isAttend) {
-            
+
             user.attendedEvents.push({
                 _id: event._id,
                 title: event.title,
                 imgUrl: event.imgUrls[0]
             });
             event.attendees.push(user);
+            await this.props.updateUser(user)
+            await this.props.saveEvent(event)
+            SubscriptionService.subscribeUser(event);
         } else {
             user.attendedEvents.splice(UserService.findIdxById(user, event._id), 1);
             event.attendees.splice(EventService.findIdxById(event, user._id), 1);
+            await this.props.updateUser(user)
+            await this.props.saveEvent(event)
         }
-        await this.props.updateUser(user)
-        await this.props.saveEvent(event)
         this.setState(prevState => ({ isAttend: !prevState.isAttend }))
     }
 
