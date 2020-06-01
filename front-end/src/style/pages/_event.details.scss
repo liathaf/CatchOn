@@ -27,18 +27,13 @@
                 "a a a a d d e e";
 
 
-            div {
+            .image-container {
+                width:100%;
+                height: 100%;
                 border: .5px solid #4848485d;
                 border-collapse: collapse;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: 100% auto;
-                transition: background-size 1s ease-in-out;
-
-
-                &:hover {
-                    background-size: 104% auto ;
-                }
+                overflow: hidden;
+                
 
                 &:first-child {
                     grid-area: a;
@@ -59,6 +54,19 @@
                 &:nth-child(5) {
                     grid-area: e;
                 }
+
+                .image {
+                    width: 100%;
+                    height: 100%;
+                    background-position: 50% 50%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    transition: transform 1s ease-in-out;
+                    transform: background-image scale(1, 1);
+                    &:hover {
+                    transform: scale(1.04, 1.04);
+                }
+                }
             }
 
         }
@@ -75,14 +83,16 @@
                 left: 0;
                 text-align: left;
                 font-size: 0;
-                animation: 20s slidy infinite;
+                animation: 24s slidy infinite;
 
-                div {
+                .image-container {
+                    image{
                     position: relative;
                     border: 0;
                     margin: 0;
                     width: 100%;
                     float: left;
+                    }
                 }
 
                 @keyframes slidy {
@@ -146,6 +156,7 @@
                     margin-top: 15px;
                     display: flex;
                     align-items: center;
+
                     p {
                         color: #767676;
                     }
@@ -163,12 +174,15 @@
                     }
                 }
 
-                .capacity-likes{
+                .capacity-likes {
                     // margin-top: 10px;
                     transform: translateY(430%);
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
+                    i{
+                        z-index: 1;
+                    }
                 }
             }
 
@@ -223,7 +237,7 @@
             background: #fff;
             margin-left: 40px;
             box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.1);
-
+            z-index: 3;
             .top-side {
                 display: flex;
                 justify-content: space-between;
@@ -292,7 +306,7 @@
                     align-items: center;
                     padding: 0;
                     margin: 0 10px;
-                    
+
                     h2 {
                         display: none;
                     }

@@ -155,7 +155,9 @@ class _EventDetails extends Component {
                     <div className="image-slide">
                         <div className="event-gallery">
                             {event.imgUrls.map((url, idx) => (
-                                <div key={idx} style={{ backgroundImage: `url(${url})` }}></div>
+                                <div className="image-container" key={idx}>
+                                    <div className="image" style={{ backgroundImage: `url(${url})` }}></div>
+                                </div>
                             ))}
                         </div>
                     </div>

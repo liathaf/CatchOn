@@ -62,7 +62,7 @@ loadEvents (filter, sort) {
     return (
       <div className="events">
 
-        <div className="filter">
+        <div className="filter container">
           {this.state.filterBy && <EventFilter onSetFilter={this.onSetFilter} onSort={this.onSort} filter={this.state} />}
         </div>
 

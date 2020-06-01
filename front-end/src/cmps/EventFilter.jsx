@@ -169,24 +169,15 @@ export class EventFilter extends Component {
               Free
             </button>
 
-            <div className="sort">
-     
-
-  <select value={this.state.sortBy} onChange={this.onSort} >
-    <option value="">All</option>
-    <option value="new">Newest</option>
-    <option value="price">Cheapest</option>
-    <option value="date">Earliest</option>
-  </select>
-
-             
-            
-            </div>
-
           </div>
         </div>
-        <div className="button-filter">
-          {/* <button className={this.state.buttonClass} onClick={this.onToggelButtonsFilter} name="thisWeek" >Up Coming Week</button> */}
+        <div className="sort">
+        <label htmlFor="sort">Sort By:</label>
+          <select name="sort" value={this.state.sortBy} onChange={this.onSort} >
+            <option value="new">Newest</option>
+            <option value="price">Cheapest</option>
+            <option value="date">Earliest</option>
+          </select>
         </div>
       </section>
     );

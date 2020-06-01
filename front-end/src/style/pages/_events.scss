@@ -1,8 +1,5 @@
  .events {
 
-     //    .main-img-events {
-     //        min-height: 280px
-     //    }
 
      .filter {
          position: relative;
@@ -10,10 +7,15 @@
          display: flex;
          flex-direction: column;
          align-items: center;
-         height: 150px;
-         background-color: rgba(0, 219, 248, 0.05);
-         border-top: 1px solid #80868ba4;
-         border-bottom: 1px solid #80868ba4;
+         height: 100px;
+        //  background-color: rgba(0, 219, 248, 0.05);
+        //  border: 1px solid #80868ba4;
+         box-shadow: 0 1px 1px rgba(166, 166, 166, 0.5);
+         
+     } 
+
+     .event-list{
+         top:20vh
      }
 
      .event-filter {
@@ -27,12 +29,11 @@
              display: flex;
              justify-content: space-between;
              align-items: center;
-
+   
              .input-filter {
                  display: flex;
                  width: 30vw;
                  height: 60px;
-
                  .filter-search {
                      border-radius: 8px;
                      display: flex;
@@ -91,6 +92,7 @@
                  width: 180px;
                  position: relative;
                  user-select: none;
+                 box-shadow: 0 1px 1px rgba(166, 166, 166, 0.678);
 
                  .active .category-filter {
                      display: block;
@@ -232,6 +234,43 @@
                  background-color: #49beb7;
              }
          }
+
+         .sort{
+             select{
+                 margin-left: 15px;
+                 padding: 5px 20px;
+                 border: none;
+                 border-bottom: 1px solid #aaa;
+             }
+         }
+     }
+     .filter{
+        @media screen and (max-width: $normal-breakpoint) {
+            height: 250px;
+            .event-filter {
+                height: 100%;
+                flex-direction: column;
+                justify-content: left;
+               .input-category-price{
+                   width: 100%;
+                   align-items: flex-start;
+                    height: 80%;
+                    justify-content: space-between;
+                   flex-direction: column;
+                   .input-filter{
+                       width: 100%;
+                       input{
+                           width: 90%;
+                       }
+                   }
+                }
+                .sort{
+                   width: 100%;
+                   margin-top: 20px;
+                   align-items: flex-start;
+                }
+            }
+        }
      }
  }
 

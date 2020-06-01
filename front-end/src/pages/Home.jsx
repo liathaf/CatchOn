@@ -64,7 +64,7 @@ class _Home extends Component {
                     <img className="image4" src={group4}></img>
                 </div>
                 <section className="landing">
-                    <div className="light-overlay"></div>
+                    {/* <div className="light-overlay"></div> */}
                     <div className="landing-inner container">
                         <h1 className="large">Explore new events and meet new people.</h1>
                         {/* <Link to="/login" className="btn btn-primary">Join VENYOU</Link> */}
