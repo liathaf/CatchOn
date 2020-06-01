@@ -33,7 +33,7 @@ class _EventDetails extends Component {
 
 
     componentDidMount() {
-
+        window.scrollTo(0, 0);
         SocketService.setup();
         const { eventId } = this.props.match.params;
         this.loadEvent(eventId)
@@ -70,7 +70,6 @@ class _EventDetails extends Component {
         SocketService.off('new review', this.loadEvent);
         SocketService.off('new like', this.loadEvent);
         window.removeEventListener('scroll', this.handleScroll);
-
     }
 
     handleScroll = () => {

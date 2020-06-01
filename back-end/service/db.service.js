@@ -6,7 +6,7 @@ module.exports = {
     getCollection
 };
 
-const dbName = 'event_db';
+const dbName = 'VENYOU_DB';
 
 var dbConn = null;
 
